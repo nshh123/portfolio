@@ -1,0 +1,146 @@
+// Metric live simulation
+setInterval(() => {
+    const cpu = document.getElementById('cpu-val');
+    const ram = document.getElementById('ram-val');
+    const net = document.getElementById('net-val');
+    
+    if (cpu) {
+        const val = Math.floor(Math.random() * 20) + 5;
+        cpu.innerText = `${val}%`;
+        cpu.nextElementSibling.firstChild.style.width = `${val}%`;
+    }
+    
+    if (ram) {
+        const val = +(Math.random() * 1.5 + 3).toFixed(1);
+        ram.innerText = `${val} GB`;
+        ram.nextElementSibling.firstChild.style.width = `${(val / 16) * 100}%`;
+    }
+    
+    if (net) {
+        const val = Math.floor(Math.random() * 150) + 800; // 800-950 Mbps
+        net.innerText = `${val} Mbps`;
+    }
+}, 2000);
+
+// Terminal Logic
+const termInput = document.getElementById('term-input');
+const termBody = document.getElementById('term-body');
+
+if(termInput) {
+    termInput.addEventListener('keydown', function(e) {
+        if(e.key === 'Enter') {
+            const command = this.value.trim().toLowerCase();
+            this.value = '';
+            
+            // Output command
+            const html = `
+                <p class="term-line"><span class="prompt">usr@smusoni:~$</span> ${command}</p>
+            `;
+            
+            let response = '';
+            
+            if (command === 'help') {
+                response = `
+                    <p class="term-line text-primary">Available commands:</p>
+                    <p class="term-line">- about: Read bio</p>
+                    <p class="term-line">- stack: View technologies</p>
+                    <p class="term-line">- clear: Clear terminal</p>
+                `;
+            } else if (command === 'about') {
+                response = `<p class="term-line">Full Stack Engineer & LLM Enthusiast based in Kigali, Rwanda.</p>`;
+            } else if (command === 'stack') {
+                response = `<p class="term-line text-secondary">React.js, Node.js, Python, FastAPI, C, PostgreSQL</p>`;
+            } else if (command === 'clear') {
+                document.querySelectorAll('.term-line:not(:last-child)').forEach(el => el.remove());
+                return;
+            } else if (command !== '') {
+                response = `<p class="term-line text-red">Command not found: ${command}. Type 'help' for options.</p>`;
+            }
+
+            // Insert before the input container
+            const inputLine = document.querySelector('.term-input-line');
+            inputLine.insertAdjacentHTML('beforebegin', html + response);
+            
+            // scroll to bottom
+            termBody.scrollTop = termBody.scrollHeight;
+        }
+    });
+
+    // Keep focus
+    termBody.addEventListener('click', () => { termInput.focus(); });
+}
+
+// Sandbox Tabs
+const tabs = document.querySelectorAll('.tab');
+const codeBlocks = document.querySelectorAll('.code-block');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // remove active from all
+        tabs.forEach(t => t.classList.remove('active'));
+        codeBlocks.forEach(c => c.classList.remove('active'));
+        
+        // set current
+        tab.classList.add('active');
+        const targetId = `code-${tab.dataset.tab}`;
+        document.getElementById(targetId).classList.add('active');
+    });
+});
+
+// Copy Email Logic
+function copyEmail(e) {
+    e.preventDefault();
+    navigator.clipboard.writeText('nshutisam61@gmail.com').then(() => {
+        const btn = e.target;
+        const originalText = btn.innerText;
+        btn.innerText = 'Copied to Clipboard!';
+        btn.style.borderColor = 'var(--secondary)';
+        btn.style.color = 'var(--secondary)';
+        
+        setTimeout(() => {
+            btn.innerText = originalText;
+            btn.style.borderColor = '';
+            btn.style.color = '';
+        }, 3000);
+    });
+}
+
+// Contact Form Submission (Formspree AJAX)
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const feedback = document.getElementById('form-feedback');
+        feedback.innerText = 'Transmitting data...';
+        feedback.style.color = 'var(--text-gray)';
+        
+        try {
+            const formData = new FormData(contactForm);
+            const response = await fetch(contactForm.action, {
+                method: contactForm.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                feedback.innerText = 'Message sent successfully!';
+                feedback.style.color = 'var(--secondary, #10B981)'; // keeping neon style
+                contactForm.reset();
+            } else {
+                feedback.innerText = 'Transmission failed. Try again.';
+                feedback.style.color = 'var(--red, #ef4444)';
+            }
+        } catch (error) {
+            feedback.innerText = 'Connection error. Please try again.';
+            feedback.style.color = 'var(--red, #ef4444)';
+        }
+        
+        // Clear message after 5 seconds
+        setTimeout(() => {
+            feedback.innerText = '';
+        }, 5000);
+    });
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sam Musoni | Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background Vignette & Grid -->
+  <div class="bg-vignette"></div>
+  <div class="bg-grid"></div>
+  <div class="scanlines"></div>
+
+  <nav class="navbar">
+    <div class="nav-content">
+      <a href="index.html" style="text-decoration: none; color: inherit;">
+        <div class="logo glitch-text" data-text="SM_">SM<span class="text-primary">_</span></div>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#sandbox">Sandbox</a>
+        <a href="index.html#projects">Projects</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container form-container">
+    <div class="contact-form-wrapper">
+      <div class="form-body">
+        <h2 class="form-title">Send me a message</h2>
+        <form id="contact-form" action="https://formspree.io/f/mlgadpvo" method="POST">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="sam, john....etc" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="[EMAIL_ADDRESS]" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="6" placeholder="Let's build something extraordinary..."
+              required></textarea>
+          </div>
+
+          <div id="form-feedback" class="feedback-msg"></div>
+
+          <button type="submit" class="btn btn-solid w-full submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

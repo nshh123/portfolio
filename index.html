@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sam Musoni | High-Tech Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background Vignette & Grid -->
+  <div class="bg-vignette"></div>
+  <div class="bg-grid"></div>
+  <div class="scanlines"></div>
+
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="logo glitch-text" data-text="SM_">SM<span class="text-primary">_</span></div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#sandbox">Sandbox</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+      <div class="hero-left">
+        <div class="hero-identity">
+          <div class="avatar-container">
+            <img src="profil.png" alt="Sam Musoni" class="profile-avatar">
+            <div class="avatar-scanner"></div>
+          </div>
+          <div class="status-pill border-primary">
+            <span class="status-dot animate-pulse"></span>
+            <span class="status-text text-primary">System Online . Ready for tasks</span>
+          </div>
+        </div>
+        <h1 class="hero-title glitch-text" data-text="Sam Musoni">Sam Musoni</h1>
+        <p class="hero-subtitle">Full Stack Engineer <span class="text-gray">&middot; LLM Enthusiast</span></p>
+        <p class="hero-bio">Building scalable, secure backends and highly interactive frontends. Exploring the frontiers
+          of artificial intelligence to design intuitive, robust solutions.</p>
+        <div class="hero-action">
+          <a href="#projects" class="btn btn-solid">View Featured Projects</a>
+          <a href="contact.html" class="btn btn-outline">Email</a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <!-- Live Metrics Card Mockup -->
+        <div class="tech-card metrics-card">
+          <div class="card-header">
+            <div class="window-controls">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="header-title">Live_Metrics</span>
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-item">
+              <span class="metric-label">CPU Usage</span>
+              <span class="metric-value text-primary" id="cpu-val">12%</span>
+              <div class="progress-bar">
+                <div class="progress-fill fill-primary" style="width: 12%"></div>
+              </div>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">RAM Allocation</span>
+              <span class="metric-value text-secondary" id="ram-val">4.2 GB</span>
+              <div class="progress-bar">
+                <div class="progress-fill fill-secondary" style="width: 45%"></div>
+              </div>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Network Speed</span>
+              <span class="metric-value text-primary" id="net-val">840 Mbps</span>
+            </div>
+            <div class="metric-item">
+              <span class="metric-label">Uptime</span>
+              <span class="metric-value" id="uptime-val">99.98%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Terminal -->
+    <section class="terminal-section" id="terminal">
+      <div class="tech-card terminal-window">
+        <div class="card-header border-bottom">
+          <div class="window-controls">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="header-title">usr@smusoni: ~</span>
+        </div>
+        <div class="terminal-body" id="term-body">
+          <p class="term-line"><span class="prompt">usr@smusoni:~$</span> Welcome to SMUSONI interactive shell.</p>
+          <p class="term-line"><span class="prompt">usr@smusoni:~$</span> Type <span class="text-primary">'help'</span>
+            to
+            see available commands.</p>
+          <div class="term-input-line">
+            <span class="prompt">usr@smusoni:~$</span>
+            <input type="text" id="term-input" autocomplete="off" spellcheck="false" autofocus>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Sandbox Section -->
+    <section class="sandbox-section" id="sandbox">
+      <div class="section-title">
+        <h2>Tech Stack</h2>
+        <p>Core programming languages and frameworks</p>
+      </div>
+
+      <div class="expertise-grid" style="margin-bottom: 4rem;">
+        <!-- Frontend -->
+        <div class="expertise-card">
+          <div class="expertise-header">
+            <span class="text-primary">&#10022;</span> Frontend
+          </div>
+          <ul class="expertise-list">
+            <li>React / Next.js <div class="bar-container">
+                <div class="bar-fill" style="width: 90%;"></div>
+              </div>
+            </li>
+            <li>Vue.js <div class="bar-container">
+                <div class="bar-fill" style="width: 75%;"></div>
+              </div>
+            </li>
+            <li>TypeScript <div class="bar-container">
+                <div class="bar-fill" style="width: 85%;"></div>
+              </div>
+            </li>
+            <li>Tailwind CSS <div class="bar-container">
+                <div class="bar-fill" style="width: 95%;"></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Backend/Frameworks -->
+        <div class="expertise-card">
+          <div class="expertise-header">
+            <span class="text-secondary">&#9881;</span> Backend & Frameworks
+          </div>
+          <ul class="expertise-list dotted green">
+            <li>Node.js / Express</li>
+            <li>Python / FastAPI</li>
+            <li>Django / DRF</li>
+            <li>C / C++ core</li>
+          </ul>
+        </div>
+
+        <!-- Databases -->
+        <div class="expertise-card">
+          <div class="expertise-header">
+            <span style="color: #6b7280;">&#9776;</span> Databases & DevOps
+          </div>
+          <ul class="expertise-list dotted gray">
+            <li>PostgreSQL</li>
+            <li>MongoDB</li>
+            <li>Redis</li>
+            <li>Docker & CI/CD</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section-title">
+        <h2>Code Walkthroughs</h2>
+        <p>Live architectural demonstrations and examples</p>
+      </div>
+
+      <div class="sandbox-grid">
+        <!-- Sandbox Window -->
+        <div class="tech-card code-sandbox">
+          <div class="card-header border-bottom padding-0">
+            <div class="sandbox-tabs">
+              <div class="tab active" data-tab="python">main.py</div>
+              <div class="tab" data-tab="react">App.tsx</div>
+              <div class="tab" data-tab="c">core.c</div>
+            </div>
+          </div>
+          <div class="sandbox-body">
+            <pre class="code-block active"
+              id="code-python"><code><span class="keyword">@ray.remote</span>(num_gpus=<span class="number">1</span>)
+<span class="keyword">class</span> <span class="function">LLMAgentState</span>:
+    <span class="keyword">def</span> <span class="function">__init__</span>(self, model_id: str):
+        <span class="comment"># Initialize high-performance quantization</span>
+        self.model = AutoModelForCausalLM.from_pretrained(
+            model_id, device_map=<span class="string">"auto"</span>, load_in_8bit=<span class="keyword">True</span>
+        )
+        self.tokenizer = AutoTokenizer.from_pretrained(model_id)
+        
+    <span class="keyword">async def</span> <span class="function">stream</span>(self, prompt: str) -> AsyncGenerator:
+        inputs = self.tokenizer(prompt).to(<span class="string">"cuda"</span>)
+        streamer = TextIteratorStreamer(self.tokenizer)
+        
+        thread = Thread(target=self.model.generate, kwargs=dict(inputs, streamer=streamer))
+        thread.start()
+        
+        <span class="keyword">for</span> new_text <span class="keyword">in</span> streamer:
+            <span class="keyword">yield</span> {<span class="string">"token"</span>: new_text, <span class="string">"ts"</span>: time.time()}</code></pre>
+
+            <pre class="code-block" id="code-react"><code><span class="keyword">export default function</span> <span class="function">InteractiveDashboard</span>() {
+    <span class="keyword">const</span> [metricData, setMetricData] = useState&lt;TimeSeriesData[]&gt;([]);
+    <span class="keyword">const</span> socketRef = useRef&lt;WebSocket | <span class="keyword">null</span>&gt;(<span class="keyword">null</span>);
+
+    useEffect(() => {
+        socketRef.current = <span class="keyword">new</span> WebSocket(<span class="string">'wss://api.aether-hub.io/v1/stream'</span>);
+        
+        socketRef.current.onmessage = (event) => {
+            <span class="keyword">const</span> payload = JSON.parse(event.data);
+            setMetricData(prev => {
+                <span class="keyword">const</span> history = prev.length > <span class="number">500</span> ? prev.slice(<span class="number">1</span>) : prev;
+                <span class="keyword">return</span> [...history, { val: payload.throughput, t: Date.now() }];
+            });
+        };
+        <span class="keyword">return</span> () => socketRef.current?.close();
+    }, []);
+
+    <span class="keyword">return</span> (
+        &lt;<span class="tag">div</span> className=<span class="string">"grid grid-cols-12 gap-6 bg-zinc-950"</span>&gt;
+            &lt;<span class="tag">Suspense</span> fallback={&lt;<span class="tag">DashboardSkeleton</span> /&gt;}&gt;
+                &lt;<span class="tag">AnalyticsChart</span> data={metricData} /&gt;
+            &lt;/<span class="tag">Suspense</span>&gt;
+        &lt;/<span class="tag">div</span>&gt;
+    );
+}</code></pre>
+
+            <pre class="code-block" id="code-c"><code><span class="keyword">#include</span> <span class="string">&lt;pthread.h&gt;</span>
+<span class="keyword">#include</span> <span class="string">&lt;sys/mman.h&gt;</span>
+
+<span class="keyword">#define</span> MAX_THREADS <span class="number">16</span>
+<span class="keyword">#define</span> PAGE_SIZE <span class="number">4096</span>
+
+<span class="keyword">typedef struct</span> {
+    <span class="keyword">void*</span> memory_pool;
+    <span class="keyword">size_t</span> allocation_size;
+    pthread_mutex_t lock;
+} ThreadSafeAllocator;
+
+<span class="keyword">void*</span> <span class="function">fast_alloc</span>(ThreadSafeAllocator* m_pool, <span class="keyword">size_t</span> bytes) {
+    pthread_mutex_lock(&m_pool->lock);
+    
+    <span class="comment">// Align memory to page boundaries for optimal L1 cache hits</span>
+    <span class="keyword">size_t</span> aligned = (bytes + PAGE_SIZE - <span class="number">1</span>) & ~(PAGE_SIZE - <span class="number">1</span>);
+    <span class="keyword">void*</span> ptr = mmap(<span class="keyword">NULL</span>, aligned, PROT_READ | PROT_WRITE, 
+                     MAP_PRIVATE | MAP_ANONYMOUS, -<span class="number">1</span>, <span class="number">0</span>);
+                     
+    m_pool->allocation_size += aligned;
+    pthread_mutex_unlock(&m_pool->lock);
+    
+    <span class="keyword">return</span> ptr;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- API Status (2x2 grid) -->
+        <div class="api-status-grid">
+          <div class="status-card">
+            <div class="card-top">
+              <h4>Auth Service</h4>
+              <span class="status-dot green"></span>
+            </div>
+            <div class="card-bottom">
+              <span class="text-gray">Response:</span>
+              <span class="text-white">45ms</span>
+            </div>
+          </div>
+          <div class="status-card">
+            <div class="card-top">
+              <h4>Database Cluster</h4>
+              <span class="status-dot green"></span>
+            </div>
+            <div class="card-bottom">
+              <span class="text-gray">Uptime:</span>
+              <span class="text-white">99.99%</span>
+            </div>
+          </div>
+          <div class="status-card">
+            <div class="card-top">
+              <h4>LLM Engine</h4>
+              <span class="status-dot yellow"></span>
+            </div>
+            <div class="card-bottom">
+              <span class="text-gray">Load:</span>
+              <span class="text-white">High</span>
+            </div>
+          </div>
+          <div class="status-card">
+            <div class="card-top">
+              <h4>Payment API</h4>
+              <span class="status-dot green"></span>
+            </div>
+            <div class="card-bottom">
+              <span class="text-gray">Status:</span>
+              <span class="text-white">Stable</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Grid Section -->
+    <section class="projects-section" id="projects">
+      <div class="section-title">
+        <h2>Featured Deployments</h2>
+        <p>Recent high-performance projects</p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <div class="project-overlay text-center">
+              <a href="maintenance.html" class="btn btn-outline text-sm">View Live</a>
+            </div>
+            <img src="project1.png" alt="Aether AI Hub">
+          </div>
+          <div class="project-info">
+            <h3>Aether AI Hub</h3>
+            <p class="text-gray">Centralized AI dashboard for real-time model monitoring and performance tracking.</p>
+            <div class="tech-tags">
+              <span class="tag blue">React</span>
+              <span class="tag green">Node.js</span>
+              <span class="tag purple">FastAPI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <div class="project-overlay text-center">
+              <a href="https://focus-assistant-website.vercel.app/" target="_blank" class="btn btn-outline text-sm">View Live</a>
+            </div>
+            <img src="focus_a.png" alt="Focus Assistant">
+          </div>
+          <div class="project-info">
+            <h3>Focus Assistant</h3>
+            <p class="text-gray">A sleek Microsoft Edge extension for focus management, featuring custom website
+              blockers and a distraction-free UI.</p>
+            <div class="tech-tags">
+              <span class="tag blue">Vanilla JS</span>
+              <span class="tag red">Extension API</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <div class="project-overlay text-center">
+              <a href="https://budget-planner-v2-0.vercel.app/" target="_blank" class="btn btn-outline text-sm">View Live</a>
+            </div>
+            <img src="budget_p.png" alt="Budget Planner">
+          </div>
+          <div class="project-info">
+            <h3>Budget Planner</h3>
+            <p class="text-gray">Professional-grade financial dashboard featuring fluid animations, monthly state
+              management, and real-time data visualization.</p>
+            <div class="tech-tags">
+              <span class="tag green">React</span>
+              <span class="tag yellow">Chart.js</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <div class="project-overlay text-center">
+              <a href="maintenance.html" class="btn btn-outline text-sm">View Live</a>
+            </div>
+            <img src="project2.png" alt="Finova Wallet">
+          </div>
+          <div class="project-info">
+            <h3>Finova Wallet App</h3>
+            <p class="text-gray">Secure fintech application for seamless peer-to-peer transfers and budget tracking.</p>
+            <div class="tech-tags">
+              <span class="tag blue">TypeScript</span>
+              <span class="tag red">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-img-wrapper">
+            <div class="project-overlay text-center">
+              <a href="maintenance.html" class="btn btn-outline text-sm">View Live</a>
+            </div>
+            <img src="project3.png" alt="Vanguard Store">
+          </div>
+          <div class="project-info">
+            <h3>Vanguard E-Comm</h3>
+            <p class="text-gray">A high-conversion headless e-commerce store with brutalist modern aesthetics.</p>
+            <div class="tech-tags">
+              <span class="tag green">Vue.js</span>
+              <span class="tag yellow">Vite</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="tech-card contact-card">
+        <h2>Initiate Connection</h2>
+        <p class="text-gray">Ready to build something extraordinary? Drop a message in the secure channel or reach out
+          via available networks.</p>
+        <div class="contact-buttons mt-4">
+          <a href="contact.html" class="btn btn-solid">Secure Message</a>
+          <a href="https://github.com/nshh123" target="_blank" class="btn btn-outline">GitHub Protocol</a>
+          <a href="https://www.linkedin.com/in/sam-musoni-786098227/" target="_blank" class="btn btn-outline">LinkedIn
+            Network</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p class="text-gray" style="font-size: 14px;">Copyright &copy; 2026 Sam Musoni</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
