@@ -494,7 +494,7 @@ body {
 }
 .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
 .card-top h4 { font-size: 0.85rem; font-weight: 600; color: #e4e4e7; }
-.status-dot.green { width: 8px; height: 8px; border-radius: 50%; background: var(--secondary); box-shadow: 0 0 8px var(--secondary); }
+.status-dot.green { width: 8px; height: 8px; border-radius: 50%; background: #34d399; box-shadow: 0 0 8px #34d399; }
 .status-dot.yellow { width: 8px; height: 8px; border-radius: 50%; background: var(--yellow); box-shadow: 0 0 8px var(--yellow); }
 .card-bottom { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.8rem; }
 
