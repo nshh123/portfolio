@@ -150,7 +150,7 @@ if (contactForm) {
 
             if (response.ok) {
                 feedback.innerText = 'Message sent successfully!';
-                feedback.style.color = 'var(--secondary, #10B981)'; // keeping neon style
+                feedback.style.color = '#34d399'; // green color
                 contactForm.reset();
             } else {
                 feedback.innerText = 'Transmission failed. Try again.';
