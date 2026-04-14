@@ -46,14 +46,33 @@ if(termInput) {
             if (command === 'help') {
                 response = `
                     <p class="term-line text-primary">Available commands:</p>
-                    <p class="term-line">- about: Read bio</p>
-                    <p class="term-line">- stack: View technologies</p>
-                    <p class="term-line">- clear: Clear terminal</p>
+                    <p class="term-line">- about: Read system bio</p>
+                    <p class="term-line">- stack: View core technologies</p>
+                    <p class="term-line">- projects: List active deployments</p>
+                    <p class="term-line">- contact: Initialize commlink</p>
+                    <p class="term-line">- whoami: Access level check</p>
+                    <p class="term-line">- status: Server health check</p>
+                    <p class="term-line">- date: Print system time</p>
+                    <p class="term-line">- clear: Clear terminal output</p>
                 `;
             } else if (command === 'about') {
-                response = `<p class="term-line">Full Stack Engineer & LLM Enthusiast based in Kigali, Rwanda.</p>`;
+                response = `<p class="term-line">Full Stack Engineer & LLM Enthusiast based in Kigali, Rwanda. Specializing in high-performance computing.</p>`;
             } else if (command === 'stack') {
-                response = `<p class="term-line text-secondary">React.js, Node.js, Python, FastAPI, C, PostgreSQL</p>`;
+                response = `<p class="term-line text-secondary">React.js, Node.js, Python, FastAPI, C, PostgreSQL, Ray, Redis</p>`;
+            } else if (command === 'projects') {
+                response = `<p class="term-line text-primary">1. Aether AI Hub<br>2. Focus Assistant<br>3. Budget Planner<br>4. Finova Wallet App<br>5. Vanguard E-Comm<br>Type 'contact' to request deployment info.</p>`;
+            } else if (command === 'contact') {
+                response = `<p class="term-line">Secure commlink ready. Reach out via email: <a href="contact.html" style="color:var(--secondary)">Click Here</a></p>`;
+            } else if (command === 'whoami') {
+                response = `<p class="term-line">guest_user@smusoni-net</p>`;
+            } else if (command === 'status') {
+                response = `<p class="term-line text-primary">All clusters fully operational. No vulnerabilities detected. Uptime: 99.98%</p>`;
+            } else if (command === 'date') {
+                response = `<p class="term-line">${new Date().toUTCString()}</p>`;
+            } else if (command === 'sudo' || command.startsWith('sudo ')) {
+                response = `<p class="term-line text-red">bash: permission denied: root access required. This incident will be reported.</p>`;
+            } else if (command === 'matrix') {
+                response = `<p class="term-line text-secondary">Wake up, Neo...<br>The Matrix has you...</p>`;
             } else if (command === 'clear') {
                 document.querySelectorAll('.term-line:not(:last-child)').forEach(el => el.remove());
                 return;
