@@ -7,13 +7,17 @@ setInterval(() => {
     if (cpu) {
         const val = Math.floor(Math.random() * 20) + 5;
         cpu.innerText = `${val}%`;
-        cpu.nextElementSibling.firstChild.style.width = `${val}%`;
+        if (cpu.nextElementSibling && cpu.nextElementSibling.firstElementChild) {
+            cpu.nextElementSibling.firstElementChild.style.width = `${val}%`;
+        }
     }
     
     if (ram) {
         const val = +(Math.random() * 1.5 + 3).toFixed(1);
         ram.innerText = `${val} GB`;
-        ram.nextElementSibling.firstChild.style.width = `${(val / 16) * 100}%`;
+        if (ram.nextElementSibling && ram.nextElementSibling.firstElementChild) {
+            ram.nextElementSibling.firstElementChild.style.width = `${(val / 16) * 100}%`;
+        }
     }
     
     if (net) {
