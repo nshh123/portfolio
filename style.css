@@ -373,6 +373,60 @@ body {
 .fill-primary { background: var(--primary); box-shadow: 0 0 10px var(--primary); }
 .fill-secondary { background: var(--secondary); box-shadow: 0 0 10px var(--secondary); }
 
+/* --- System Boot Animations --- */
+@keyframes flickerIn {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  20% { opacity: 0; }
+  30% { opacity: 1; }
+  40% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideRightIn {
+  0% { opacity: 0; transform: translateX(60px) skewX(-10deg); filter: blur(5px); }
+  100% { opacity: 1; transform: translateX(0) skewX(0); filter: blur(0); }
+}
+
+@keyframes digitalZoomIn {
+  0% { opacity: 0; transform: scale(1.1); filter: brightness(2) contrast(1.5); }
+  100% { opacity: 1; transform: scale(1); filter: brightness(1) contrast(1); }
+}
+
+@keyframes textReveal {
+  0% { opacity: 0; transform: translateY(20px); letter-spacing: 5px; filter: blur(4px); }
+  100% { opacity: 1; transform: translateY(0); letter-spacing: -1px; filter: blur(0); } 
+}
+
+/* Apply Boot Animations */
+.hero-identity {
+  animation: digitalZoomIn 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.hero-title {
+  animation: textReveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.hero-subtitle, .hero-bio, .hero-action {
+  animation: flickerIn 1s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.metrics-card {
+  animation: slideRightIn 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  animation-delay: 0.35s;
+  opacity: 0;
+}
+
+.navbar {
+  animation: flickerIn 1.5s ease-out forwards;
+}
+/* -------------------------------- */
+
 /* Terminal Section */
 .terminal-section { margin-top: 4rem; margin-bottom: 6rem;}
 .terminal-window { width: 100%; max-width: 800px; margin: 0 auto; }

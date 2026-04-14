@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.hero-left, .hero-right, .section-title, .expertise-card, .tech-card, .project-card, .contact-card');
+    const revealElements = document.querySelectorAll('.section-title, .expertise-card, .tech-card:not(.metrics-card), .project-card, .contact-card');
     revealElements.forEach((el, index) => {
         el.classList.add('reveal');
         
