@@ -15,6 +15,65 @@
   --nav-height: 70px;
 }
 
+/* Light Mode Aesthetics Override */
+html.light {
+  --bg-dark: #f1f5f9;
+  --bg-panel: #ffffff;
+  --border-light: rgba(0, 0, 0, 0.15);
+  --primary: #2563eb;
+  --primary-glow: rgba(37, 99, 235, 0.2);
+  --secondary: #ea580c;
+  --secondary-glow: rgba(234, 88, 12, 0.2);
+  --yellow: #d97706;
+  --red: #dc2626;
+  --text-main: #0f172a;
+  --text-gray: #475569;
+}
+
+html.light .bg-vignette {
+  background: radial-gradient(circle at center, transparent 30%, rgba(37, 99, 235, 0.05) 90%, rgba(200, 210, 225, 0.6) 100%);
+}
+
+html.light .scanlines {
+  background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0) 50%, rgba(0,0,0,0.03) 50%, rgba(0,0,0,0.03));
+}
+
+html.light .navbar { background: rgba(255, 255, 255, 0.85); }
+html.light .btn-solid { background: var(--text-main); color: #fff; border-color: var(--text-main); }
+html.light .btn-solid:hover { background: transparent; color: var(--text-main); box-shadow: 0 0 10px rgba(0,0,0,0.2); }
+
+html.light .terminal-body, html.light .sandbox-body {
+  background: #f8fafc; color: #334155; border-top: 1px solid var(--border-light);
+}
+
+html.light .code-block .keyword { color: #8b5cf6; }
+html.light .code-block .function { color: #0284c7; }
+html.light .code-block .string { color: #16a34a; }
+html.light .code-block .number { color: #d97706; }
+html.light .code-block .comment { color: #94a3b8; }
+html.light .project-overlay { background: rgba(255,255,255,0.9); }
+html.light .project-img-wrapper img { opacity: 1; }
+
+.theme-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  margin-left: 1.5rem;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 0 10px var(--primary-glow);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

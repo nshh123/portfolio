@@ -1,3 +1,39 @@
+// Theme Toggle Logic
+const savedTheme = localStorage.getItem('theme');
+const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+const htmlEl = document.documentElement;
+
+function initializeTheme() {
+    if (savedTheme === 'light') {
+        htmlEl.classList.add('light');
+        htmlEl.classList.remove('dark');
+        themeToggleBtns.forEach(btn => updateIcons(btn, true));
+    }
+}
+
+function updateIcons(btn, isLight) {
+    const sunIcon = btn.querySelector('#sun-icon');
+    const moonIcon = btn.querySelector('#moon-icon');
+    if (sunIcon && moonIcon) {
+        sunIcon.style.display = isLight ? 'block' : 'none';
+        moonIcon.style.display = isLight ? 'none' : 'block';
+    }
+}
+
+initializeTheme();
+
+themeToggleBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        htmlEl.classList.toggle('light');
+        htmlEl.classList.toggle('dark');
+        
+        const isLight = htmlEl.classList.contains('light');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        
+        themeToggleBtns.forEach(b => updateIcons(b, isLight));
+    });
+});
+
 // Metric live simulation
 setInterval(() => {
     const cpu = document.getElementById('cpu-val');
