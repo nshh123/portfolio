@@ -224,6 +224,11 @@ body {
   align-items: center;
 }
 
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   font-size: 1.5rem;
   font-weight: 900;
@@ -858,5 +863,20 @@ html.light .form-group textarea:focus {
   .projects-grid, .expertise-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .hero-title { font-size: 2.5rem; }
+  .section-title h2 { font-size: 1.8rem; }
   .api-status-grid { grid-template-columns: 1fr; }
+  .hero-action { flex-direction: column; width: 100%; }
+  .btn { width: 100%; }
+  .agent-standalone-section { margin-bottom: 4rem; }
+  .agent-runner { padding: 1rem; }
+}
+
+/* Helper classes */
+.expertise-grid, .awards-section, .agent-standalone-section { margin-bottom: 6rem; }
+.text-accent { color: #eab308; }
+.agent-msg { color: var(--secondary); margin-bottom: 8px; }
+.hand-animation-wrapper { position: relative; display: inline-flex; align-items: center; }
+
+@media (max-width: 480px) {
+  .hand-animation-container { display: none; }
 }

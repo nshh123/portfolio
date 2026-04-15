@@ -23,7 +23,7 @@
   <nav class="navbar">
     <div class="nav-content">
       <div class="logo glitch-text" data-text="SM_">SM<span class="text-primary">_</span></div>
-      <div class="nav-links" style="display: flex; align-items: center;">
+      <div class="nav-links">
         <a href="#about">About</a>
         <a href="#sandbox">Sandbox</a>
         <a href="#agent-interactive">Agent</a>
@@ -72,7 +72,7 @@
           of artificial intelligence to design intuitive, robust solutions.</p>
         <div class="hero-action">
           <a href="#projects" class="btn btn-solid">View Featured Projects</a>
-          <div style="position: relative; display: inline-flex; align-items: center;">
+          <div class="hand-animation-wrapper">
             <a href="contact.html" class="btn btn-outline click-target">Email</a>
             <div class="hand-animation-container">
               <svg class="hand-cursor-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="32"
@@ -154,7 +154,7 @@
         <p>Core programming languages and frameworks</p>
       </div>
 
-      <div class="expertise-grid" style="margin-bottom: 4rem;">
+      <div class="expertise-grid">
         <!-- Frontend -->
         <div class="expertise-card">
           <div class="expertise-header">
@@ -196,7 +196,7 @@
         <!-- Databases -->
         <div class="expertise-card">
           <div class="expertise-header">
-            <span style="color: #6b7280;">&#9776;</span> Databases & DevOps
+            <span class="text-gray">&#9776;</span> Databases & DevOps
           </div>
           <ul class="expertise-list dotted gray">
             <li>PostgreSQL</li>
@@ -365,7 +365,7 @@
     </section>
 
     <!-- Interact with my agent Section -->
-    <section class="agent-standalone-section" id="agent-interactive" style="margin-bottom: 6rem;">
+    <section class="agent-standalone-section" id="agent-interactive">
       <div class="section-title reveal">
         <h2 data-i18n-orig="Interact with my agent">Interact with my agent</h2>
         <p data-i18n-orig="Chat directly with The Alpha Core Agent">Chat directly with The Alpha Core Agent</p>
@@ -379,10 +379,10 @@
         </div>
         <div class="agent-runner">
           <div class="agent-output" id="agent-output">
-            <p style="color: var(--secondary); margin-bottom: 8px;" data-i18n-orig="> System initialized. AlphaAgent standing by.">&gt; System initialized. AlphaAgent standing by.</p>
+            <p class="agent-msg">&gt; System initialized. AlphaAgent standing by.</p>
           </div>
           <div class="agent-input-wrapper">
-            <span style="color: var(--primary); font-weight: bold; align-self: center;">&gt;</span>
+            <span class="prompt">&gt;</span>
             <input type="text" id="agent-input-field" placeholder="Interact with Agent..." autocomplete="off">
             <button class="btn btn-outline" id="agent-run-btn" data-i18n-orig="Send">Send</button>
           </div>
@@ -492,7 +492,7 @@
     </section>
 
     <!-- Honors & Awards Section -->
-    <section class="awards-section" id="awards" style="margin-bottom: 6rem;">
+    <section class="awards-section" id="awards">
       <div class="section-title">
         <h2 data-i18n-orig="Honors & Awards">Honors & Awards</h2>
         <p data-i18n-orig="Recognition for technical excellence and innovation">Recognition for technical excellence and
@@ -504,21 +504,21 @@
           <div class="expertise-header">
             <span class="text-secondary">&#127942;</span> Top Innovator
           </div>
-          <p class="text-gray" style="font-size: 0.9rem;">Awarded 1st place at Rwanda National Tech Summit for an
+          <p class="text-gray">Awarded 1st place at Rwanda National Tech Summit for an
             optimal predictive AI model.</p>
         </div>
         <div class="tech-card expertise-card">
           <div class="expertise-header">
             <span class="text-primary">&#11088;</span> OS Contributor
           </div>
-          <p class="text-gray" style="font-size: 0.9rem;">Recognized for significant upstream contributions to
+          <p class="text-gray">Recognized for significant upstream contributions to
             high-performance Python libraries.</p>
         </div>
         <div class="tech-card expertise-card">
-          <div class="expertise-header" style="color: #eab308;">
-            <span style="margin-right: 8px;">&#9889;</span> Best Cybersecurity Protocol
+          <div class="expertise-header">
+            <span class="text-accent">&#9889;</span> Best Cybersecurity Protocol
           </div>
-          <p class="text-gray" style="font-size: 0.9rem;">Developed the most resilient encryption logic algorithm during
+          <p class="text-gray">Developed the most resilient encryption logic algorithm during
             the 2025 Kigali Hackathon.</p>
         </div>
       </div>
