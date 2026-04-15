@@ -39,6 +39,7 @@ const dict = {
     "About": { fr: "À propos", kn: "Ibyanjye" },
     "Sandbox": { fr: "Démo", kn: "Igerageza" },
     "Projects": { fr: "Projets", kn: "Imishinga" },
+    "Agent": { fr: "Agent", kn: "Agent" },
     "Contact": { fr: "Contact", kn: "Kuvugana" },
     "System Online . Ready for tasks": { fr: "Système en Ligne . Prêt pour les tâches", kn: "Sisitemu Iriho . Yiteguye" },
     "Full Stack Engineer": { fr: "Ingénieur Full Stack", kn: "Injiniyeri Full Stack" },
@@ -115,7 +116,24 @@ const dict = {
     "All clusters fully operational. No vulnerabilities detected. Uptime: 99.98%": { fr: "Tous les clusters sont opérationnels. Aucune vulnérabilité. Disponibilité: 99.98%", kn: "Itsinda ryose rirakora. Nta kibazo na kimwe. Igihe: 99.98%" },
     "bash: permission denied: root access required. This incident will be reported.": { fr: "bash: accès refusé: droits root requis. Cet incident sera signalé.", kn: "bash: byanzwe: hakenewe root. Iri kosa rigiye gutangazwa." },
     "Wake up, Neo...": { fr: "Réveille-toi, Neo...", kn: "Kanguka, Neo..." },
-    "The Matrix has you...": { fr: "La Matrice t'a...", kn: "Matrix iragufite..." }
+    "The Matrix has you...": { fr: "La Matrice t'a...", kn: "Matrix iragufite..." },
+    "> System initialized. AlphaAgent standing by.": { fr: "> Système initialisé. AlphaAgent prêt.", kn: "> Sisitemu yatangiye. AlphaAgent iriteguye." },
+    "> User:": { fr: "> Utilisateur :", kn: "> Umukoresha :" },
+    "> Agent:": { fr: "> Agent :", kn: "> Agent :" },
+    "Greetings, user. System is fully operational.": { fr: "Salutations, utilisateur. Le système est opérationnel.", kn: "Muraho. Sisitemu irakora neza." },
+    "All subsystems nominal. Memory at 12% capacity.": { fr: "Sous-systèmes nominaux. Mémoire à 12%.", kn: "Bikomeje kugenda neza. Memory iri kuri 12%." },
+    "I am a rudimentary AI. Try saying 'hello', 'status', or 'who are you'.": { fr: "Je suis une IA. Essayez de dire 'hello', 'status' ou 'who are you'.", kn: "Ndi AI. Gerageza kuvuga 'hello', 'status', cyangwa 'who are you'." },
+    "I am an autonomous agent deployed on this portfolio.": { fr: "Je suis un agent autonome déployé sur ce portfolio.", kn: "Ndi Agent wigenga ushyizwe kurubu rubuga." },
+    "Processing error: Command not recognized.": { fr: "Erreur : Commande non reconnue.", kn: "Ikosa: Itegeko ntirizwi." },
+    "Unable to fetch external APIs. It's always cyberpunk weather here.": { fr: "Impossible de récupérer les API externes. C'est toujours une météo cyberpunk ici.", kn: "Sinabasha kubona ikirere cy'ahandi." },
+    "Command executed: Aether AI Hub, Focus Assistant, Budget Planner, Finova Wallet, Vanguard.": { fr: "Commande exécutée : Aether AI Hub, Focus Assistant, Budget Planner, Finova Wallet, Vanguard.", kn: "Itegeko ryakozwe: Aether AI Hub, Focus Assistant, Budget Planner, Finova Wallet, Vanguard." },
+    "Node.js, React, Vue, Python, C++ core, Docker, Postgres, Redis.": { fr: "Node.js, React, Vue, Python, C++ core, Docker, Postgres, Redis.", kn: "Node.js, React, Vue, Python, C++ core, Docker, Postgres, Redis." },
+    "You can send emails directly, or click the 'Contact' navigations to shoot a message!": { fr: "Envoyez un e-mail directement ou cliquez sur 'Contact' !", kn: "Ohereza imeli ukanze ahanditse 'Contact' !" },
+    "Access denied. This terminal is strictly monitored by The Alpha Core.": { fr: "Accès refusé. Ce terminal est surveillé par Alpha Core.", kn: "Byanzwe. Alpha Core irakurinda bikomeye." },
+    "For professional inquiries, please navigate to the Contact section.": { fr: "Pour toute demande professionnelle, visitez la section de contact.", kn: "Kugirango uvugane nanjye kubijyanye n'akazi, jya kuri Contact." },
+    "Sam Musoni is a highly skilled Full Stack Engineer and AI/ML enthusiast.": { fr: "Sam Musoni est un ingénieur Full Stack hautement qualifié et passionné par l'IA/ML.", kn: "Sam Musoni ni injiniyeri ubishyikiriye akaba yikundira cyane AI." },
+    "Sam operates centrally from Kigali, Rwanda.": { fr: "Sam opère de façon centralisée depuis Kigali, Rwanda.", kn: "Sam akorera imirimo ye mu mujyi wa Kigali, mu Rwanda." },
+    "Sam has extensive experience building scalable backends, highly interactive frontends, and AI integrations.": { fr: "Sam a une vaste expérience dans la création de backends évolutifs, de frontends interactifs et d'intégrations d'IA.", kn: "Sam afite ubuhanga buhambaye mwikoranabuhanga n'imishinga minini cyane cyane iya AI." }
 };
 
 let currentLang = localStorage.getItem('lang') || 'en';
@@ -409,3 +427,65 @@ fetch('https://api.counterapi.dev/v1/sammusoni/portfolio123/up')
         const counterEl = document.getElementById('visit-counter');
         if (counterEl) counterEl.innerText = "1,024"; // fallback
     });
+
+// Agent Runner Logic
+const agentInput = document.getElementById('agent-input-field');
+const agentBtn = document.getElementById('agent-run-btn');
+const agentOutput = document.getElementById('agent-output');
+
+if (agentInput && agentBtn && agentOutput) {
+    const knowledgeBase = {
+        "hello": "Greetings, user. System is fully operational.",
+        "status": "All subsystems nominal. Memory at 12% capacity.",
+        "help": "I am a rudimentary AI. Try saying 'hello', 'status', or 'who are you'.",
+        "who are you": "I am an autonomous agent deployed on this portfolio.",
+        "weather": "Unable to fetch external APIs. It's always cyberpunk weather here.",
+        "project": "Command executed: Aether AI Hub, Focus Assistant, Budget Planner, Finova Wallet, Vanguard.",
+        "skill": "Node.js, React, Vue, Python, C++ core, Docker, Postgres, Redis.",
+        "contact": "You can send emails directly, or click the 'Contact' navigations to shoot a message!",
+        "sudo": "Access denied. This terminal is strictly monitored by The Alpha Core.",
+        "admin": "Access denied. This terminal is strictly monitored by The Alpha Core.",
+        "hire": "For professional inquiries, please navigate to the Contact section.",
+        "sam": "Sam Musoni is a highly skilled Full Stack Engineer and AI/ML enthusiast.",
+        "who is sam": "Sam Musoni is a highly skilled Full Stack Engineer and AI/ML enthusiast.",
+        "location": "Sam operates centrally from Kigali, Rwanda.",
+        "where": "Sam operates centrally from Kigali, Rwanda.",
+        "experience": "Sam has extensive experience building scalable backends, highly interactive frontends, and AI integrations.",
+        "resume": "Sam has extensive experience building scalable backends, highly interactive frontends, and AI integrations.",
+        "education": "Sam has extensive experience building scalable backends, highly interactive frontends, and AI integrations.",
+        "background": "Sam has extensive experience building scalable backends, highly interactive frontends, and AI integrations."
+    };
+
+    function runAgent() {
+        const val = agentInput.value.trim();
+        if (!val) return;
+        
+        // append user message
+        const userMsgHTML = `<p style="color: var(--text-main); margin-bottom: 4px;"><span data-i18n-orig="> User:">&gt; User:</span> ${val}</p>`;
+        agentOutput.insertAdjacentHTML('beforeend', userMsgHTML);
+        agentInput.value = '';
+
+        // process agent response
+        let responseOrig = "Processing error: Command not recognized.";
+        let match = Object.keys(knowledgeBase).find(k => val.toLowerCase().includes(k));
+        if (match) {
+            responseOrig = knowledgeBase[match];
+        }
+
+        // simulate delay
+        setTimeout(() => {
+            const agentMsgHTML = `<p style="color: var(--primary); margin-bottom: 8px;"><span data-i18n-orig="> Agent:">&gt; Agent:</span> <span data-i18n-orig="${responseOrig}">${responseOrig}</span></p>`;
+            agentOutput.insertAdjacentHTML('beforeend', agentMsgHTML);
+            agentOutput.scrollTop = agentOutput.scrollHeight;
+            
+            if (typeof setLang === 'function') setLang(currentLang);
+        }, 500);
+        
+        agentOutput.scrollTop = agentOutput.scrollHeight;
+    }
+
+    agentBtn.addEventListener('click', runAgent);
+    agentInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') runAgent();
+    });
+}
