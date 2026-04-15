@@ -521,7 +521,7 @@ body {
 /* -------------------------------- */
 
 /* Terminal Section */
-.terminal-section { margin-top: 4rem; margin-bottom: 6rem;}
+.terminal-section { margin-top: 10rem; margin-bottom: 6rem;}
 .terminal-window { width: 100%; max-width: 800px; margin: 0 auto; }
 .terminal-body {
   padding: 1.5rem;
