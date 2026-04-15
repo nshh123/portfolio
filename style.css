@@ -46,11 +46,13 @@ html.light .terminal-body, html.light .sandbox-body {
   background: #f8fafc; color: #334155; border-top: 1px solid var(--border-light);
 }
 
+html.light .code-block { color: #334155; }
 html.light .code-block .keyword { color: #8b5cf6; }
 html.light .code-block .function { color: #0284c7; }
 html.light .code-block .string { color: #16a34a; }
 html.light .code-block .number { color: #d97706; }
 html.light .code-block .comment { color: #94a3b8; }
+html.light .card-top h4 { color: #0f172a; }
 html.light .project-overlay { background: rgba(255,255,255,0.9); }
 html.light .project-img-wrapper img { opacity: 1; }
 
