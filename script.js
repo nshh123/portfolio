@@ -430,7 +430,6 @@ const agentOutput = document.getElementById('agent-output');
 if (agentInput && agentBtn && agentOutput) {
     let lastIntent = null;
     let userName = sessionStorage.getItem('agent_user_name') || null;
-    const quickRepliesContainer = document.getElementById('agent-quick-replies');
 
     // Multi-turn responses
     const msgGreeting = [
@@ -462,28 +461,8 @@ if (agentInput && agentBtn && agentOutput) {
         "cost": msgPricing, "price": msgPricing, "rate": msgPricing, "hourly": msgPricing, "budget": msgPricing, "charge": msgPricing, "fee": msgPricing,
         "joke": msgFun, "fun": msgFun, "hobbi": msgFun, "music": msgFun, "coffee": msgFun, "pizza": msgFun, "meaning of life": msgFun,
         "weather": msgWeather,
-        "sudo": msgAdmin, "admin": msgAdmin,
-        "Skills 🛠️": msgSkills, "Projects 🚀": msgProjects, "Contact ✉️": msgContact, "About Sam 👋": msgAbout
+        "sudo": msgAdmin, "admin": msgAdmin
     };
-
-    function showQuickReplies(options = ["Skills 🛠️", "Projects 🚀", "Contact ✉️", "About Sam 👋"]) {
-        quickRepliesContainer.innerHTML = '';
-        quickRepliesContainer.classList.remove('visible');
-        
-        setTimeout(() => {
-            options.forEach(opt => {
-                const chip = document.createElement('div');
-                chip.className = 'reply-chip';
-                chip.innerText = opt;
-                chip.onclick = () => {
-                    agentInput.value = opt.split(' ')[0]; // Take first word
-                    runAgent();
-                };
-                quickRepliesContainer.appendChild(chip);
-            });
-            quickRepliesContainer.classList.add('visible');
-        }, 300);
-    }
 
     function typewriter(text, element, callback) {
         let i = 0;
@@ -520,9 +499,6 @@ if (agentInput && agentBtn && agentOutput) {
         const val = agentInput.value.trim();
         if (!val) return;
         
-        // Hide quick replies while processing
-        quickRepliesContainer.classList.remove('visible');
-
         // append user message
         const userMsgHTML = `<p style="color: var(--text-main); margin-bottom: 4px;"><span data-i18n-orig="> User:">&gt; User:</span> ${val}</p>`;
         agentOutput.insertAdjacentHTML('beforeend', userMsgHTML);
@@ -609,7 +585,6 @@ if (agentInput && agentBtn && agentOutput) {
             agentOutput.appendChild(agentLine);
             
             typewriter(responseOrig, agentLine, () => {
-                showQuickReplies();
                 agentOutput.scrollTop = agentOutput.scrollHeight;
                 if (typeof setLang === 'function') setLang(currentLang);
             });
@@ -619,11 +594,6 @@ if (agentInput && agentBtn && agentOutput) {
         
         agentOutput.scrollTop = agentOutput.scrollHeight;
     }
-
-    // Initialize with quick replies
-    setTimeout(() => {
-        showQuickReplies();
-    }, 1000);
 
     agentBtn.addEventListener('click', runAgent);
     agentInput.addEventListener('keydown', (e) => {
