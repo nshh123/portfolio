@@ -42,7 +42,7 @@ html.light .navbar { background: rgba(255, 255, 255, 0.85); }
 html.light .btn-solid { background: var(--text-main); color: #fff; border-color: var(--text-main); }
 html.light .btn-solid:hover { background: transparent; color: var(--text-main); box-shadow: 0 0 10px rgba(0,0,0,0.2); }
 
-html.light .terminal-body, html.light .sandbox-body {
+html.light .terminal-body, html.light .sandbox-body, html.light .agent-runner {
   background: #f8fafc; color: #334155; border-top: 1px solid var(--border-light);
 }
 
@@ -578,6 +578,41 @@ html.light .hand-cursor-icon {
 #term-input {
   background: transparent; border: none; color: var(--primary); font-family: inherit; font-size: inherit; outline: none; width: 100%;
   font-weight: bold;
+}
+
+.agent-runner {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1.5rem;
+}
+
+.agent-output {
+  min-height: 150px;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+
+.agent-input-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+#agent-input-field {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-light);
+  color: var(--text-main);
+  font-family: var(--font-mono);
+  outline: none;
+  padding: 8px;
+  font-size: 0.95rem;
+}
+
+html.light #agent-input-field {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Section Shared */
