@@ -120,20 +120,12 @@ const dict = {
     "> System initialized. AlphaAgent standing by.": { fr: "> Système initialisé. AlphaAgent prêt.", kn: "> Sisitemu yatangiye. AlphaAgent iriteguye." },
     "> User:": { fr: "> Utilisateur :", kn: "> Umukoresha :" },
     "> Agent:": { fr: "> Agent :", kn: "> Agent :" },
-    "Greetings, user. System is fully operational.": { fr: "Salutations, utilisateur. Le système est opérationnel.", kn: "Muraho. Sisitemu irakora neza." },
-    "All subsystems nominal. Memory at 12% capacity.": { fr: "Sous-systèmes nominaux. Mémoire à 12%.", kn: "Bikomeje kugenda neza. Memory iri kuri 12%." },
-    "I am a rudimentary AI. Try saying 'hello', 'status', or 'who are you'.": { fr: "Je suis une IA. Essayez de dire 'hello', 'status' ou 'who are you'.", kn: "Ndi AI. Gerageza kuvuga 'hello', 'status', cyangwa 'who are you'." },
-    "I am an autonomous agent deployed on this portfolio.": { fr: "Je suis un agent autonome déployé sur ce portfolio.", kn: "Ndi Agent wigenga ushyizwe kurubu rubuga." },
-    "Processing error: Command not recognized.": { fr: "Erreur : Commande non reconnue.", kn: "Ikosa: Itegeko ntirizwi." },
-    "Unable to fetch external APIs. It's always cyberpunk weather here.": { fr: "Impossible de récupérer les API externes. C'est toujours une météo cyberpunk ici.", kn: "Sinabasha kubona ikirere cy'ahandi." },
-    "Command executed: Aether AI Hub, Focus Assistant, Budget Planner, Finova Wallet, Vanguard.": { fr: "Commande exécutée : Aether AI Hub, Focus Assistant, Budget Planner, Finova Wallet, Vanguard.", kn: "Itegeko ryakozwe: Aether AI Hub, Focus Assistant, Budget Planner, Finova Wallet, Vanguard." },
-    "Node.js, React, Vue, Python, C++ core, Docker, Postgres, Redis.": { fr: "Node.js, React, Vue, Python, C++ core, Docker, Postgres, Redis.", kn: "Node.js, React, Vue, Python, C++ core, Docker, Postgres, Redis." },
-    "You can send emails directly, or click the 'Contact' navigations to shoot a message!": { fr: "Envoyez un e-mail directement ou cliquez sur 'Contact' !", kn: "Ohereza imeli ukanze ahanditse 'Contact' !" },
-    "Access denied. This terminal is strictly monitored by The Alpha Core.": { fr: "Accès refusé. Ce terminal est surveillé par Alpha Core.", kn: "Byanzwe. Alpha Core irakurinda bikomeye." },
-    "For professional inquiries, please navigate to the Contact section.": { fr: "Pour toute demande professionnelle, visitez la section de contact.", kn: "Kugirango uvugane nanjye kubijyanye n'akazi, jya kuri Contact." },
-    "Sam Musoni is a highly skilled Full Stack Engineer and AI/ML enthusiast.": { fr: "Sam Musoni est un ingénieur Full Stack hautement qualifié et passionné par l'IA/ML.", kn: "Sam Musoni ni injiniyeri ubishyikiriye akaba yikundira cyane AI." },
-    "Sam operates centrally from Kigali, Rwanda.": { fr: "Sam opère de façon centralisée depuis Kigali, Rwanda.", kn: "Sam akorera imirimo ye mu mujyi wa Kigali, mu Rwanda." },
-    "Sam has extensive experience building scalable backends, highly interactive frontends, and AI integrations.": { fr: "Sam a une vaste expérience dans la création de backends évolutifs, de frontends interactifs et d'intégrations d'IA.", kn: "Sam afite ubuhanga buhambaye mwikoranabuhanga n'imishinga minini cyane cyane iya AI." },
+    "Hi there! I'm the Alpha Core Agent. I'm here to help you navigate Sam's world. What would you like to know?": { fr: "Salut ! Je suis l'agent Alpha Core. Je suis là pour vous aider à naviguer dans l'univers de Sam. Que voulez-vous savoir ?", kn: "Muraho! Ndi Alpha Core Agent. Ndi hano kugirango mbagufashe kumenya ibya Sam. Murifuza kumenya iki?" },
+    "Greetings, human. I am the Alpha Core. Systems operational. How can I assist you today?": { fr: "Salutations, humain. Je suis l'Alpha Core. Systèmes opérationnels. Comment puis-je vous aider aujourd'hui ?", kn: "Muraho, muntu. Ndi Alpha Core. Sisitemu irakora neza. Nabafasha nte uyu munsi?" },
+    "Welcome! I'm Sam's digital companion. I can tell you about his skills, projects, or how to get in touch.": { fr: "Bienvenue ! Je suis le compagnon numérique de Sam. Je peux vous parler de ses compétences, de ses projets ou de la façon de le contacter.", kn: "Murakaza neza! Ndi umufasha wa Sam mu buryo bw'ikoranabuhanga. Nshobora kubabwira kubuhanga bwe, imishinga ye, cyangwa uko mwamuvugisha." },
+    "Nice to meet you! I've updated my registers. Now, what can I tell you about Sam's work?": { fr: "Ravi de vous rencontrer ! J'ai mis à jour mes registres. Maintenant, que puis-je vous dire sur le travail de Sam ?", kn: "Nishimiye kubamenya! Namaze kubashyira muri sisitemu yanjye. None se, nababwira iki ku mirimo ya Sam?" },
+    "I'm still learning! I didn't quite catch that. You can ask me about Sam's projects, skills, or how to contact him.": { fr: "J'apprends encore ! Je n'ai pas bien compris. Vous pouvez me poser des questions sur les projets de Sam, ses compétences ou comment le contacter.", kn: "Ndacyiyiga! Sinumvise neza icyo mushatse kuvuga. Mushobora kumbaza kubyerekeye imishinga ya Sam, ubuhanga bwe, cyangwa uko mwamuvugisha." },
+    "Great! What else would you like to know?": { fr: "Génial ! Que voulez-vous savoir d'autre ?", kn: "Nibyiza cyane! Hari ikindi mwifuza kumenya?" },
     "Interact with my agent": { fr: "Interagissez avec mon agent", kn: "Vugana na agent yanjye" },
     "Chat directly with The Alpha Core Agent": { fr: "Discutez directement avec l'agent Alpha Core", kn: "Ganira na Alpha Core Agent" }
 };
@@ -436,55 +428,202 @@ const agentBtn = document.getElementById('agent-run-btn');
 const agentOutput = document.getElementById('agent-output');
 
 if (agentInput && agentBtn && agentOutput) {
+    let lastIntent = null;
+    let userName = sessionStorage.getItem('agent_user_name') || null;
+    const quickRepliesContainer = document.getElementById('agent-quick-replies');
+
+    // Multi-turn responses
+    const msgGreeting = [
+        "Hi there! I'm the Alpha Core Agent. I'm here to help you navigate Sam's world. What would you like to know?",
+        "Greetings, human. I am the Alpha Core. Systems operational. How can I assist you today?",
+        "Welcome! I'm Sam's digital companion. I can tell you about his skills, projects, or how to get in touch."
+    ];
+    
+    const msgAbout = "Sam Musoni is a Full Stack Engineer based in Kigali, Rwanda. He is passionate about Artificial Intelligence and Machine Learning. Would you like to hear about his skills or projects?";
+    const msgSkills = "His primary toolkit includes Node.js, React, and Python. He is also highly proficient in C++, Postgres, and Docker. Are you looking for a specific skill?";
+    const msgProjects = "You can view his full portfolio above, but some standout projects include Aether AI Hub and Focus Assistant. Shall I provide more details?";
+    const msgResume = "Please navigate to the About or Awards sections to see his qualifications, or reach out via Email for a formal resume PDF.";
+    const msgContact = "The best way to reach Sam is via email or by connecting on LinkedIn. He generally responds within 24 hours. You can also use the <a href='contact.html' style='color: var(--primary); text-decoration: underline;'>contact form here</a>.";
+    const msgAvailability = "Currently, Sam is open to exciting full-time roles and freelance projects. Feel free to contact him to discuss opportunities!";
+    const msgPricing = "Project rates depend entirely on scope and requirements. Sam would love to hear about your project to give you an accurate estimate. Should I provide his email?";
+    const msgFun = "When not coding, Sam is usually brewing an unnecessarily complicated cup of coffee or diving deep into cyberpunk lore. And the meaning of life? 42, obviously.";
+    const msgWeather = "Unable to fetch external APIs. It's always cyberpunk weather here.";
+    const msgAdmin = "Access denied. This terminal is strictly monitored by The Alpha Core.";
+    const msgNameIdentify = (name) => `Nice to meet you! I've updated my registers. Now, what can I tell you about Sam's work?`;
+
     const knowledgeBase = {
-        "hello": "Greetings, user. System is fully operational.",
-        "status": "All subsystems nominal. Memory at 12% capacity.",
-        "help": "I am a rudimentary AI. Try saying 'hello', 'status', or 'who are you'.",
-        "who are you": "I am an autonomous agent deployed on this portfolio.",
-        "weather": "Unable to fetch external APIs. It's always cyberpunk weather here.",
-        "project": "Command executed: Aether AI Hub, Focus Assistant, Budget Planner, Finova Wallet, Vanguard.",
-        "skill": "Node.js, React, Vue, Python, C++ core, Docker, Postgres, Redis.",
-        "contact": "You can send emails directly, or click the 'Contact' navigations to shoot a message!",
-        "sudo": "Access denied. This terminal is strictly monitored by The Alpha Core.",
-        "admin": "Access denied. This terminal is strictly monitored by The Alpha Core.",
-        "hire": "For professional inquiries, please navigate to the Contact section.",
-        "sam": "Sam Musoni is a highly skilled Full Stack Engineer and AI/ML enthusiast.",
-        "who is sam": "Sam Musoni is a highly skilled Full Stack Engineer and AI/ML enthusiast.",
-        "location": "Sam operates centrally from Kigali, Rwanda.",
-        "where": "Sam operates centrally from Kigali, Rwanda.",
-        "experience": "Sam has extensive experience building scalable backends, highly interactive frontends, and AI integrations.",
-        "resume": "Sam has extensive experience building scalable backends, highly interactive frontends, and AI integrations.",
-        "education": "Sam has extensive experience building scalable backends, highly interactive frontends, and AI integrations.",
-        "background": "Sam has extensive experience building scalable backends, highly interactive frontends, and AI integrations."
+        "hello": msgGreeting, "hi": msgGreeting, "hey": msgGreeting, "greeting": msgGreeting, "morning": msgGreeting, "who are you": msgGreeting, "bot": msgGreeting, "help": msgGreeting, "status": msgGreeting,
+        "about": msgAbout, "who is": msgAbout, "background": msgAbout, "bio": msgAbout, "story": msgAbout, "where from": msgAbout, "sam": msgAbout, "where": msgAbout, "location": msgAbout,
+        "skill": msgSkills, "technolog": msgSkills, "stack": msgSkills, "tool": msgSkills, "software": msgSkills, "language": msgSkills, "good at": msgSkills, "framework": msgSkills,
+        "project": msgProjects, "portfolio": msgProjects, "work": msgProjects, "example": msgProjects, "case study": msgProjects, "built": msgProjects, "show me": msgProjects,
+        "resume": msgResume, "cv": msgResume, "download": msgResume, "pdf": msgResume, "document": msgResume, "paper": msgResume, "experience": msgResume, "education": msgResume,
+        "contact": msgContact, "email": msgContact, "hire": msgContact, "freelance": msgContact, "message": msgContact, "reach out": msgContact, "talk": msgContact, "phone": msgContact, "get in touch": msgContact, "how can i": msgContact,
+        "availab": msgAvailability, "job": msgAvailability, "looking": msgAvailability, "open": msgAvailability, "hiring": msgAvailability,
+        "cost": msgPricing, "price": msgPricing, "rate": msgPricing, "hourly": msgPricing, "budget": msgPricing, "charge": msgPricing, "fee": msgPricing,
+        "joke": msgFun, "fun": msgFun, "hobbi": msgFun, "music": msgFun, "coffee": msgFun, "pizza": msgFun, "meaning of life": msgFun,
+        "weather": msgWeather,
+        "sudo": msgAdmin, "admin": msgAdmin,
+        "Skills 🛠️": msgSkills, "Projects 🚀": msgProjects, "Contact ✉️": msgContact, "About Sam 👋": msgAbout
     };
+
+    function showQuickReplies(options = ["Skills 🛠️", "Projects 🚀", "Contact ✉️", "About Sam 👋"]) {
+        quickRepliesContainer.innerHTML = '';
+        quickRepliesContainer.classList.remove('visible');
+        
+        setTimeout(() => {
+            options.forEach(opt => {
+                const chip = document.createElement('div');
+                chip.className = 'reply-chip';
+                chip.innerText = opt;
+                chip.onclick = () => {
+                    agentInput.value = opt.split(' ')[0]; // Take first word
+                    runAgent();
+                };
+                quickRepliesContainer.appendChild(chip);
+            });
+            quickRepliesContainer.classList.add('visible');
+        }, 300);
+    }
+
+    function typewriter(text, element, callback) {
+        let i = 0;
+        const speed = 25; // realistic speed
+        element.innerHTML = '<span data-i18n-orig="> Agent:">&gt; Agent:</span> ';
+        const textSpan = document.createElement('span');
+        element.appendChild(textSpan);
+        const cursor = document.createElement('span');
+        cursor.className = 'agent-cursor';
+        element.appendChild(cursor);
+
+        // Handle HTML tags by injecting them directly
+        if (text.includes('<')) {
+            textSpan.innerHTML = text; // Just fallback for HTML for now to keep it safe
+            cursor.remove();
+            if (callback) callback();
+            return;
+        }
+
+        function type() {
+            if (i < text.length) {
+                textSpan.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            } else {
+                cursor.remove();
+                if (callback) callback();
+            }
+        }
+        type();
+    }
 
     function runAgent() {
         const val = agentInput.value.trim();
         if (!val) return;
         
+        // Hide quick replies while processing
+        quickRepliesContainer.classList.remove('visible');
+
         // append user message
         const userMsgHTML = `<p style="color: var(--text-main); margin-bottom: 4px;"><span data-i18n-orig="> User:">&gt; User:</span> ${val}</p>`;
         agentOutput.insertAdjacentHTML('beforeend', userMsgHTML);
         agentInput.value = '';
 
         // process agent response
-        let responseOrig = "Processing error: Command not recognized.";
-        let match = Object.keys(knowledgeBase).find(k => val.toLowerCase().includes(k));
-        if (match) {
-            responseOrig = knowledgeBase[match];
+        let responseOrig = "I'm still learning! I didn't quite catch that. You can ask me about Sam's projects, skills, or how to contact him.";
+        const valLower = val.toLowerCase();
+
+        // 1. Check for Name Introduction
+        const nameMatch = valLower.match(/(my name is|i'm|i am|call me) ([a-z]+)/i);
+        if (nameMatch && nameMatch[2]) {
+            userName = nameMatch[2].charAt(0).toUpperCase() + nameMatch[2].slice(1);
+            sessionStorage.setItem('agent_user_name', userName);
+            responseOrig = msgNameIdentify(userName);
+        }
+        // 2. Handle simple follow-ups (Yes/Sure/etc.)
+        else {
+            const affirmatives = ["yes", "sure", "ok", "yep", "yeah", "absolutely", "please", "do it"];
+            const isAffirmative = affirmatives.some(a => new RegExp(`\\b${a}\\b`, 'i').test(valLower));
+
+            if (isAffirmative && lastIntent) {
+                if (lastIntent === msgAbout) {
+                    responseOrig = msgSkills;
+                    lastIntent = msgSkills;
+                } else if (lastIntent === msgPricing || lastIntent === msgAbout) {
+                    responseOrig = msgContact;
+                    lastIntent = msgContact;
+                } else if (lastIntent === msgProjects) {
+                    responseOrig = msgContact;
+                    lastIntent = msgContact;
+                } else {
+                    responseOrig = userName ? `Glad I could help, ${userName}! What else?` : "Great! What else would you like to know?";
+                    lastIntent = null;
+                }
+            } else {
+                // Priority map
+                const priorities = {
+                    [msgAbout]: 2,
+                    [msgSkills]: 5,
+                    [msgProjects]: 5,
+                    [msgContact]: 5,
+                    [msgResume]: 5,
+                    [msgAvailability]: 5,
+                    [msgPricing]: 5,
+                    [msgFun]: 5,
+                    [msgWeather]: 5,
+                    [msgAdmin]: 10
+                };
+                // Check if msgGreeting is an array and handle it
+                if (Array.isArray(msgGreeting)) {
+                    msgGreeting.forEach(g => priorities[g] = 1);
+                }
+
+                let bestMatch = null;
+                let highestPriority = -1;
+
+                Object.keys(knowledgeBase).forEach(k => {
+                    const regex = new RegExp(`\\b${k}(s|es|ies)?\\b`, 'i');
+                    if (regex.test(valLower)) {
+                        let response = knowledgeBase[k];
+                        if (Array.isArray(response)) {
+                            response = response[Math.floor(Math.random() * response.length)];
+                        }
+                        const priority = priorities[response] || 0;
+                        
+                        if (priority > highestPriority || (priority === highestPriority && k.length > (bestMatch ? bestMatch.length : 0))) {
+                            highestPriority = priority;
+                            bestMatch = k;
+                            responseOrig = response;
+                            lastIntent = response;
+                        }
+                    }
+                });
+            }
         }
 
-        // simulate delay
+        // simulate processing delay
         setTimeout(() => {
-            const agentMsgHTML = `<p style="color: var(--primary); margin-bottom: 8px;"><span data-i18n-orig="> Agent:">&gt; Agent:</span> <span data-i18n-orig="${responseOrig}">${responseOrig}</span></p>`;
-            agentOutput.insertAdjacentHTML('beforeend', agentMsgHTML);
-            agentOutput.scrollTop = agentOutput.scrollHeight;
+            const agentLine = document.createElement('p');
+            agentLine.style.color = 'var(--primary)';
+            agentLine.style.marginBottom = '8px';
+            agentLine.className = 'agent-msg-line';
+            agentOutput.appendChild(agentLine);
             
-            if (typeof setLang === 'function') setLang(currentLang);
+            typewriter(responseOrig, agentLine, () => {
+                showQuickReplies();
+                agentOutput.scrollTop = agentOutput.scrollHeight;
+                if (typeof setLang === 'function') setLang(currentLang);
+            });
+            
+            agentOutput.scrollTop = agentOutput.scrollHeight;
         }, 500);
         
         agentOutput.scrollTop = agentOutput.scrollHeight;
     }
+
+    // Initialize with quick replies
+    setTimeout(() => {
+        showQuickReplies();
+    }, 1000);
 
     agentBtn.addEventListener('click', runAgent);
     agentInput.addEventListener('keydown', (e) => {
