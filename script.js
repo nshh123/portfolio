@@ -73,6 +73,8 @@ const dict = {
     "Awards": { fr: "Prix", kn: "Ibihembo" },
     "Photo Gallery": { fr: "Galerie", kn: "Amashusho" },
     "Visual assets and deployments featured across the interface": { fr: "Actifs visuels et déploiements présentés", kn: "Amashusho yose yanakoreshejwe murubuga" },
+    "Interactive Terminal": { fr: "Terminal Interactif", kn: "Terminali" },
+    "Execute commands to interact with the system": { fr: "Exécuter des commandes pour interagir avec le système", kn: "Koresha amategeko kugirango utange amabwiriza" },
     "Unique System Visits:": { fr: "Visites du système :", kn: "Abasuye urubuga :" },
     "Honors & Awards": { fr: "Distinctions et Prix", kn: "Ibihembo n'Amashimwe" },
     "Recognition for technical excellence and innovation": { fr: "Reconnaissance de l'excellence technique et de l'innovation", kn: "Kumenyekana kubera ubuhanga n'ikoranabuhanga" },
