@@ -90,8 +90,8 @@ const dict = {
     "Message": { fr: "Message", kn: "Ubutumwa" },
     "Send Message": { fr: "Envoyer", kn: "Ohereza" },
     "SYSTEM OFFLINE": { fr: "HORS LIGNE", kn: "NTIRI KUMURONGO" },
-    "The requested deployment is currently undergoing scheduled backend architecture maintenance to patch vulnerabilities and upgrade cluster infrastructure. Please check back later.": { fr: "Le système subit actuellement une maintenance backend planifiée pour corriger des failles.", kn: "Inshingano zagusaba zikuweho byagateganyo kugirango zivugururwe zisumbyeho. Mwongere mushake." },
-    "Return to Hub": { fr: "Retour", kn: "Saba Kongera" },
+    "The requested deployment is currently undergoing scheduled backend architecture maintenance to patch vulnerabilities and upgrade cluster infrastructure. Please check back later.": { fr: "Le système subit actuellement une maintenance backend planifiée pour corriger des failles.", kn: "Inshingano uri gusaba zabaye zikuweho byagateganyo kugirango zivugururwe byisumbyeho. Mwongere mukanya." },
+    "Return to Hub": { fr: "Retour", kn: "Subira Inyuma" },
     "# Initialize high-performance quantization": { fr: "# Initialisation de la quantification haute performance", kn: "# Gutangiza kwanitizasiyo yihuse" },
     "// Align memory to page boundaries for optimal L1 cache hits": { fr: "// Aligner la mémoire sur les limites de page pour le cache L1", kn: "// Gutsindagira ububiko kumpande za paji kubera L1 cache" },
     "Welcome to SMUSONI interactive shell.": { fr: "Bienvenue dans le shell interactif SMUSONI.", kn: "Murakaza neza muri shell ya SMUSONI." },
@@ -372,8 +372,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         observer.observe(el);
     });
-});
 
+    // Repeat Hand Click Animation on Scroll
+    const handAnimContainer = document.querySelector('.hand-animation-container');
+    const clickTarget = document.querySelector('.click-target');
+
+    if (handAnimContainer && clickTarget) {
+        const animObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Slight delay to allow layout to settle
+                    setTimeout(() => {
+                        handAnimContainer.classList.add('run-anim');
+                        clickTarget.classList.add('run-anim');
+                    }, 50);
+                } else {
+                    handAnimContainer.classList.remove('run-anim');
+                    clickTarget.classList.remove('run-anim');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        animObserver.observe(handAnimContainer.parentElement);
+    }
+});
 // Visit Counter API Fetch
 fetch('https://api.counterapi.dev/v1/sammusoni/portfolio123/up')
     .then(res => res.json())
