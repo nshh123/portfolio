@@ -43,6 +43,7 @@ const dict = {
     "System Online . Ready for tasks": { fr: "Système en Ligne . Prêt pour les tâches", kn: "Sisitemu Iriho . Yiteguye" },
     "Full Stack Engineer": { fr: "Ingénieur Full Stack", kn: "Injiniyeri Full Stack" },
     "AI/ML Enthusiast": { fr: "Passionné d'IA/ML", kn: "Ukunze AI/ML" },
+    "· AI/ML Enthusiast": { fr: "· Passionné d'IA/ML", kn: "· Ukunze AI/ML" },
     "Building scalable, secure backends and highly interactive frontends. Exploring the frontiers of artificial intelligence to design intuitive, robust solutions.": { fr: "Création de backends évolutifs et de frontends interactifs pour concevoir des solutions robustes.", kn: "Nubaka imbuga z' ikoranabuhanga zikomeye cyane kumurongo. Nkunda gukoresha application za AI kugirango mbone ibisubizo bigezweho." },
     "View Featured Projects": { fr: "Voir les Projets", kn: "Reba Imishinga" },
     "Email": { fr: "Email", kn: "Imeli" },
