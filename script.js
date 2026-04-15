@@ -26,10 +26,10 @@ themeToggleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         htmlEl.classList.toggle('light');
         htmlEl.classList.toggle('dark');
-        
+
         const isLight = htmlEl.classList.contains('light');
         localStorage.setItem('theme', isLight ? 'light' : 'dark');
-        
+
         themeToggleBtns.forEach(b => updateIcons(b, isLight));
     });
 });
@@ -84,14 +84,14 @@ const dict = {
     "'help'": { fr: "'help'", kn: "'help'" },
     "to see available commands.": { fr: "pour voir les commandes.", kn: "kugirango urebe amategeko." },
     "Available commands:": { fr: "Commandes disponibles :", kn: "Amategeko ahari:" },
-    "- about: Read system bio": { fr: "- about: Lire la bio du système", kn: "- about: Soma ibyerekeye sitemu" },
-    "- stack: View core technologies": { fr: "- stack: Voir les technologies", kn: "- stack: Reba ikoranabuhanga" },
-    "- projects: List active deployments": { fr: "- projects: Liste des déploiements", kn: "- projects: Reba imishinga iriho" },
-    "- contact: Initialize commlink": { fr: "- contact: Initier la communication", kn: "- contact: Tangiza kuvugana" },
-    "- whoami: Access level check": { fr: "- whoami: Vérification du niveau", kn: "- whoami: Reba urwego rwawe" },
-    "- status: Server health check": { fr: "- status: État du serveur", kn: "- status: Reba uko severi imeze" },
-    "- date: Print system time": { fr: "- date: Afficher l'heure", kn: "- date: Reba isaha" },
-    "- clear: Clear terminal output": { fr: "- clear: Effacer le terminal", kn: "- clear: Siba ivyanditswe" },
+    "- about: Read system bio": { fr: "- about: Lire la bio du système", kn: "- about: Soma ibyerekeranye nange" },
+    "- stack: View core technologies": { fr: "- stack: Voir les technologies", kn: "- stack: Reba ikoranabuhanga nkoresha" },
+    "- projects: List active deployments": { fr: "- projects: Liste des déploiements", kn: "- projects: Reba imishinga mfite" },
+    "- contact: Initialize commlink": { fr: "- contact: Initier la communication", kn: "- contact: Ngezaho ubutumwa" },
+    "- whoami: Access level check": { fr: "- whoami: Vérification du niveau", kn: "- whoami: Reba uwo uriwe" },
+    "- status: Server health check": { fr: "- status: État du serveur", kn: "- status: Reba uko seriveri(server) imeze" },
+    "- date: Print system time": { fr: "- date: Afficher l'heure", kn: "- date: Reba isaha n' itariki" },
+    "- clear: Clear terminal output": { fr: "- clear: Effacer le terminal", kn: "- clear: Siba ibyanditswe" },
     "Full Stack Engineer & LLM Enthusiast based in Kigali, Rwanda. Specializing in high-performance computing.": { fr: "Ingénieur Full Stack et passionné de LLM basé à Kigali, Rwanda. Spécialisé en calcul haute performance.", kn: "Injiniyeri Full Stack n'umukunzi wa LLM uba i Kigali, Rwanda. Yibanda kubara byihuse." },
     "Type 'contact' to request deployment info.": { fr: "Tapez 'contact' pour obtenir les infos de déploiement.", kn: "Andika 'contact' wumve amakuru y'imishinga." },
     "Secure commlink ready. Reach out via email:": { fr: "Lien de communication sécurisé prêt. Contactez par e-mail :", kn: "Uburyo bwo kuvugana buriteguye. Koresha imeli:" },
@@ -108,7 +108,7 @@ let currentLang = localStorage.getItem('lang') || 'en';
 function setLang(lang) {
     currentLang = lang;
     localStorage.setItem('lang', lang);
-    
+
     // Update active UI
     document.querySelectorAll('.lang-toggle .lang').forEach(el => {
         el.classList.toggle('active', el.innerText.toLowerCase() === lang);
@@ -120,19 +120,19 @@ function setLang(lang) {
     while (n = walk.nextNode()) {
         const parent = n.parentElement;
         if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || parent.id === 'term-input') continue;
-        
+
         // Exclude general code blocks, but allow explicit span comments
         if (parent.closest('.code-block') && !parent.classList.contains('comment')) continue;
-        
+
         if (typeof n.origValue === 'undefined') {
-            n.origValue = n.nodeValue.trim();
+            n.origValue = n.nodeValue.trim().replace(/\s+/g, ' ');
         }
-        
+
         let originalText = n.origValue;
         if (originalText && dict[originalText]) {
             const localizedText = (lang === 'en') ? originalText : dict[originalText][lang];
             n.nodeValue = n.nodeValue.replace(n.nodeValue.trim(), localizedText);
-            
+
             if (parent.hasAttribute('data-text')) {
                 parent.setAttribute('data-text', localizedText);
             }
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('.lang-toggle .lang').forEach(el => {
         el.addEventListener('click', (e) => setLang(e.target.innerText.toLowerCase()));
     });
-    
+
     // Trigger localization safely on load without user input if pre-selected
     if (currentLang !== 'en') {
         setLang(currentLang);
@@ -161,7 +161,7 @@ setInterval(() => {
     const cpu = document.getElementById('cpu-val');
     const ram = document.getElementById('ram-val');
     const net = document.getElementById('net-val');
-    
+
     if (cpu) {
         const val = Math.floor(Math.random() * 20) + 5;
         cpu.innerText = `${val}%`;
@@ -169,7 +169,7 @@ setInterval(() => {
             cpu.nextElementSibling.firstElementChild.style.width = `${val}%`;
         }
     }
-    
+
     if (ram) {
         const val = +(Math.random() * 1.5 + 3).toFixed(1);
         ram.innerText = `${val} GB`;
@@ -177,7 +177,7 @@ setInterval(() => {
             ram.nextElementSibling.firstElementChild.style.width = `${(val / 16) * 100}%`;
         }
     }
-    
+
     if (net) {
         const val = Math.floor(Math.random() * 150) + 800; // 800-950 Mbps
         net.innerText = `${val} Mbps`;
@@ -188,19 +188,19 @@ setInterval(() => {
 const termInput = document.getElementById('term-input');
 const termBody = document.getElementById('term-body');
 
-if(termInput) {
-    termInput.addEventListener('keydown', function(e) {
-        if(e.key === 'Enter') {
+if (termInput) {
+    termInput.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
             const command = this.value.trim().toLowerCase();
             this.value = '';
-            
+
             // Output command
             const html = `
                 <p class="term-line"><span class="prompt">usr@smusoni:~$</span> ${command}</p>
             `;
-            
+
             let response = '';
-            
+
             if (command === 'help') {
                 response = `
                     <p class="term-line text-primary">Available commands:</p>
@@ -241,10 +241,10 @@ if(termInput) {
             // Insert before the input container
             const inputLine = document.querySelector('.term-input-line');
             inputLine.insertAdjacentHTML('beforebegin', html + response);
-            
+
             // scroll to bottom
             termBody.scrollTop = termBody.scrollHeight;
-            
+
             // Translate new output instantly
             setLang(currentLang);
         }
@@ -263,7 +263,7 @@ tabs.forEach(tab => {
         // remove active from all
         tabs.forEach(t => t.classList.remove('active'));
         codeBlocks.forEach(c => c.classList.remove('active'));
-        
+
         // set current
         tab.classList.add('active');
         const targetId = `code-${tab.dataset.tab}`;
@@ -280,7 +280,7 @@ function copyEmail(e) {
         btn.innerText = 'Copied to Clipboard!';
         btn.style.borderColor = 'var(--secondary)';
         btn.style.color = 'var(--secondary)';
-        
+
         setTimeout(() => {
             btn.innerText = originalText;
             btn.style.borderColor = '';
@@ -292,13 +292,13 @@ function copyEmail(e) {
 // Contact Form Submission (Formspree AJAX)
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
+    contactForm.addEventListener('submit', async function (e) {
         e.preventDefault();
-        
+
         const feedback = document.getElementById('form-feedback');
         feedback.innerText = 'Transmitting data...';
         feedback.style.color = 'var(--text-gray)';
-        
+
         try {
             const formData = new FormData(contactForm);
             const response = await fetch(contactForm.action, {
@@ -321,7 +321,7 @@ if (contactForm) {
             feedback.innerText = 'Connection error. Please try again.';
             feedback.style.color = 'var(--red, #ef4444)';
         }
-        
+
         // Clear message after 5 seconds
         setTimeout(() => {
             feedback.innerText = '';
@@ -349,12 +349,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const revealElements = document.querySelectorAll('.section-title, .expertise-card, .tech-card:not(.metrics-card), .project-card, .contact-card');
     revealElements.forEach((el, index) => {
         el.classList.add('reveal');
-        
+
         // Add staggered delays for grid items automatically
         if (el.classList.contains('expertise-card') || el.classList.contains('project-card')) {
             el.style.transitionDelay = `${(index % 3) * 0.15}s`;
         }
-        
+
         observer.observe(el);
     });
 });
