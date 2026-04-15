@@ -76,6 +76,38 @@ html.light .project-img-wrapper img { opacity: 1; }
   box-shadow: 0 0 10px var(--primary-glow);
 }
 
+/* Language Toggle */
+.lang-toggle {
+  display: inline-flex; align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 6px 12px;
+  margin-left: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+html.light .lang-toggle {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.lang-toggle .lang {
+  cursor: pointer;
+  color: var(--text-gray);
+  transition: color 0.3s;
+}
+
+.lang-toggle .lang:hover { color: var(--text-main); }
+.lang-toggle .lang.active { color: #3b82f6; } /* Mac OS Active Blue */
+.lang-toggle .pipe {
+  color: var(--text-main);
+  margin: 0 6px;
+  font-weight: normal;
+  opacity: 0.5;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -292,9 +324,9 @@ body {
   background: #3f3f46;
 }
 
-.window-controls span:nth-child(1) { background: #ef4444; }
-.window-controls span:nth-child(2) { background: #f59e0b; }
-.window-controls span:nth-child(3) { background: var(--secondary); }
+.window-controls span:nth-child(1) { background: #ff5f56; } /* Mac OS Red */
+.window-controls span:nth-child(2) { background: #ffbd2e; } /* Mac OS Yellow */
+.window-controls span:nth-child(3) { background: #27c93f; } /* Mac OS Green */
 
 .header-title {
   position: absolute;
