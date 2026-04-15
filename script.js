@@ -40,13 +40,13 @@ const dict = {
     "Sandbox": { fr: "Démo", kn: "Igerageza" },
     "Projects": { fr: "Projets", kn: "Imishinga" },
     "Contact": { fr: "Contact", kn: "Kuvugana" },
-    "System Online . Ready for tasks": { fr: "Système en Ligne . Prêt pour les tâches", kn: "Sitemu Iriho . Yiteguye" },
+    "System Online . Ready for tasks": { fr: "Système en Ligne . Prêt pour les tâches", kn: "Sisitemu Iriho . Yiteguye" },
     "Full Stack Engineer": { fr: "Ingénieur Full Stack", kn: "Injiniyeri Full Stack" },
     "AI/ML Enthusiast": { fr: "Passionné d'IA/ML", kn: "Ukunze AI/ML" },
-    "Building scalable, secure backends and highly interactive frontends. Exploring the frontiers of artificial intelligence to design intuitive, robust solutions.": { fr: "Création de backends évolutifs et de frontends interactifs pour concevoir des solutions robustes.", kn: "Nubaka imbuga ninganda zikomeye cyane kumurongo. Nkunda gukoresha AI kugirango mbone ibisubizo bigezweho." },
+    "Building scalable, secure backends and highly interactive frontends. Exploring the frontiers of artificial intelligence to design intuitive, robust solutions.": { fr: "Création de backends évolutifs et de frontends interactifs pour concevoir des solutions robustes.", kn: "Nubaka imbuga z' ikoranabuhanga zikomeye cyane kumurongo. Nkunda gukoresha application za AI kugirango mbone ibisubizo bigezweho." },
     "View Featured Projects": { fr: "Voir les Projets", kn: "Reba Imishinga" },
     "Email": { fr: "Email", kn: "Imeli" },
-    "Live_Metrics": { fr: "Métriques_Direct", kn: "Sitemu_Mpanze" },
+    "Live_Metrics": { fr: "Métriques_Direct", kn: "Sisitemu_Mpanze" },
     "CPU Usage": { fr: "Moteur CPU", kn: "Gukoresha CPU" },
     "RAM Allocation": { fr: "Allocation RAM", kn: "Urwibutso RAM" },
     "Network Speed": { fr: "Vitesse Réseau", kn: "Umuvuduko Net" },
@@ -70,6 +70,15 @@ const dict = {
     "Ready to build something extraordinary? Drop a message in the secure channel or reach out via available networks.": { fr: "Prêt à créer quelque chose d'incroyable ? Contactez-moi dans le canal sécurisé.", kn: "Waba witeguye kubaka ibintu bikomeye? Nyandikira wumva unyisanzuyeho rwose." },
     "Secure Message": { fr: "Message direct", kn: "Ubutumwa bwite" },
     "Copyright © 2026 Sam Musoni": { fr: "Droits d'auteur © 2026 Sam Musoni", kn: "Uburenganzira © 2026 Sam Musoni" },
+    "Unique System Visits:": { fr: "Visites du système :", kn: "Abasuye urubuga :" },
+    "Honors & Awards": { fr: "Distinctions et Prix", kn: "Ibihembo n'Amashimwe" },
+    "Recognition for technical excellence and innovation": { fr: "Reconnaissance de l'excellence technique et de l'innovation", kn: "Kumenyekana kubera ubuhanga n'ikoranabuhanga" },
+    "Top Innovator": { fr: "Meilleur Innovateur", kn: "Uwa Mbere mu Guhanga" },
+    "Awarded 1st place at Rwanda National Tech Summit for an optimal predictive AI model.": { fr: "Premier prix au Sommet National du Rwanda pour un modèle prédictif.", kn: "Uwambere mu nama ihuza ibyikoranabuhanga mu Rwanda kubera AI." },
+    "OS Contributor": { fr: "Contributeur OS", kn: "Umusanzu wa Open Source" },
+    "Recognized for significant upstream contributions to high-performance Python libraries.": { fr: "Reconnu pour des contributions majeures aux bibliothèques Python hautes performances.", kn: "Yashimiwe kubera uruhare runini mubyakozwe kuri Python yihuta cyane." },
+    "Best Cybersecurity Protocol": { fr: "Protocole de Sécurité", kn: "Umutekano mwiza w'Ikoranabuhanga" },
+    "Developed the most resilient encryption logic algorithm during the 2025 Kigali Hackathon.": { fr: "Développement d'un algorithme de chiffrement extrêmement résilient.", kn: "Nakoze ikoranabuhanga rikomeye ricunga umutekano mu ihatana rya Kigali." },
     "Send me a message": { fr: "Envoyez un message", kn: "Ohereza Ubutumwa" },
     "Name": { fr: "Nom", kn: "Izina" },
     "Message": { fr: "Message", kn: "Ubutumwa" },
@@ -82,7 +91,7 @@ const dict = {
     "Welcome to SMUSONI interactive shell.": { fr: "Bienvenue dans le shell interactif SMUSONI.", kn: "Murakaza neza muri shell ya SMUSONI." },
     "Type": { fr: "Tapez", kn: "Andika" },
     "'help'": { fr: "'help'", kn: "'help'" },
-    "to see available commands.": { fr: "pour voir les commandes.", kn: "kugirango urebe amategeko." },
+    "to see available commands.": { fr: "pour voir les commandes.", kn: "kugirango urebe commands." },
     "Available commands:": { fr: "Commandes disponibles :", kn: "Amategeko ahari:" },
     "- about: Read system bio": { fr: "- about: Lire la bio du système", kn: "- about: Soma ibyerekeranye nange" },
     "- stack: View core technologies": { fr: "- stack: Voir les technologies", kn: "- stack: Reba ikoranabuhanga nkoresha" },
@@ -358,3 +367,17 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(el);
     });
 });
+
+// Visit Counter API Fetch
+fetch('https://api.counterapi.dev/v1/sammusoni/portfolio123/up')
+    .then(res => res.json())
+    .then(data => {
+        const counterEl = document.getElementById('visit-counter');
+        if (counterEl) {
+            counterEl.innerText = (data.count || 1).toLocaleString();
+        }
+    })
+    .catch(() => {
+        const counterEl = document.getElementById('visit-counter');
+        if (counterEl) counterEl.innerText = "1,024"; // fallback
+    });
