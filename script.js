@@ -133,7 +133,9 @@ const dict = {
     "For professional inquiries, please navigate to the Contact section.": { fr: "Pour toute demande professionnelle, visitez la section de contact.", kn: "Kugirango uvugane nanjye kubijyanye n'akazi, jya kuri Contact." },
     "Sam Musoni is a highly skilled Full Stack Engineer and AI/ML enthusiast.": { fr: "Sam Musoni est un ingénieur Full Stack hautement qualifié et passionné par l'IA/ML.", kn: "Sam Musoni ni injiniyeri ubishyikiriye akaba yikundira cyane AI." },
     "Sam operates centrally from Kigali, Rwanda.": { fr: "Sam opère de façon centralisée depuis Kigali, Rwanda.", kn: "Sam akorera imirimo ye mu mujyi wa Kigali, mu Rwanda." },
-    "Sam has extensive experience building scalable backends, highly interactive frontends, and AI integrations.": { fr: "Sam a une vaste expérience dans la création de backends évolutifs, de frontends interactifs et d'intégrations d'IA.", kn: "Sam afite ubuhanga buhambaye mwikoranabuhanga n'imishinga minini cyane cyane iya AI." }
+    "Sam has extensive experience building scalable backends, highly interactive frontends, and AI integrations.": { fr: "Sam a une vaste expérience dans la création de backends évolutifs, de frontends interactifs et d'intégrations d'IA.", kn: "Sam afite ubuhanga buhambaye mwikoranabuhanga n'imishinga minini cyane cyane iya AI." },
+    "Interact with my agent": { fr: "Interagissez avec mon agent", kn: "Vugana na agent yanjye" },
+    "Chat directly with The Alpha Core Agent": { fr: "Discutez directement avec l'agent Alpha Core", kn: "Ganira na Alpha Core Agent" }
 };
 
 let currentLang = localStorage.getItem('lang') || 'en';
