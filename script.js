@@ -34,6 +34,101 @@ themeToggleBtns.forEach(btn => {
     });
 });
 
+// Language Toggle Logic
+const dict = {
+    "About": { fr: "À propos", kn: "Ibyanjye" },
+    "Sandbox": { fr: "Démo", kn: "Igerageza" },
+    "Projects": { fr: "Projets", kn: "Imishinga" },
+    "Contact": { fr: "Contact", kn: "Kuvugana" },
+    "System Online . Ready for tasks": { fr: "Système en Ligne . Prêt pour les tâches", kn: "Sitemu Iriho . Yiteguye" },
+    "Full Stack Engineer": { fr: "Ingénieur Full Stack", kn: "Injiniyeri Full Stack" },
+    "AI/ML Enthusiast": { fr: "Passionné d'IA/ML", kn: "Ukunze AI/ML" },
+    "Building scalable, secure backends and highly interactive frontends. Exploring the frontiers of artificial intelligence to design intuitive, robust solutions.": { fr: "Création de backends évolutifs et de frontends interactifs pour concevoir des solutions robustes.", kn: "Nubaka imbuga ninganda zikomeye cyane kumurongo. Nkunda gukoresha AI kugirango mbone ibisubizo bigezweho." },
+    "View Featured Projects": { fr: "Voir les Projets", kn: "Reba Imishinga" },
+    "Email": { fr: "Email", kn: "Imeli" },
+    "Live_Metrics": { fr: "Métriques_Direct", kn: "Sitemu_Mpanze" },
+    "CPU Usage": { fr: "Moteur CPU", kn: "Gukoresha CPU" },
+    "RAM Allocation": { fr: "Allocation RAM", kn: "Urwibutso RAM" },
+    "Network Speed": { fr: "Vitesse Réseau", kn: "Umuvuduko Net" },
+    "Uptime": { fr: "Disponibilité", kn: "Gihe Gikora" },
+    "Tech Stack": { fr: "Technologies", kn: "Ikoranabuhanga" },
+    "Core programming languages and frameworks": { fr: "Principaux langages et frameworks", kn: "Indimi nkuru na frameworks" },
+    "Frontend": { fr: "Frontend", kn: "Imbere" },
+    "Backend & Frameworks": { fr: "Backend & Serveurs", kn: "Inyuma na Severi" },
+    "Databases & DevOps": { fr: "Bases & Opérations", kn: "Ububiko & DevOps" },
+    "Code Walkthroughs": { fr: "Démonstrations de Code", kn: "Uburyo Twubaka" },
+    "Live architectural demonstrations and examples": { fr: "Architecture en direct et exemples", kn: "Ingero za Kode nizindi serivisi k'umurongo" },
+    "Featured Deployments": { fr: "Déploiements Récents", kn: "Imishinga Nyirizina" },
+    "Recent high-performance projects": { fr: "Projets haute performance", kn: "Porogaramu nkoranyambaga ndetse nikoranabuhanga rihanitse" },
+    "View Live": { fr: "Voir le direct", kn: "Reba kumurongo" },
+    "Centralized AI dashboard for real-time model monitoring and performance tracking.": { fr: "Tableau de bord IA centralisé pour le suivi des modèles en temps réel.", kn: "Itsinda ry'ikoranabuhanga rihuza inyigo za AI ako kanya." },
+    "A sleek Microsoft Edge extension for focus management, featuring custom website blockers and a distraction-free UI.": { fr: "Une extension élégante pour la gestion de la concentration.", kn: "Porogaramu ifasha gukomeza kumvira imirimo idafite ibirangaza." },
+    "Professional-grade financial dashboard featuring fluid animations, monthly state management, and real-time data visualization.": { fr: "Tableau de bord financier de niveau professionnel.", kn: "Urubuga rufasha abantu gucunga umutungo muburyo burambye." },
+    "Secure fintech application for seamless peer-to-peer transfers and budget tracking.": { fr: "Application fintech sécurisée.", kn: "Porogaramu y'imari yizewe ihuza uburyo bw'imiyoboro yose." },
+    "A high-conversion headless e-commerce store with brutalist modern aesthetics.": { fr: "Une boutique e-commerce moderne à forte conversion.", kn: "Idurika rikoranye ubuhanga kumurongo rikora neza cyane." },
+    "Initiate Connection": { fr: "Connexion Sécurisée", kn: "Hitamo Uburyo" },
+    "Ready to build something extraordinary? Drop a message in the secure channel or reach out via available networks.": { fr: "Prêt à créer quelque chose d'incroyable ? Contactez-moi dans le canal sécurisé.", kn: "Waba witeguye kubaka ibintu bikomeye? Nyandikira wumva unyisanzuyeho rwose." },
+    "Secure Message": { fr: "Message direct", kn: "Ubutumwa bwite" },
+    "Copyright © 2026 Sam Musoni": { fr: "Droits d'auteur © 2026 Sam Musoni", kn: "Uburenganzira © 2026 Sam Musoni" },
+    "Send me a message": { fr: "Envoyez un message", kn: "Ohereza Ubutumwa" },
+    "Name": { fr: "Nom", kn: "Izina" },
+    "Message": { fr: "Message", kn: "Ubutumwa" },
+    "Send Message": { fr: "Envoyer", kn: "Ohereza" },
+    "SYSTEM OFFLINE": { fr: "HORS LIGNE", kn: "NTIRI KUMURONGO" },
+    "The requested deployment is currently undergoing scheduled backend architecture maintenance to patch vulnerabilities and upgrade cluster infrastructure. Please check back later.": { fr: "Le système subit actuellement une maintenance backend planifiée pour corriger des failles.", kn: "Inshingano zagusaba zikuweho byagateganyo kugirango zivugururwe zisumbyeho. Mwongere mushake." },
+    "Return to Hub": { fr: "Retour", kn: "Saba Kongera" }
+};
+
+let currentLang = localStorage.getItem('lang') || 'en';
+
+function setLang(lang) {
+    currentLang = lang;
+    localStorage.setItem('lang', lang);
+    
+    // Update active UI
+    document.querySelectorAll('.lang-toggle .lang').forEach(el => {
+        el.classList.toggle('active', el.innerText.toLowerCase() === lang);
+    });
+
+    // Translate DOM Nodes
+    const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false);
+    let n;
+    while (n = walk.nextNode()) {
+        const parent = n.parentElement;
+        if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || parent.closest('.code-block') || parent.closest('.terminal-body') || parent.id === 'term-input') continue;
+        
+        if (typeof n.origValue === 'undefined') {
+            n.origValue = n.nodeValue.trim();
+        }
+        
+        let originalText = n.origValue;
+        if (originalText && dict[originalText]) {
+            const localizedText = (lang === 'en') ? originalText : dict[originalText][lang];
+            n.nodeValue = n.nodeValue.replace(n.nodeValue.trim(), localizedText);
+            
+            if (parent.hasAttribute('data-text')) {
+                parent.setAttribute('data-text', localizedText);
+            }
+        }
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Inject lang click actions safely mapping to the toggle pill
+    document.querySelectorAll('.lang-toggle .lang').forEach(el => {
+        el.addEventListener('click', (e) => setLang(e.target.innerText.toLowerCase()));
+    });
+    
+    // Trigger localization safely on load without user input if pre-selected
+    if (currentLang !== 'en') {
+        setLang(currentLang);
+    } else {
+        document.querySelectorAll('.lang-toggle .lang').forEach(el => {
+            el.classList.toggle('active', el.innerText.toLowerCase() === 'en');
+        });
+    }
+});
+
 // Metric live simulation
 setInterval(() => {
     const cpu = document.getElementById('cpu-val');
