@@ -76,7 +76,31 @@ const dict = {
     "Send Message": { fr: "Envoyer", kn: "Ohereza" },
     "SYSTEM OFFLINE": { fr: "HORS LIGNE", kn: "NTIRI KUMURONGO" },
     "The requested deployment is currently undergoing scheduled backend architecture maintenance to patch vulnerabilities and upgrade cluster infrastructure. Please check back later.": { fr: "Le système subit actuellement une maintenance backend planifiée pour corriger des failles.", kn: "Inshingano zagusaba zikuweho byagateganyo kugirango zivugururwe zisumbyeho. Mwongere mushake." },
-    "Return to Hub": { fr: "Retour", kn: "Saba Kongera" }
+    "Return to Hub": { fr: "Retour", kn: "Saba Kongera" },
+    "# Initialize high-performance quantization": { fr: "# Initialisation de la quantification haute performance", kn: "# Gutangiza kwanitizasiyo yihuse" },
+    "// Align memory to page boundaries for optimal L1 cache hits": { fr: "// Aligner la mémoire sur les limites de page pour le cache L1", kn: "// Gutsindagira ububiko kumpande za paji kubera L1 cache" },
+    "Welcome to SMUSONI interactive shell.": { fr: "Bienvenue dans le shell interactif SMUSONI.", kn: "Murakaza neza muri shell ya SMUSONI." },
+    "Type": { fr: "Tapez", kn: "Andika" },
+    "'help'": { fr: "'help'", kn: "'help'" },
+    "to see available commands.": { fr: "pour voir les commandes.", kn: "kugirango urebe amategeko." },
+    "Available commands:": { fr: "Commandes disponibles :", kn: "Amategeko ahari:" },
+    "- about: Read system bio": { fr: "- about: Lire la bio du système", kn: "- about: Soma ibyerekeye sitemu" },
+    "- stack: View core technologies": { fr: "- stack: Voir les technologies", kn: "- stack: Reba ikoranabuhanga" },
+    "- projects: List active deployments": { fr: "- projects: Liste des déploiements", kn: "- projects: Reba imishinga iriho" },
+    "- contact: Initialize commlink": { fr: "- contact: Initier la communication", kn: "- contact: Tangiza kuvugana" },
+    "- whoami: Access level check": { fr: "- whoami: Vérification du niveau", kn: "- whoami: Reba urwego rwawe" },
+    "- status: Server health check": { fr: "- status: État du serveur", kn: "- status: Reba uko severi imeze" },
+    "- date: Print system time": { fr: "- date: Afficher l'heure", kn: "- date: Reba isaha" },
+    "- clear: Clear terminal output": { fr: "- clear: Effacer le terminal", kn: "- clear: Siba ivyanditswe" },
+    "Full Stack Engineer & LLM Enthusiast based in Kigali, Rwanda. Specializing in high-performance computing.": { fr: "Ingénieur Full Stack et passionné de LLM basé à Kigali, Rwanda. Spécialisé en calcul haute performance.", kn: "Injiniyeri Full Stack n'umukunzi wa LLM uba i Kigali, Rwanda. Yibanda kubara byihuse." },
+    "Type 'contact' to request deployment info.": { fr: "Tapez 'contact' pour obtenir les infos de déploiement.", kn: "Andika 'contact' wumve amakuru y'imishinga." },
+    "Secure commlink ready. Reach out via email:": { fr: "Lien de communication sécurisé prêt. Contactez par e-mail :", kn: "Uburyo bwo kuvugana buriteguye. Koresha imeli:" },
+    "Click Here": { fr: "Cliquez ici", kn: "Kanda Hano" },
+    "guest_user@smusoni-net": { fr: "utilisateur_invite@smusoni-net", kn: "umushyitsi@smusoni-net" },
+    "All clusters fully operational. No vulnerabilities detected. Uptime: 99.98%": { fr: "Tous les clusters sont opérationnels. Aucune vulnérabilité. Disponibilité: 99.98%", kn: "Itsinda ryose rirakora. Nta kibazo na kimwe. Igihe: 99.98%" },
+    "bash: permission denied: root access required. This incident will be reported.": { fr: "bash: accès refusé: droits root requis. Cet incident sera signalé.", kn: "bash: byanzwe: hakenewe root. Iri kosa rigiye gutangazwa." },
+    "Wake up, Neo...": { fr: "Réveille-toi, Neo...", kn: "Kanguka, Neo..." },
+    "The Matrix has you...": { fr: "La Matrice t'a...", kn: "Matrix iragufite..." }
 };
 
 let currentLang = localStorage.getItem('lang') || 'en';
@@ -95,7 +119,10 @@ function setLang(lang) {
     let n;
     while (n = walk.nextNode()) {
         const parent = n.parentElement;
-        if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || parent.closest('.code-block') || parent.closest('.terminal-body') || parent.id === 'term-input') continue;
+        if (!parent || parent.tagName === 'SCRIPT' || parent.tagName === 'STYLE' || parent.id === 'term-input') continue;
+        
+        // Exclude general code blocks, but allow explicit span comments
+        if (parent.closest('.code-block') && !parent.classList.contains('comment')) continue;
         
         if (typeof n.origValue === 'undefined') {
             n.origValue = n.nodeValue.trim();
@@ -217,6 +244,9 @@ if(termInput) {
             
             // scroll to bottom
             termBody.scrollTop = termBody.scrollHeight;
+            
+            // Translate new output instantly
+            setLang(currentLang);
         }
     });
 
