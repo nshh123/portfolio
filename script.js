@@ -47,7 +47,7 @@ const dict = {
     "· AI/ML Enthusiast": { fr: "· Passionné d'IA/ML", kn: "· Akarusho kuri AI/ML" },
     "Building scalable, secure backends and highly interactive frontends. Exploring the frontiers of artificial intelligence to design intuitive, robust solutions.": { fr: "Création de backends évolutifs et de frontends interactifs pour concevoir des solutions robustes.", kn: "Nubaka imbuga z' ikoranabuhanga zikomeye cyane kumurongo. Nkunda gukoresha application za AI kugirango mbone ibisubizo bigezweho." },
     "View Featured Projects": { fr: "Voir les Projets", kn: "Reba Imishinga" },
-    "Email": { fr: "Email", kn: "Imeli" },
+    "Contact Me": { fr: "Me contacter", kn: "Mvugisha" },
     "Live_Metrics": { fr: "Métriques_Direct", kn: "Sisitemu_Mpanze" },
     "CPU Usage": { fr: "Moteur CPU", kn: "Gukoresha CPU" },
     "RAM Allocation": { fr: "Allocation RAM", kn: "GUKORESHA RAM" },
