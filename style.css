@@ -887,7 +887,116 @@ html.light .form-group textarea:focus {
   color: var(--secondary);
 }
 
+/* Experience / Timeline Section */
+.experience-section { margin-bottom: 6rem; }
+.timeline-container { position: relative; padding-left: 3rem; margin-top: 2rem; }
+.timeline-item { position: relative; margin-bottom: 3rem; }
+.timeline-item:last-child { margin-bottom: 0; }
+
+.timeline-dot {
+  position: absolute;
+  left: -3rem;
+  top: 1.5rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--bg-panel);
+  border: 3px solid #34d399; /* Green accent */
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.5);
+  z-index: 2;
+}
+
+.timeline-line {
+  position: absolute;
+  left: calc(-3rem + 7px); /* center line under 16px dot */
+  top: 1.5rem;
+  width: 2px;
+  height: calc(100% + 3rem);
+  background: rgba(52, 211, 153, 0.15); /* Faint green line */
+  z-index: 1;
+}
+
+.experience-card {
+  padding: 1.5rem 2rem;
+}
+
+.experience-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.company-icon { font-size: 1.2rem; }
+.company-name { font-size: 0.85rem; font-family: var(--font-mono); font-weight: 500; }
+
+.role-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text-main);
+  letter-spacing: -0.5px;
+}
+
+.date-pill {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(52, 211, 153, 0.1);
+  border: 1px solid rgba(52, 211, 153, 0.3);
+  color: #34d399;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.experience-bullets {
+  list-style: none;
+  padding: 0;
+}
+
+.experience-bullets li {
+  position: relative;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  color: var(--text-gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.experience-bullets li strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.bullet-arrow {
+  position: absolute;
+  left: 0;
+  color: #34d399;
+  font-family: var(--font-mono);
+  font-weight: bold;
+}
+
+/* Light Mode Overrides for Experience */
+html.light .timeline-dot {
+  background: #ffffff;
+  border-color: #059669;
+}
+html.light .timeline-line {
+  background: rgba(5, 150, 105, 0.2);
+}
+html.light .date-pill {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.1);
+  border-color: rgba(5, 150, 105, 0.3);
+}
+html.light .experience-bullets li { color: #334155; }
+html.light .experience-bullets li strong { color: #0f172a; }
+html.light .bullet-arrow { color: #059669; }
+
 /* Scroll Reveal Animation Styles */
+
 .reveal {
   opacity: 0;
   transform: translateY(40px);

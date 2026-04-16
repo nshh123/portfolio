@@ -40,6 +40,7 @@ const dict = {
     "Sandbox": { fr: "Démo", kn: "Igerageza" },
     "Projects": { fr: "Projets", kn: "Imishinga" },
     "Agent": { fr: "Agent", kn: "Agent" },
+    "Experience": { fr: "Expérience", kn: "Uburambe" },
     "Contact": { fr: "Contact", kn: "Kuvugana" },
     "System Online . Ready for tasks": { fr: "Système en Ligne . Prêt pour les tâches", kn: "Sisitemu Iriho . Yiteguye" },
     "Full Stack Engineer": { fr: "Ingénieur Full Stack", kn: "Injiniyeri Full Stack" },
@@ -181,7 +182,20 @@ const dict = {
     "Interact with agent": { fr: "Interagir avec l'agent", kn: "Vugana na agent" },
     "Chat directly with The Alpha Core Agent created by Sam": { fr: "Discutez directement avec l'agent Alpha Core créé par Sam", kn: "Ganira na Alpha Core Agent yakozwe na Sam" },
     "Interact with Agent...": { fr: "Interagir avec l'agent...", kn: "Vugana na Agent..." },
-    "Interact with my agent": { fr: "Interagissez avec mon agent", kn: "Vugana na agent yanjye" }
+    "Interact with my agent": { fr: "Interagissez avec mon agent", kn: "Vugana na agent yanjye" },
+    "Where I've ": { fr: "Où j'ai ", kn: "Aho " },
+    "Built": { fr: "Construit", kn: "Nubatse" },
+    "From mastering complex algorithms at A2SV to securing the internet's foundation and engineering the future of AI.": { fr: "De la maîtrise d'algorithmes complexes chez A2SV à la sécurisation des fondations de l'internet et l'ingénierie de l'IA.", kn: "Kuva mukumenya algorithm zihanitse muri A2SV kugeza kubaka umutekano w'ikoranabuhanga n'iterambere rya AI." },
+    "Trainee": { fr: "Stagiaire", kn: "Uwimenyereza" },
+    "Dec 2025 -> Present": { fr: "Déc 2025 -> Présent", kn: "Ukuboza 2025 -> Ubu" },
+    "Mastered Data Structures and Algorithms through rigorous daily challenges.": { fr: "Maîtrise des structures de données et des algorithmes grâce à des défis quotidiens rigoureux.", kn: "Naminuje imiterere y'amakuru na algorithm binyuze mu mbogamizi zikomeye za buri munsi." },
+    "Developed optimized technical solutions using Python for complex problem sets.": { fr: "Développement de solutions techniques optimisées avec Python pour des problèmes complexes.", kn: "Natezimbere ibisubizo byikoranabuhanga nkurikije Python kubibazo bikomeye." },
+    "Apprentice & Student Fellow": { fr: "Apprenti & Étudiant Chercheur", kn: "Uwimenyereza & Umunyeshuri" },
+    "Oct 2025 -> Feb 2026": { fr: "Oct 2025 -> Fév 2026", kn: "Ukwakira 2025 -> Gashyantare 2026" },
+    "Gained hands-on expertise in Cybersecurity, Information Security, and Network Expansion.": { fr: "Acquisition d'une expertise pratique en cybersécurité, sécurité de l'information et expansion réseau.", kn: "Nabonye ubumenyi ngiro muri Cybersecurity, Umutekano w'amakuru, n'iyagurwa ry'umuyoboro." },
+    "Attained certification in Advanced Network Operations 2.0.": { fr: "Obtention de la certification en Opérations Réseau Avancées 2.0.", kn: "Nabonye impamyabumenyi muri Advanced Network Operations 2.0." },
+    "Configured and managed Caching DNS Servers for enhanced network performance.": { fr: "Configuration et gestion de serveurs DNS de cache pour améliorer les performances réseau.", kn: "Nashyizeho kandi nicunga Caching DNS Servers kugirango imikorere yumuyoboro yiyongere." },
+    "Demonstrated advanced proficiency in UNIX/Linux Shell environments.": { fr: "Démonstration d'une compétence avancée dans les environnements Shell UNIX/Linux.", kn: "Nerekanye ubuhanga buhanitse muri UNIX/Linux Shell." }
 };
 
 let currentLang = localStorage.getItem('lang') || 'en';
@@ -447,12 +461,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.section-title, .expertise-card, .tech-card:not(.metrics-card), .project-card, .contact-card');
+    const revealElements = document.querySelectorAll('.section-title, .expertise-card, .tech-card:not(.metrics-card):not(.experience-card), .project-card, .contact-card, .timeline-item');
     revealElements.forEach((el, index) => {
         el.classList.add('reveal');
 
         // Add staggered delays for grid items automatically
-        if (el.classList.contains('expertise-card') || el.classList.contains('project-card')) {
+        if (el.classList.contains('expertise-card') || el.classList.contains('project-card') || el.classList.contains('timeline-item')) {
             el.style.transitionDelay = `${(index % 3) * 0.15}s`;
         }
 
