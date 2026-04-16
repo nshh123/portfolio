@@ -126,8 +126,62 @@ const dict = {
     "Nice to meet you! I've updated my registers. Now, what can I tell you about Sam's work?": { fr: "Ravi de vous rencontrer ! J'ai mis à jour mes registres. Maintenant, que puis-je vous dire sur le travail de Sam ?", kn: "Nishimiye kubamenya! Namaze kubashyira muri sisitemu yanjye. None se, nababwira iki ku mirimo ya Sam?" },
     "I'm still learning! I didn't quite catch that. You can ask me about Sam's projects, skills, or how to contact him.": { fr: "J'apprends encore ! Je n'ai pas bien compris. Vous pouvez me poser des questions sur les projets de Sam, ses compétences ou comment le contacter.", kn: "Ndacyiyiga! Sinumvise neza icyo mushatse kuvuga. Mushobora kumbaza kubyerekeye imishinga ya Sam, ubuhanga bwe, cyangwa uko mwamuvugisha." },
     "Great! What else would you like to know?": { fr: "Génial ! Que voulez-vous savoir d'autre ?", kn: "Nibyiza cyane! Hari ikindi mwifuza kumenya?" },
-    "Interact with my agent": { fr: "Interagissez avec mon agent", kn: "Vugana na agent yanjye" },
-    "Chat directly with The Alpha Core Agent": { fr: "Discutez directement avec l'agent Alpha Core", kn: "Ganira na Alpha Core Agent" }
+    "Sam Musoni is a Full Stack Engineer based in Kigali, Rwanda. He is passionate about Artificial Intelligence and Machine Learning. Would you like to hear about his skills or projects?": { 
+        fr: "Sam Musoni est un ingénieur Full Stack basé à Kigali, au Rwanda. Il est passionné par l'intelligence artificielle et l'apprentissage automatique. Souhaitez-vous en savoir plus sur ses compétences ou ses projets ?",
+        kn: "Sam Musoni ni Injiniyeri wa Full Stack uba i Kigali, mu Rwanda. Ukunze cyane Ubuhanga mu by'Ikoranabuhanga (AI) na Machine Learning. Mwifuza kumenya ubumenyi bwe cyangwa imishinga ye?"
+    },
+    "His primary toolkit includes Node.js, React, and Python. He is also highly proficient in C++, Postgres, and Docker. Are you looking for a specific skill?": {
+        fr: "Sa boîte à outils principale comprend Node.js, React et Python. Il est également très compétent en C++, Postgres et Docker. Recherchez-vous une compétence spécifique ?",
+        kn: "Ibikoresho bye by'ingenzi harimo Node.js, React, na Python. Nanone azi neza C++, Postgres, na Docker. Hari ubumenyi bwihariye mwaba mushaka?"
+    },
+    "You can view his full portfolio above, but some standout projects include Aether AI Hub and Focus Assistant. Shall I provide more details?": {
+        fr: "Vous pouvez voir son portfolio complet ci-dessus, mais certains projets notables incluent Aether AI Hub et Focus Assistant. Souhaitez-vous plus de détails ?",
+        kn: "Mushobora kureba imishinga ye yose haruguru, ariko imwe mu ikomeye harimo Aether AI Hub na Focus Assistant. Mbabahe andi makuru arambuye?"
+    },
+    "Please navigate to the About or Awards sections to see his qualifications, or reach out via Email for a formal resume PDF.": {
+        fr: "Veuillez consulter les sections À propos ou Prix pour voir ses qualifications, ou contactez-le par e-mail pour obtenir un CV au format PDF.",
+        kn: "Nyamuneka murebe mu gice cya 'Ibyerekeranye nange' cyangwa 'Ibihembo' kugirango murebe uburambe bwe, cyangwa mumwandikire kuri imeli mumuhe CV ye ya PDF."
+    },
+    "The best way to reach Sam is via email or by connecting on LinkedIn. He generally responds within 24 hours. You can also use the <a href='contact.html' style='color: var(--primary); text-decoration: underline;'>contact form here</a>.": {
+        fr: "Le meilleur moyen de contacter Sam est par e-mail ou en se connectant sur LinkedIn. Il répond généralement sous 24 heures. Vous pouvez aussi utiliser le <a href='contact.html' style='color: var(--primary); text-decoration: underline;'>formulaire de contact ici</a>.",
+        kn: "Uburyo bwiza bwo kuvugana na Sam ni kuri imeli cyangwa guhura kuri LinkedIn. Akunze gusubiza mu masaha 24. Mwanakoresha <a href='contact.html' style='color: var(--primary); text-decoration: underline;'>ifomu yo kuvugana hano</a>."
+    },
+    "Currently, Sam is open to exciting full-time roles and freelance projects. Feel free to contact him to discuss opportunities!": {
+        fr: "Actuellement, Sam est ouvert à des rôles à temps plein passionnants et à des projets en freelance. N'hésitez pas à le contacter pour discuter d'opportunités !",
+        kn: "Kuri ubu, Sam yiteguye akazi gahoraho cyangwa imishinga y'igihe gito. Mwumve mwisanzuye kumuvugisha kugirango muganire ku mahirwe ahari!"
+    },
+    "Project rates depend entirely on scope and requirements. Sam would love to hear about your project to give you an accurate estimate. Should I provide his email?": {
+        fr: "Les tarifs des projets dépendent entièrement de la portée et des exigences. Sam aimerait en savoir plus sur votre projet pour vous donner un devis précis. Dois-je vous donner son e-mail ?",
+        kn: "Ibiciro by'imishinga biterwa n'ubunini n'ibikenewe. Sam yabyishimira kumva ibyo mushaka kugirango abahe igiciro gikwiye. Mbabahe imeli ye?"
+    },
+    "When not coding, Sam is usually brewing an unnecessarily complicated cup of coffee or diving deep into cyberpunk lore. And the meaning of life? 42, obviously.": {
+        fr: "Quand il ne code pas, Sam prépare généralement une tasse de café inutilement compliquée ou se plonge dans l'univers cyberpunk. Et le sens de la vie ? 42, évidemment.",
+        kn: "Iyo adahari ari gukora kode, Sam akunze kuba ari gukora ikawa iteguye mu buryo bugoye cyangwa ari kwiga ku mateka ya cyberpunk. Naho icyo ubuzima bivuze? Ni 42, birumvikana."
+    },
+    "Unable to fetch external APIs. It's always cyberpunk weather here.": {
+        fr: "Impossible de récupérer les API externes. Il fait toujours un temps cyberpunk ici.",
+        kn: "Ntibishoboka kubona amakuru y'ikirere. Hano buri gihe ni ikirere cya cyberpunk."
+    },
+    "Access denied. This terminal is strictly monitored by The Alpha Core.": {
+        fr: "Accès refusé. Ce terminal est strictement surveillé par l'Alpha Core.",
+        kn: "Uburenganzira bwanzwe. Iri koranabuhanga ricungwa cyane na Alpha Core."
+    },
+    "Glad I could help! What else?": {
+        fr: "Heureux d'avoir pu aider ! Quoi d'autre ?",
+        kn: "Nishimiye kubafasha! Hari ikindi?"
+    },
+    "Skills 🛠️": { fr: "Compétences 🛠️", kn: "Ubuhanga 🛠️" },
+    "Projects 🚀": { fr: "Projets 🚀", kn: "Imishinga 🚀" },
+    "Contact ✉️": { fr: "Contact ✉️", kn: "Kuvugana ✉️" },
+    "About Sam 👋": { fr: "À propos 👋", kn: "Ibyerekeye Sam 👋" },
+    "Agent:": { fr: "Agent :", kn: "Agent :" },
+    "User:": { fr: "Utilisateur :", kn: "Umukoresha :" },
+    "Send": { fr: "Envoyer", kn: "Ohereza" },
+    "Interact with Sam's agent": { fr: "Interagissez avec l'agent de Sam", kn: "Vugana na agent ya Sam" },
+    "Interact with agent": { fr: "Interagir avec l'agent", kn: "Vugana na agent" },
+    "Chat directly with The Alpha Core Agent created by Sam": { fr: "Discutez directement avec l'agent Alpha Core créé par Sam", kn: "Ganira na Alpha Core Agent yakozwe na Sam" },
+    "Interact with Agent...": { fr: "Interagir avec l'agent...", kn: "Vugana na Agent..." },
+    "Interact with my agent": { fr: "Interagissez avec mon agent", kn: "Vugana na agent yanjye" }
 };
 
 let currentLang = localStorage.getItem('lang') || 'en';
@@ -151,20 +205,40 @@ function setLang(lang) {
         // Exclude general code blocks, but allow explicit span comments
         if (parent.closest('.code-block') && !parent.classList.contains('comment')) continue;
 
-        if (typeof n.origValue === 'undefined') {
-            n.origValue = n.nodeValue.trim().replace(/\s+/g, ' ');
+        let originalText;
+        if (parent.hasAttribute('data-i18n-orig')) {
+            originalText = parent.getAttribute('data-i18n-orig');
+        } else {
+            if (typeof n.origValue === 'undefined') {
+                n.origValue = n.nodeValue.trim().replace(/\s+/g, ' ');
+            }
+            originalText = n.origValue;
         }
 
-        let originalText = n.origValue;
         if (originalText && dict[originalText]) {
             const localizedText = (lang === 'en') ? originalText : dict[originalText][lang];
-            n.nodeValue = n.nodeValue.replace(n.nodeValue.trim(), localizedText);
+            // Use a safer replacement for text content to avoid destroying whitespace if we're not using total replace
+            const currentTrimmed = n.nodeValue.trim();
+            if (currentTrimmed) {
+                n.nodeValue = n.nodeValue.replace(currentTrimmed, localizedText);
+            }
 
             if (parent.hasAttribute('data-text')) {
                 parent.setAttribute('data-text', localizedText);
             }
         }
     }
+
+    // Update placeholders
+    document.querySelectorAll('input[placeholder]').forEach(input => {
+        if (typeof input.origPlaceholder === 'undefined') {
+            input.origPlaceholder = input.placeholder;
+        }
+        const orig = input.origPlaceholder;
+        if (dict[orig]) {
+            input.placeholder = (lang === 'en') ? orig : dict[orig][lang];
+        }
+    });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -463,7 +537,52 @@ if (agentInput && agentBtn && agentOutput) {
         "joke": msgFun, "fun": msgFun, "hobbi": msgFun, "music": msgFun, "coffee": msgFun, "pizza": msgFun, "meaning of life": msgFun,
         "weather": msgWeather,
         "sudo": msgAdmin, "admin": msgAdmin,
-        "Skills 🛠️": msgSkills, "Projects 🚀": msgProjects, "Contact ✉️": msgContact, "About Sam 👋": msgAbout
+        "Skills 🛠️": msgSkills, "Projects 🚀": msgProjects, "Contact ✉️": msgContact, "About Sam 👋": msgAbout,
+        // French
+        "bonjour": msgGreeting, "salut": msgGreeting, "coucou": msgGreeting, "allo": msgGreeting,
+        "propos": msgAbout, "biographie": msgAbout, "qui est": msgAbout, "presentation": msgAbout, "présentation": msgAbout, "parcours": msgAbout,
+        "competence": msgSkills, "compétence": msgSkills, "outil": msgSkills, "pile": msgSkills, "langage": msgSkills, "techno": msgSkills,
+        "projet": msgProjects, "travail": msgProjects, "realisation": msgProjects, "réalisation": msgProjects,
+        "curriculum": msgResume,
+        "contacter": msgContact, "embaucher": msgContact, "joindre": msgContact,
+        "disponibilite": msgAvailability, "disponibilité": msgAvailability, "disponible": msgAvailability, "libre": msgAvailability,
+        "tarif": msgPricing, "cout": msgPricing, "coût": msgPricing, "combien": msgPricing,
+        "blague": msgFun, "cafe": msgFun, "café": msgFun, "plaisir": msgFun, "amusant": msgFun, "rire": msgFun,
+        "meteo": msgWeather, "météo": msgWeather, "temps": msgWeather, "ciel": msgWeather,
+        // Kinyarwanda
+        "muraho": msgGreeting, "bite": msgGreeting, "amacuru": msgGreeting, "mwaramutse": msgGreeting, "mwiriwe": msgGreeting,
+        "ibyanjye": msgAbout, "ibyerekeye": msgAbout, "amakuru": msgAbout, "ninde": msgAbout,
+        "ubuhanga": msgSkills, "ubumenyi": msgSkills, "ibyo nzi": msgSkills, "indimi": msgSkills,
+        "imishinga": msgProjects, "ibyo wakoze": msgProjects, "ibyo nakoze": msgProjects,
+        "uburambe": msgResume, "amasomo": msgResume,
+        "kuvugana": msgContact, "imeli": msgContact, "twandikire": msgContact, "vugisha": msgContact,
+        "igihe": msgAvailability, "akazi": msgAvailability, "guhura": msgAvailability, "umwanya": msgAvailability,
+        "igiciro": msgPricing, "amafaranga": msgPricing, "wishyura": msgPricing,
+        "urwenya": msgFun, "ikawa": msgFun, "bisheke": msgFun, "sekuro": msgFun,
+        "ikirere": msgWeather, "izuba": msgWeather, "imvura": msgWeather
+    };
+
+    const keywordLangMap = {
+        "bonjour": "fr", "salut": "fr", "coucou": "fr", "allo": "fr",
+        "propos": "fr", "biographie": "fr", "qui est": "fr", "presentation": "fr", "présentation": "fr", "parcours": "fr",
+        "competence": "fr", "compétence": "fr", "outil": "fr", "pile": "fr", "langage": "fr", "techno": "fr",
+        "projet": "fr", "travail": "fr", "realisation": "fr", "réalisation": "fr",
+        "curriculum": "fr",
+        "contacter": "fr", "embaucher": "fr", "joindre": "fr",
+        "disponibilite": "fr", "disponibilité": "fr", "disponible": "fr", "libre": "fr",
+        "tarif": "fr", "cout": "fr", "coût": "fr", "combien": "fr",
+        "blague": "fr", "cafe": "fr", "café": "fr", "plaisir": "fr", "amusant": "fr", "rire": "fr",
+        "meteo": "fr", "météo": "fr", "temps": "fr", "ciel": "fr",
+        "muraho": "kn", "bite": "kn", "amacuru": "kn", "mwaramutse": "kn", "mwiriwe": "kn",
+        "ibyanjye": "kn", "ibyerekeye": "kn", "amakuru": "kn", "ninde": "kn",
+        "ubuhanga": "kn", "ubumenyi": "kn", "ibyo nzi": "kn", "indimi": "kn",
+        "imishinga": "kn", "ibyo wakoze": "kn", "ibyo nakoze": "kn",
+        "uburambe": "kn", "amasomo": "kn",
+        "kuvugana": "kn", "imeli": "kn", "twandikire": "kn", "vugisha": "kn",
+        "igihe": "kn", "akazi": "kn", "guhura": "kn", "umwanya": "kn",
+        "igiciro": "kn", "amafaranga": "kn", "wishyura": "kn",
+        "urwenya": "kn", "ikawa": "kn", "bisheke": "kn", "sekuro": "kn",
+        "ikirere": "kn", "izuba": "kn", "imvura": "kn"
     };
 
     function showQuickReplies(options = ["Skills 🛠️", "Projects 🚀", "Contact ✉️", "About Sam 👋"]) {
@@ -594,6 +713,20 @@ if (agentInput && agentBtn && agentOutput) {
                             bestMatch = k;
                             responseOrig = response;
                             lastIntent = response;
+
+                            // Detect language and switch if matched a specific language keyword
+                            if (keywordLangMap[k]) {
+                                const detectedLang = keywordLangMap[k];
+                                if (detectedLang !== currentLang) {
+                                    setLang(detectedLang);
+                                }
+                            } else if (currentLang !== 'en') {
+                                // If matched an English keyword while in another language, switch back to English
+                                const commonEn = ["hello", "hi", "about", "skill", "project", "contact", "resume", "status", "who are you"];
+                                if (commonEn.includes(k)) {
+                                    setLang('en');
+                                }
+                            }
                         }
                     }
                 });
