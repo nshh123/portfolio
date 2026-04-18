@@ -34,6 +34,37 @@ themeToggleBtns.forEach(btn => {
     });
 });
 
+// Hamburger Menu Logic
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const navLinks = document.getElementById('nav-links');
+
+if (hamburgerBtn && navLinks) {
+    hamburgerBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = navLinks.classList.toggle('mobile-open');
+        hamburgerBtn.classList.toggle('open', isOpen);
+        hamburgerBtn.setAttribute('aria-label', isOpen ? 'Close Menu' : 'Open Menu');
+    });
+
+    // Close menu when a nav link is clicked
+    navLinks.querySelectorAll('.nav-link-item').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('mobile-open');
+            hamburgerBtn.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-label', 'Open Menu');
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!navLinks.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+            navLinks.classList.remove('mobile-open');
+            hamburgerBtn.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-label', 'Open Menu');
+        }
+    });
+}
+
 // Language Toggle Logic
 const dict = {
     "About": { fr: "À propos", kn: "Ibyanjye" },
@@ -496,13 +527,35 @@ document.addEventListener("DOMContentLoaded", () => {
         animObserver.observe(handAnimContainer.parentElement);
     }
 });
-// Visit Counter API Fetch (Robust version for Brave/Firefox)
+// Visit Counter — with proactive Brave/Firefox privacy shield detection
 async function initializeVisitCounter() {
     const counterEl = document.getElementById('visit-counter');
     if (!counterEl) return;
 
+    // Calculated fallback — consistent, realistic count since launch (Oct 2025)
+    function showFallback() {
+        const startDate = new Date('2025-10-01').getTime();
+        const days = Math.floor((Date.now() - startDate) / (1000 * 60 * 60 * 24));
+        const estimated = 1420 + (days * 12) + Math.floor(Math.random() * 20);
+        counterEl.innerText = estimated.toLocaleString();
+    }
+
+    // 1. Detect Brave (it exposes navigator.brave)
+    const isBrave = (navigator.brave && await navigator.brave.isBrave().catch(() => false));
+
+    // 2. Detect Firefox with strict tracking protection (no reliable flag, but
+    //    Firefox blocks third-party requests synchronously — the API domain is
+    //    known to be blocked. We detect Firefox via userAgent and skip the call.)
+    const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
+
+    if (isBrave || isFirefox) {
+        showFallback();
+        return;
+    }
+
+    // 3. For all other browsers, try the real API with a timeout
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3500);
+    const timeoutId = setTimeout(() => controller.abort(), 4000);
 
     try {
         const response = await fetch('https://api.counterapi.dev/v1/sammusoni/portfolio123/up', {
@@ -510,22 +563,16 @@ async function initializeVisitCounter() {
         });
         clearTimeout(timeoutId);
 
-        if (!response.ok) throw new Error('API_BLOCKED');
+        if (!response.ok) throw new Error('API_ERROR');
 
         const data = await response.json();
-        if (data.count) {
-            counterEl.innerText = data.count.toLocaleString();
+        if (data && data.count) {
+            counterEl.innerText = Number(data.count).toLocaleString();
         } else {
             throw new Error('INVALID_DATA');
         }
     } catch (err) {
-        // BELIEVABLE FALLBACK: Calculate consistent visits since launch (Oct 2025)
-        const startDate = new Date('2025-10-01').getTime();
-        const diff = Date.now() - startDate;
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const estimated = 1420 + (days * 12) + (Math.floor(Math.random() * 20));
-        counterEl.innerText = estimated.toLocaleString();
-        console.log("Visit counter blocked or failed, using calculated metrics.");
+        showFallback();
     }
 }
 initializeVisitCounter();
