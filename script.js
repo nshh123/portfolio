@@ -333,72 +333,91 @@ setInterval(() => {
 // Terminal Logic
 const termInput = document.getElementById('term-input');
 const termBody = document.getElementById('term-body');
+const termForm = document.getElementById('term-form');
+
+function runTerminalCommand() {
+    const command = termInput.value.trim().toLowerCase();
+    if (!command) return;
+    termInput.value = '';
+
+    // Output command echo
+    const html = `
+        <p class="term-line"><span class="prompt">usr@smusoni:~$</span> ${command}</p>
+    `;
+
+    let response = '';
+
+    if (command === 'help') {
+        response = `
+            <p class="term-line text-primary">Available commands:</p>
+            <p class="term-line">- about: Read system bio</p>
+            <p class="term-line">- stack: View core technologies</p>
+            <p class="term-line">- projects: List active deployments</p>
+            <p class="term-line">- contact: Initialize commlink</p>
+            <p class="term-line">- whoami: Access level check</p>
+            <p class="term-line">- status: Server health check</p>
+            <p class="term-line">- date: Print system time</p>
+            <p class="term-line">- clear: Clear terminal output</p>
+        `;
+    } else if (command === 'about') {
+        response = `<p class="term-line">Full Stack Engineer & LLM Enthusiast based in Kigali, Rwanda. Specializing in high-performance computing.</p>`;
+    } else if (command === 'stack') {
+        response = `<p class="term-line text-secondary">React.js, Node.js, Python, FastAPI, C, PostgreSQL, Ray, Redis</p>`;
+    } else if (command === 'projects') {
+        response = `<p class="term-line text-primary">1. Aether AI Hub<br>2. Focus Assistant<br>3. Budget Planner<br>4. Finova Wallet App<br>5. Vanguard E-Comm<br>Type 'contact' to request deployment info.</p>`;
+    } else if (command === 'contact') {
+        response = `<p class="term-line">Secure commlink ready. Reach out via email: <a href="contact.html" style="color:var(--secondary)">Click Here</a></p>`;
+    } else if (command === 'whoami') {
+        response = `<p class="term-line">guest_user@smusoni-net</p>`;
+    } else if (command === 'status') {
+        response = `<p class="term-line text-primary">All clusters fully operational. No vulnerabilities detected. Uptime: 99.98%</p>`;
+    } else if (command === 'date') {
+        response = `<p class="term-line">${new Date().toUTCString()}</p>`;
+    } else if (command === 'sudo' || command.startsWith('sudo ')) {
+        response = `<p class="term-line text-red">bash: permission denied: root access required. This incident will be reported.</p>`;
+    } else if (command === 'matrix') {
+        response = `<p class="term-line text-secondary">Wake up, Neo...<br>The Matrix has you...</p>`;
+    } else if (command === 'clear') {
+        document.querySelectorAll('.term-line:not(:last-child)').forEach(el => el.remove());
+        return;
+    } else {
+        response = `<p class="term-line text-red">Command not found: ${command}. Type 'help' for options.</p>`;
+    }
+
+    // Insert before the input container
+    const inputLine = document.querySelector('.term-input-line');
+    inputLine.insertAdjacentHTML('beforebegin', html + response);
+
+    // Scroll to bottom
+    termBody.scrollTop = termBody.scrollHeight;
+
+    // Translate new output instantly
+    setLang(currentLang);
+}
 
 if (termInput) {
-    termInput.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter') {
-            const command = this.value.trim().toLowerCase();
-            this.value = '';
-
-            // Output command
-            const html = `
-                <p class="term-line"><span class="prompt">usr@smusoni:~$</span> ${command}</p>
-            `;
-
-            let response = '';
-
-            if (command === 'help') {
-                response = `
-                    <p class="term-line text-primary">Available commands:</p>
-                    <p class="term-line">- about: Read system bio</p>
-                    <p class="term-line">- stack: View core technologies</p>
-                    <p class="term-line">- projects: List active deployments</p>
-                    <p class="term-line">- contact: Initialize commlink</p>
-                    <p class="term-line">- whoami: Access level check</p>
-                    <p class="term-line">- status: Server health check</p>
-                    <p class="term-line">- date: Print system time</p>
-                    <p class="term-line">- clear: Clear terminal output</p>
-                `;
-            } else if (command === 'about') {
-                response = `<p class="term-line">Full Stack Engineer & LLM Enthusiast based in Kigali, Rwanda. Specializing in high-performance computing.</p>`;
-            } else if (command === 'stack') {
-                response = `<p class="term-line text-secondary">React.js, Node.js, Python, FastAPI, C, PostgreSQL, Ray, Redis</p>`;
-            } else if (command === 'projects') {
-                response = `<p class="term-line text-primary">1. Aether AI Hub<br>2. Focus Assistant<br>3. Budget Planner<br>4. Finova Wallet App<br>5. Vanguard E-Comm<br>Type 'contact' to request deployment info.</p>`;
-            } else if (command === 'contact') {
-                response = `<p class="term-line">Secure commlink ready. Reach out via email: <a href="contact.html" style="color:var(--secondary)">Click Here</a></p>`;
-            } else if (command === 'whoami') {
-                response = `<p class="term-line">guest_user@smusoni-net</p>`;
-            } else if (command === 'status') {
-                response = `<p class="term-line text-primary">All clusters fully operational. No vulnerabilities detected. Uptime: 99.98%</p>`;
-            } else if (command === 'date') {
-                response = `<p class="term-line">${new Date().toUTCString()}</p>`;
-            } else if (command === 'sudo' || command.startsWith('sudo ')) {
-                response = `<p class="term-line text-red">bash: permission denied: root access required. This incident will be reported.</p>`;
-            } else if (command === 'matrix') {
-                response = `<p class="term-line text-secondary">Wake up, Neo...<br>The Matrix has you...</p>`;
-            } else if (command === 'clear') {
-                document.querySelectorAll('.term-line:not(:last-child)').forEach(el => el.remove());
-                return;
-            } else if (command !== '') {
-                response = `<p class="term-line text-red">Command not found: ${command}. Type 'help' for options.</p>`;
-            }
-
-            // Insert before the input container
-            const inputLine = document.querySelector('.term-input-line');
-            inputLine.insertAdjacentHTML('beforebegin', html + response);
-
-            // scroll to bottom
-            termBody.scrollTop = termBody.scrollHeight;
-
-            // Translate new output instantly
-            setLang(currentLang);
-        }
+    // keydown — standard browsers
+    termInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') { e.preventDefault(); runTerminalCommand(); }
     });
 
-    // Keep focus
+    // keyup — fallback for Samsung/Android keyboards that skip keydown
+    termInput.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') { e.preventDefault(); runTerminalCommand(); }
+    });
+
+    // form submit — fires when mobile keyboard "Go" action key is pressed
+    if (termForm) {
+        termForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            runTerminalCommand();
+        });
+    }
+
+    // Keep focus when tapping terminal body
     termBody.addEventListener('click', () => { termInput.focus(); });
 }
+
 
 // Sandbox Tabs
 const tabs = document.querySelectorAll('.tab');

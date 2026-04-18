@@ -144,10 +144,11 @@
           <p class="term-line"><span class="prompt">usr@smusoni:~$</span> Type <span class="text-primary">'help'</span>
             to
             see available commands.</p>
-          <div class="term-input-line">
+          <form class="term-input-line" id="term-form" onsubmit="return false;">
             <span class="prompt">usr@smusoni:~$</span>
-            <input type="text" id="term-input" autocomplete="off" spellcheck="false">
-          </div>
+            <input type="text" id="term-input" autocomplete="off" spellcheck="false"
+              enterkeyhint="go" inputmode="text">
+          </form>
         </div>
       </div>
     </section>
