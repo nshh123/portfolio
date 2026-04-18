@@ -601,11 +601,13 @@ html.light .hand-cursor-icon {
 
 .agent-input-wrapper {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
 #agent-input-field {
   flex: 1;
+  min-width: 0; /* allow flex shrinking without overflow */
   background: transparent;
   border: none;
   border-bottom: 1px solid var(--border-light);
@@ -614,6 +616,12 @@ html.light .hand-cursor-icon {
   outline: none;
   padding: 8px;
   font-size: 0.95rem;
+}
+
+#agent-run-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+  padding: 0.5rem 1.25rem;
 }
 
 html.light #agent-input-field {
@@ -1042,7 +1050,7 @@ html.light .bullet-arrow { color: #059669; }
   .projects-grid, .expertise-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hamburger { display: flex; }
 
   .nav-links {
@@ -1126,6 +1134,7 @@ html.light .bullet-arrow { color: #059669; }
 .hand-animation-wrapper { position: relative; display: inline-flex; align-items: center; }
 
 @media (max-width: 480px) {
+  #agent-run-btn { padding: 0.5rem 0.85rem; font-size: 0.85rem; }
   .hand-animation-container { display: none; }
   .metrics-grid { grid-template-columns: 1fr; }
   .api-status-grid { grid-template-columns: 1fr; }
