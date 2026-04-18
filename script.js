@@ -4,10 +4,24 @@ const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
 const htmlEl = document.documentElement;
 
 function initializeTheme() {
-    if (savedTheme === 'light') {
-        htmlEl.classList.add('light');
-        htmlEl.classList.remove('dark');
-        themeToggleBtns.forEach(btn => updateIcons(btn, true));
+    if (savedTheme) {
+        // User has previously chosen a theme — always respect their preference
+        if (savedTheme === 'light') {
+            htmlEl.classList.add('light');
+            htmlEl.classList.remove('dark');
+            themeToggleBtns.forEach(btn => updateIcons(btn, true));
+        }
+        // savedTheme === 'dark' → keep default dark class, nothing to do
+    } else {
+        // No saved preference — auto-detect device type:
+        // pointer:coarse = touch screen (phones, tablets) → light mode default
+        // pointer:fine   = mouse/trackpad (laptops, desktops) → dark mode default
+        const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+        if (isTouchDevice) {
+            htmlEl.classList.add('light');
+            htmlEl.classList.remove('dark');
+            themeToggleBtns.forEach(btn => updateIcons(btn, true));
+        }
     }
 }
 
