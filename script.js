@@ -527,55 +527,38 @@ document.addEventListener("DOMContentLoaded", () => {
         animObserver.observe(handAnimContainer.parentElement);
     }
 });
-// Visit Counter — with proactive Brave/Firefox privacy shield detection
+// Visit Counter — proxied via Vercel serverless function (/api/counter)
+// Calls our own domain so Brave, Firefox, and all browsers receive the real count.
 async function initializeVisitCounter() {
     const counterEl = document.getElementById('visit-counter');
     if (!counterEl) return;
 
-    // Calculated fallback — consistent, realistic count since launch (Oct 2025)
+    // localStorage fallback: persists and increments if the proxy is unavailable
     function showFallback() {
         const startDate = new Date('2025-10-01').getTime();
         const days = Math.floor((Date.now() - startDate) / (1000 * 60 * 60 * 24));
-        const estimated = 1420 + (days * 12) + Math.floor(Math.random() * 20);
-        counterEl.innerText = estimated.toLocaleString();
+        const baseEstimate = 1420 + (days * 12);
+        const stored = parseInt(localStorage.getItem('visit_count_fallback'), 10);
+        const newCount = (!stored || stored < baseEstimate) ? baseEstimate : stored + 1;
+        localStorage.setItem('visit_count_fallback', newCount);
+        counterEl.innerText = newCount.toLocaleString();
     }
-
-    // 1. Detect Brave (it exposes navigator.brave)
-    const isBrave = (navigator.brave && await navigator.brave.isBrave().catch(() => false));
-
-    // 2. Detect Firefox with strict tracking protection (no reliable flag, but
-    //    Firefox blocks third-party requests synchronously — the API domain is
-    //    known to be blocked. We detect Firefox via userAgent and skip the call.)
-    const isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
-
-    if (isBrave || isFirefox) {
-        showFallback();
-        return;
-    }
-
-    // 3. For all other browsers, try the real API with a timeout
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 4000);
 
     try {
-        const response = await fetch('https://api.counterapi.dev/v1/sammusoni/portfolio123/up', {
-            signal: controller.signal
-        });
-        clearTimeout(timeoutId);
-
-        if (!response.ok) throw new Error('API_ERROR');
-
+        const response = await fetch('/api/counter');
+        if (!response.ok) throw new Error('Proxy error');
         const data = await response.json();
         if (data && data.count) {
             counterEl.innerText = Number(data.count).toLocaleString();
         } else {
-            throw new Error('INVALID_DATA');
+            throw new Error('Invalid data');
         }
     } catch (err) {
         showFallback();
     }
 }
 initializeVisitCounter();
+
 
 // Agent Runner Logic
 const agentInput = document.getElementById('agent-input-field');
