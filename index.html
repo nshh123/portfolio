@@ -11,6 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="preload" as="image" href="profil.webp" fetchpriority="high">
 </head>
 
 <body>
@@ -63,7 +64,7 @@
       <div class="hero-left">
         <div class="hero-identity">
           <div class="avatar-container">
-            <img src="profil.png" alt="Sam Musoni" class="profile-avatar">
+            <img src="profil.webp" alt="Sam Musoni" class="profile-avatar" fetchpriority="high" decoding="async">
             <div class="avatar-scanner"></div>
           </div>
           <div class="status-pill border-primary">
