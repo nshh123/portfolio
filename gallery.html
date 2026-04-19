@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery | Sam Musoni</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <style>
     .gallery-grid {
@@ -16,6 +19,7 @@
       width: 100%;
       margin-top: 2rem;
     }
+
     .gallery-item {
       overflow: hidden;
       border-radius: 12px;
@@ -25,11 +29,13 @@
       position: relative;
       cursor: pointer;
     }
+
     .gallery-item:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
       border-color: var(--primary);
     }
+
     .gallery-item img {
       width: 100%;
       height: 100%;
@@ -37,11 +43,13 @@
       display: block;
       transition: transform 0.5s ease;
     }
+
     .gallery-item:hover img {
       transform: scale(1.05);
     }
   </style>
 </head>
+
 <body>
 
   <div class="bg-vignette"></div>
@@ -65,14 +73,19 @@
         <a href="gallery.html" class="nav-link-item">Photo Gallery</a>
         <a href="contact.html" class="nav-link-item">Contact</a>
         <div class="lang-toggle">
-          <span class="lang active">EN</span><span class="pipe">|</span><span class="lang">FR</span><span class="pipe">|</span><span class="lang">KN</span>
+          <span class="lang active">EN</span><span class="pipe">|</span><span class="lang">FR</span><span
+            class="pipe">|</span><span class="lang">KN</span>
         </div>
         <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
-          <svg id="sun-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          <svg id="sun-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
           </svg>
-          <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
           </svg>
         </button>
       </div>
@@ -83,24 +96,27 @@
   <main class="container" style="padding-top: 100px; padding-bottom: 50px;">
     <div class="section-title">
       <h2 data-i18n-orig="Photo Gallery">Photo Gallery</h2>
-      <p data-i18n-orig="Visual assets and deployments featured across the interface">Visual assets and deployments featured across the interface</p>
+      <p data-i18n-orig="Visual assets and deployments featured across the interface">Visual assets and deployments
+        featured across the interface</p>
     </div>
-    
+
     <div class="gallery-grid">
       <div class="gallery-item"><img src="budget_p.webp" alt="Budget Planner"></div>
       <div class="gallery-item"><img src="focus_a.webp" alt="Focus Assistant"></div>
       <div class="gallery-item"><img src="project1.webp" alt="Project 1"></div>
       <div class="gallery-item"><img src="project2.webp" alt="Project 2"></div>
       <div class="gallery-item"><img src="project3.webp" alt="Project 3"></div>
-      <div class="gallery-item"><img src="project_budget.webp" alt="Project Budget"></div>
-      <div class="gallery-item"><img src="project_focus.webp" alt="Project Focus"></div>
     </div>
   </main>
 
   <footer>
-    <p class="text-gray" style="font-size: 14px;"><span data-i18n-orig="Copyright © 2026 Sam Musoni">Copyright &copy; 2026 Sam Musoni</span> <span style="margin: 0 10px;">|</span> <span data-i18n-orig="Unique System Visits:">Unique System Visits:</span> <span id="visit-counter" class="text-primary" style="font-family: var(--font-mono); font-weight: bold;">Loading...</span></p>
+    <p class="text-gray" style="font-size: 14px;"><span data-i18n-orig="Copyright © 2026 Sam Musoni">Copyright &copy;
+        2026 Sam Musoni</span> <span style="margin: 0 10px;">|</span> <span
+        data-i18n-orig="Unique System Visits:">Unique System Visits:</span> <span id="visit-counter"
+        class="text-primary" style="font-family: var(--font-mono); font-weight: bold;">Loading...</span></p>
   </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
