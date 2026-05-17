@@ -587,6 +587,17 @@ setInterval(() => {
 const termInput = document.getElementById("term-input");
 const termBody = document.getElementById("term-body");
 const termForm = document.getElementById("term-form");
+const TERM_SUDO_COUNT_KEY = "term_sudo_count";
+
+function getSudoAttemptCount() {
+  return parseInt(sessionStorage.getItem(TERM_SUDO_COUNT_KEY) || "0", 10);
+}
+
+function incrementSudoAttemptCount() {
+  const next = getSudoAttemptCount() + 1;
+  sessionStorage.setItem(TERM_SUDO_COUNT_KEY, String(next));
+  return next;
+}
 
 function runTerminalCommand() {
   const command = termInput.value.trim().toLowerCase();
@@ -627,7 +638,12 @@ function runTerminalCommand() {
   } else if (command === "date") {
     response = `<p class="term-line">${new Date().toUTCString()}</p>`;
   } else if (command === "sudo" || command.startsWith("sudo ")) {
-    response = `<p class="term-line text-red">bash: permission denied: root access required. This incident will be reported.</p>`;
+    const sudoAttempt = incrementSudoAttemptCount();
+    if (sudoAttempt === 2) {
+      response = `<p class="term-line text-secondary">Wake up, Neo...<br>The Matrix has you...</p>`;
+    } else {
+      response = `<p class="term-line text-red">bash: permission denied: root access required. This incident will be reported.</p>`;
+    }
   } else if (command === "matrix") {
     response = `<p class="term-line text-secondary">Wake up, Neo...<br>The Matrix has you...</p>`;
   } else if (command === "clear") {
