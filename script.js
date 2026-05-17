@@ -599,9 +599,15 @@ function incrementSudoAttemptCount() {
   return next;
 }
 
+let termEnterHandled = false;
+
 function runTerminalCommand() {
   const command = termInput.value.trim().toLowerCase();
   if (!command) return;
+
+  // Prevent keydown + keyup + form submit from running the same command 2–3 times
+  if (termInput.dataset.busy === "1") return;
+  termInput.dataset.busy = "1";
   termInput.value = "";
 
   // Output command echo
@@ -650,6 +656,9 @@ function runTerminalCommand() {
     document
       .querySelectorAll(".term-line:not(:last-child)")
       .forEach((el) => el.remove());
+    requestAnimationFrame(() => {
+      delete termInput.dataset.busy;
+    });
     return;
   } else {
     response = `<p class="term-line text-red">Command not found: ${command}. Type 'help' for options.</p>`;
@@ -664,6 +673,10 @@ function runTerminalCommand() {
 
   // Translate new output instantly
   setLang(currentLang);
+
+  requestAnimationFrame(() => {
+    delete termInput.dataset.busy;
+  });
 }
 
 if (termInput) {
@@ -671,6 +684,7 @@ if (termInput) {
   termInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
+      termEnterHandled = true;
       runTerminalCommand();
     }
   });
@@ -679,6 +693,10 @@ if (termInput) {
   termInput.addEventListener("keyup", (e) => {
     if (e.key === "Enter") {
       e.preventDefault();
+      if (termEnterHandled) {
+        termEnterHandled = false;
+        return;
+      }
       runTerminalCommand();
     }
   });
@@ -687,6 +705,7 @@ if (termInput) {
   if (termForm) {
     termForm.addEventListener("submit", (e) => {
       e.preventDefault();
+      if (termEnterHandled) return;
       runTerminalCommand();
     });
   }
