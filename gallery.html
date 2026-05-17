@@ -15,38 +15,68 @@
     <style>
       .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
         gap: 1.5rem;
         width: 100%;
         margin-top: 2rem;
       }
 
       .gallery-item {
+        display: flex;
+        flex-direction: column;
         overflow: hidden;
         border-radius: 12px;
         border: 1px solid var(--border-light);
-        background: var(--card-bg);
-        transition: all 0.4s ease;
+        background: var(--bg-panel);
+        transition:
+          transform 0.35s ease,
+          box-shadow 0.35s ease,
+          border-color 0.35s ease;
         position: relative;
-        cursor: pointer;
       }
 
       .gallery-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
         border-color: var(--primary);
+      }
+
+      html.light .gallery-item:hover {
+        box-shadow: 0 12px 28px rgba(37, 99, 235, 0.15);
+      }
+
+      .gallery-item-media {
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        background: var(--bg-dark);
       }
 
       .gallery-item img {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: top center;
         display: block;
         transition: transform 0.5s ease;
       }
 
       .gallery-item:hover img {
-        transform: scale(1.05);
+        transform: scale(1.04);
+      }
+
+      .gallery-caption {
+        padding: 0.85rem 1rem;
+        font-size: 0.8rem;
+        font-family: var(--font-mono);
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        color: var(--text-gray);
+        border-top: 1px solid var(--border-light);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      html.light .gallery-caption {
+        background: rgba(0, 0, 0, 0.02);
       }
     </style>
   </head>
@@ -134,27 +164,84 @@
       </div>
 
       <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="budget_p.webp" alt="Budget Planner" />
-        </div>
-        <div class="gallery-item">
-          <img src="focus_a.webp" alt="Focus Assistant" />
-        </div>
-        <div class="gallery-item">
-          <img src="project1.webp" alt="Project 1" />
-        </div>
-        <div class="gallery-item">
-          <img src="project2.webp" alt="Project 2" />
-        </div>
-        <div class="gallery-item">
-          <img src="project3.webp" alt="Project 3" />
-        </div>
-        <div class="gallery-item">
-          <img src="Simba E-Comm.webp" alt="Project 4" />
-        </div>
-        <div class="gallery-item">
-          <img src="ProfAdvisor.webp" alt="Project 5" />
-        </div>
+        <figure class="gallery-item">
+          <div class="gallery-item-media">
+            <img
+              src="Simba E-Comm.webp"
+              alt="Simba Supermarket 2.0 e-commerce storefront"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="gallery-caption" data-i18n-orig="Simba E-Comm">
+            Simba E-Comm
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="gallery-item-media">
+            <img
+              src="ProfAdvisor.webp"
+              alt="ProfAdvisor lecturer review application"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="gallery-caption" data-i18n-orig="ProfAdvisor">
+            ProfAdvisor
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="gallery-item-media">
+            <img
+              src="budget_p.webp"
+              alt="Budget Planner financial dashboard"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="gallery-caption" data-i18n-orig="Budget Planner">
+            Budget Planner
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="gallery-item-media">
+            <img
+              src="focus_a.webp"
+              alt="Focus Assistant browser extension"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="gallery-caption" data-i18n-orig="Focus Assistant">
+            Focus Assistant
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="gallery-item-media">
+            <img
+              src="project1.webp"
+              alt="Aether AI Hub dashboard"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="gallery-caption" data-i18n-orig="Aether AI Hub">
+            Aether AI Hub
+          </figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <div class="gallery-item-media">
+            <img
+              src="project2.webp"
+              alt="Finova Wallet application"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="gallery-caption" data-i18n-orig="Finova Wallet App">
+            Finova Wallet App
+          </figcaption>
+        </figure>
       </div>
     </main>
 

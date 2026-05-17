@@ -152,6 +152,19 @@ const dict = {
     },
   "Simba E-Comm": { fr: "Simba E-Comm", kn: "Simba E-Comm" },
   ProfAdvisor: { fr: "ProfAdvisor", kn: "ProfAdvisor" },
+  "Budget Planner": {
+    fr: "Planificateur budgétaire",
+    kn: "Gahunda y'ingengo",
+  },
+  "Focus Assistant": {
+    fr: "Assistant de concentration",
+    kn: "Umufasha wo kwibanda",
+  },
+  "Aether AI Hub": { fr: "Aether AI Hub", kn: "Aether AI Hub" },
+  "Finova Wallet App": {
+    fr: "Application Finova Wallet",
+    kn: "Porogaramu Finova Wallet",
+  },
   "Initiate Connection": { fr: "Connexion Sécurisée", kn: "Hitamo Uburyo" },
   "Ready to build something extraordinary? Drop a message in the secure channel or reach out via available networks.":
     {
@@ -396,9 +409,9 @@ const dict = {
   "Agent:": { fr: "Agent :", kn: "Agent :" },
   "User:": { fr: "Utilisateur :", kn: "Umukoresha :" },
   Send: { fr: "Envoyer", kn: "Ohereza" },
-  "Interact with Sam's AI agent": {
-    fr: "Interagissez avec l'agent AI de Sam",
-    kn: "Vugana na agent AI ya Sam",
+  "Interact with an AI agent created by Sam": {
+    fr: "Interagissez avec un agent AI créé par Sam",
+    kn: "Vugana na agent AI yakozwe na Sam",
   },
   "Chat directly with The Alpha Core Agent created by Sam": {
     fr: "Discutez directement avec l'agent Alpha Core créé par Sam",
