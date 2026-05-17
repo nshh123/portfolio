@@ -4,12 +4,15 @@ const themeToggleBtns = document.querySelectorAll(".theme-toggle-btn");
 const htmlEl = document.documentElement;
 
 function initializeTheme() {
-  if (savedTheme === "light") {
+  if (savedTheme === "dark") {
+    htmlEl.classList.add("dark");
+    htmlEl.classList.remove("light");
+    themeToggleBtns.forEach((btn) => updateIcons(btn, false));
+  } else {
     htmlEl.classList.add("light");
     htmlEl.classList.remove("dark");
     themeToggleBtns.forEach((btn) => updateIcons(btn, true));
   }
-  // No saved preference → keep default dark (HTML has class="dark")
 }
 
 function updateIcons(btn, isLight) {
