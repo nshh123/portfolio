@@ -405,14 +405,6 @@ const dict = {
     fr: "Discutez directement avec l'agent Alpha Core créé par Sam",
     kn: "Ganira na Alpha Core Agent yakozwe na Sam",
   },
-  "Interact with Agent...": {
-    fr: "Interagir avec l'agent...",
-    kn: "Vugana na Agent...",
-  },
-  "Interact with my agent": {
-    fr: "Interagissez avec mon agent",
-    kn: "Vugana na agent yanjye",
-  },
   "Where I've ": { fr: "Où j'ai ", kn: "Aho " },
   Built: { fr: "Construit", kn: "Nubatse" },
   "From mastering complex algorithms at A2SV to securing the internet's foundation and engineering the future of AI.":
