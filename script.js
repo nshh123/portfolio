@@ -1,18 +1,14 @@
-// Theme Toggle Logic
-const savedTheme = localStorage.getItem("theme");
+// Theme Toggle Logic (default theme: config.js → SITE_CONFIG.defaultTheme)
 const themeToggleBtns = document.querySelectorAll(".theme-toggle-btn");
 const htmlEl = document.documentElement;
 
+function getActiveTheme() {
+  return htmlEl.classList.contains("light") ? "light" : "dark";
+}
+
 function initializeTheme() {
-  if (savedTheme === "dark") {
-    htmlEl.classList.add("dark");
-    htmlEl.classList.remove("light");
-    themeToggleBtns.forEach((btn) => updateIcons(btn, false));
-  } else {
-    htmlEl.classList.add("light");
-    htmlEl.classList.remove("dark");
-    themeToggleBtns.forEach((btn) => updateIcons(btn, true));
-  }
+  const isLight = getActiveTheme() === "light";
+  themeToggleBtns.forEach((btn) => updateIcons(btn, isLight));
 }
 
 function updateIcons(btn, isLight) {
