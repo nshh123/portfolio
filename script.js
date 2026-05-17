@@ -311,7 +311,7 @@ const dict = {
       kn: "bash: byanzwe: hakenewe root. Iri kosa rigiye gutangazwa.",
     },
   "Wake up, Neo...": { fr: "Réveille-toi, Neo...", kn: "Kanguka, Neo..." },
-  "The Matrix has you...": {
+  "The Matrix has you 😂": {
     fr: "La Matrice t'a...",
     kn: "Matrix iragufite...",
   },
@@ -640,12 +640,12 @@ function runTerminalCommand() {
   } else if (command === "sudo" || command.startsWith("sudo ")) {
     const sudoAttempt = incrementSudoAttemptCount();
     if (sudoAttempt === 2) {
-      response = `<p class="term-line text-secondary">Wake up, Neo...<br>The Matrix has you...</p>`;
+      response = `<p class="term-line text-secondary">Wake up, Neo...<br>The Matrix has you 😂</p>`;
     } else {
       response = `<p class="term-line text-red">bash: permission denied: root access required. This incident will be reported.</p>`;
     }
   } else if (command === "matrix") {
-    response = `<p class="term-line text-secondary">Wake up, Neo...<br>The Matrix has you...</p>`;
+    response = `<p class="term-line text-secondary">Wake up, Neo...<br>The Matrix has you 😂</p>`;
   } else if (command === "clear") {
     document
       .querySelectorAll(".term-line:not(:last-child)")
