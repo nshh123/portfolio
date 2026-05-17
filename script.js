@@ -141,11 +141,18 @@ const dict = {
       fr: "Application fintech sécurisée.",
       kn: "Porogaramu y'imari yizewe ihuza uburyo bw'imiyoboro yose.",
     },
-  "A high-conversion headless e-commerce store with brutalist modern aesthetics.":
+  "Sleek, performance-optimized e-commerce rebuild for Simba Supermarket—Next.js App Router with TypeScript, Zustand for global state, and shadcn/ui on Tailwind, deployed on Vercel.":
     {
-      fr: "Une boutique e-commerce moderne à forte conversion.",
-      kn: "Idurika rikoranye ubuhanga kumurongo rikora neza cyane.",
+      fr: "Refonte e-commerce élégante et performante pour Simba Supermarket—Next.js App Router avec TypeScript, Zustand pour l'état global et shadcn/ui sur Tailwind, déployée sur Vercel.",
+      kn: "Urubuga rwishya rwa e-commerce rwa Simba Supermarket—Next.js App Router na TypeScript, Zustand yo gucunga ibikubiyemo, shadcn/ui kuri Tailwind, rwashyizwe kuri Vercel.",
     },
+  "Modern full-stack lecturer review platform with a clean, responsive UI—React 19, TypeScript, and Vite on the front end; Firebase Firestore and Google Auth on a serverless stack built to scale toward future AI.":
+    {
+      fr: "Plateforme moderne d'avis sur les enseignants—React 19, TypeScript et Vite à l'avant-plan ; Firestore et Google Auth sur une architecture serverless évolutive, prête pour l'IA.",
+      kn: "Porogaramu y'ibitekerezo ku barimu—React 19, TypeScript na Vite imbere; Firebase Firestore na Google Auth kuri serverless yiteguye AI.",
+    },
+  "Simba E-Comm": { fr: "Simba E-Comm", kn: "Simba E-Comm" },
+  ProfAdvisor: { fr: "ProfAdvisor", kn: "ProfAdvisor" },
   "Initiate Connection": { fr: "Connexion Sécurisée", kn: "Hitamo Uburyo" },
   "Ready to build something extraordinary? Drop a message in the secure channel or reach out via available networks.":
     {
@@ -390,13 +397,9 @@ const dict = {
   "Agent:": { fr: "Agent :", kn: "Agent :" },
   "User:": { fr: "Utilisateur :", kn: "Umukoresha :" },
   Send: { fr: "Envoyer", kn: "Ohereza" },
-  "Interact with Sam's agent": {
-    fr: "Interagissez avec l'agent de Sam",
-    kn: "Vugana na agent ya Sam",
-  },
-  "Interact with agent": {
-    fr: "Interagir avec l'agent",
-    kn: "Vugana na agent",
+  "Interact with Sam's AI agent": {
+    fr: "Interagissez avec l'agent AI de Sam",
+    kn: "Vugana na agent AI ya Sam",
   },
   "Chat directly with The Alpha Core Agent created by Sam": {
     fr: "Discutez directement avec l'agent Alpha Core créé par Sam",
@@ -610,7 +613,7 @@ function runTerminalCommand() {
   } else if (command === "stack") {
     response = `<p class="term-line text-secondary">React.js, Node.js, Python, FastAPI, C, PostgreSQL, Ray, Redis</p>`;
   } else if (command === "projects") {
-    response = `<p class="term-line text-primary">1. Aether AI Hub<br>2. Focus Assistant<br>3. Budget Planner<br>4. Finova Wallet App<br>5. Vanguard E-Comm<br>Type 'contact' to request deployment info.</p>`;
+    response = `<p class="term-line text-primary">1. Aether AI Hub<br>2. Focus Assistant<br>3. Budget Planner<br>4. Finova Wallet App<br>5. Simba E-Comm<br>6. ProfAdvisor<br>Type 'contact' to request deployment info.</p>`;
   } else if (command === "contact") {
     response = `<p class="term-line">Secure commlink ready. Reach out via email: <a href="contact.html" style="color:var(--secondary)">Click Here</a></p>`;
   } else if (command === "whoami") {
