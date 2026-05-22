@@ -2,18 +2,22 @@
  * Site-wide defaults — edit values here only.
  */
 window.SITE_CONFIG = {
-  /** Default theme for desktop when no saved preference: "light" | "dark" */
   defaultTheme: "light",
-
-  /** Default theme for mobile when no saved preference: "light" | "dark" */
   defaultThemeMobile: "dark",
-
-  /** Breakpoint (in pixels) to determine mobile vs desktop */
   mobileBreakpoint: 900,
 };
 
 (function applyDefaultTheme() {
   const saved = localStorage.getItem("theme");
+  const isMaintenancePage =
+    window.location.pathname.endsWith("maintenance.html");
+
+  // Force dark mode for the maintenance page, regardless of saved theme.
+  if (isMaintenancePage) {
+    document.documentElement.classList.remove("light", "dark");
+    document.documentElement.classList.add("dark");
+    return;
+  }
 
   // If user has a saved preference, use it
   if (saved === "light" || saved === "dark") {
