@@ -312,6 +312,12 @@ body {
   display: none;
 }
 
+.bottom-nav-hidden {
+  transform: translateY(100%) !important;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .terminal-nav-btn {
   display: none;
 }
@@ -1076,8 +1082,16 @@ html.light .bullet-arrow { color: #059669; }
 }
 
 @media (max-width: 900px) {
+  :root {
+    --nav-height: 55px;
+  }
+
   body {
     padding-bottom: 80px !important;
+  }
+
+  .container {
+    padding: calc(var(--nav-height) + 1.5rem) 1.5rem 3rem 1.5rem !important;
   }
 
   /* Hide hamburger and standard menu lists */
@@ -1120,6 +1134,7 @@ html.light .bullet-arrow { color: #059669; }
     justify-content: space-around;
     padding: 0 1rem;
     box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
   }
 
   html.light .bottom-nav {

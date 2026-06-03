@@ -593,6 +593,7 @@ setInterval(() => {
 document.addEventListener("DOMContentLoaded", () => {
   const bottomNavItems = document.querySelectorAll(".bottom-nav-item");
   const sections = document.querySelectorAll("section[id]");
+  const bottomNav = document.querySelector(".bottom-nav");
 
   if (sections.length > 0 && bottomNavItems.length > 0 && document.getElementById("about")) {
     function highlightBottomNav() {
@@ -628,6 +629,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", highlightBottomNav);
     highlightBottomNav(); // Initial call
+  }
+
+  // Scroll Hide/Show bottom navigation bar (runs on all pages containing bottom nav)
+  if (bottomNav) {
+    let lastScrollY = window.scrollY;
+    
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.scrollY;
+      
+      // Always show close to top
+      if (currentScrollY < 60) {
+        bottomNav.classList.remove("bottom-nav-hidden");
+        return;
+      }
+      
+      if (currentScrollY > lastScrollY) {
+        // Scrolling down -> hide
+        bottomNav.classList.add("bottom-nav-hidden");
+      } else {
+        // Scrolling up -> show
+        bottomNav.classList.remove("bottom-nav-hidden");
+      }
+      
+      lastScrollY = currentScrollY;
+    });
   }
 });
 
