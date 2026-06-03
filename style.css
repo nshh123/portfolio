@@ -630,17 +630,6 @@ html.light .hand-cursor-icon {
   caret-color: var(--primary);
 }
 
-#term-input::placeholder {
-  color: var(--primary);
-  opacity: 1;
-  animation: cursorBlink 1s step-end infinite;
-}
-
-@keyframes cursorBlink {
-  0%, 100% { opacity: 0; }
-  50% { opacity: 1; }
-}
-
 .agent-runner {
   background: rgba(0, 0, 0, 0.6);
   padding: 1.5rem;

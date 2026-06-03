@@ -789,6 +789,19 @@ if (termInput) {
   termBody.addEventListener("click", () => {
     termInput.focus();
   });
+
+  // Auto focus when terminal section scrolls into view
+  const termSection = document.getElementById("terminal");
+  if (termSection && "IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          termInput.focus({ preventScroll: true });
+        }
+      });
+    }, { threshold: 0.3 });
+    observer.observe(termSection);
+  }
 }
 
 // Sandbox Tabs
