@@ -88,10 +88,10 @@ const dict = {
   "AI/ML Engineer": { fr: "Ingénieur IA/ML", kn: "Injiniyeri AI/ML" },
   "· AI/ML Engineer": { fr: "· Ingénieur IA/ML", kn: "· Injiniyeri AI/ML" },
   "Building scalable, secure backends and highly interactive frontends. Exploring the frontiers of artificial intelligence to design intuitive, robust solutions.":
-    {
-      fr: "Création de backends évolutifs et de frontends interactifs pour concevoir des solutions robustes.",
-      kn: "Nubaka imbuga z' ikoranabuhanga zikomeye cyane kumurongo. Nkunda gukoresha application za AI kugirango mbone ibisubizo bigezweho.",
-    },
+  {
+    fr: "Création de backends évolutifs et de frontends interactifs pour concevoir des solutions robustes.",
+    kn: "Nubaka imbuga z' ikoranabuhanga zikomeye cyane kumurongo. Nkunda gukoresha application za AI kugirango mbone ibisubizo bigezweho.",
+  },
   "View Featured Projects": { fr: "Voir les Projets", kn: "Reba Imishinga" },
   "Contact Me": { fr: "Me contacter", kn: "Mvugisha" },
   Live_Metrics: { fr: "Métriques_Direct", kn: "Sisitemu_Mpanze" },
@@ -122,35 +122,35 @@ const dict = {
   },
   "View Live": { fr: "Voir le direct", kn: "Reba kumurongo" },
   "Centralized AI dashboard for real-time model monitoring and performance tracking.":
-    {
-      fr: "Tableau de bord IA centralisé pour le suivi des modèles en temps réel.",
-      kn: "Itsinda ry'ikoranabuhanga rihuza inyigo za AI ako kanya.",
-    },
+  {
+    fr: "Tableau de bord IA centralisé pour le suivi des modèles en temps réel.",
+    kn: "Itsinda ry'ikoranabuhanga rihuza inyigo za AI ako kanya.",
+  },
   "A sleek Microsoft Edge extension for focus management, featuring custom website blockers and a distraction-free UI.":
-    {
-      fr: "Une extension élégante pour la gestion de la concentration.",
-      kn: "Porogaramu ifasha gukomeza kumvira imirimo idafite ibirangaza.",
-    },
+  {
+    fr: "Une extension élégante pour la gestion de la concentration.",
+    kn: "Porogaramu ifasha gukomeza kumvira imirimo idafite ibirangaza.",
+  },
   "Professional-grade financial dashboard featuring fluid animations, monthly state management, and real-time data visualization.":
-    {
-      fr: "Tableau de bord financier de niveau professionnel.",
-      kn: "Urubuga rufasha abantu gucunga umutungo muburyo burambye.",
-    },
+  {
+    fr: "Tableau de bord financier de niveau professionnel.",
+    kn: "Urubuga rufasha abantu gucunga umutungo muburyo burambye.",
+  },
   "Secure fintech application for seamless peer-to-peer transfers and budget tracking.":
-    {
-      fr: "Application fintech sécurisée.",
-      kn: "Porogaramu y'imari yizewe ihuza uburyo bw'imiyoboro yose.",
-    },
+  {
+    fr: "Application fintech sécurisée.",
+    kn: "Porogaramu y'imari yizewe ihuza uburyo bw'imiyoboro yose.",
+  },
   "Sleek, performance-optimized e-commerce rebuild for Simba Supermarket—Next.js App Router with TypeScript, Zustand for global state, and shadcn/ui on Tailwind, deployed on Vercel.":
-    {
-      fr: "Refonte e-commerce élégante et performante pour Simba Supermarket—Next.js App Router avec TypeScript, Zustand pour l'état global et shadcn/ui sur Tailwind, déployée sur Vercel.",
-      kn: "Urubuga rwishya rwa e-commerce rwa Simba Supermarket—Next.js App Router na TypeScript, Zustand yo gucunga ibikubiyemo, shadcn/ui kuri Tailwind, rwashyizwe kuri Vercel.",
-    },
+  {
+    fr: "Refonte e-commerce élégante et performante pour Simba Supermarket—Next.js App Router avec TypeScript, Zustand pour l'état global et shadcn/ui sur Tailwind, déployée sur Vercel.",
+    kn: "Urubuga rwishya rwa e-commerce rwa Simba Supermarket—Next.js App Router na TypeScript, Zustand yo gucunga ibikubiyemo, shadcn/ui kuri Tailwind, rwashyizwe kuri Vercel.",
+  },
   "Modern full-stack lecturer review platform with a clean, responsive UI—React 19, TypeScript, and Vite on the front end; Firebase Firestore and Google Auth on a serverless stack built to scale toward future AI.":
-    {
-      fr: "Plateforme moderne d'avis sur les enseignants—React 19, TypeScript et Vite à l'avant-plan ; Firestore et Google Auth sur une architecture serverless évolutive, prête pour l'IA.",
-      kn: "Porogaramu y'ibitekerezo ku barimu—React 19, TypeScript na Vite imbere; Firebase Firestore na Google Auth kuri serverless yiteguye AI.",
-    },
+  {
+    fr: "Plateforme moderne d'avis sur les enseignants—React 19, TypeScript et Vite à l'avant-plan ; Firestore et Google Auth sur une architecture serverless évolutive, prête pour l'IA.",
+    kn: "Porogaramu y'ibitekerezo ku barimu—React 19, TypeScript na Vite imbere; Firebase Firestore na Google Auth kuri serverless yiteguye AI.",
+  },
   "Simba E-Comm": { fr: "Simba E-Comm", kn: "Simba E-Comm" },
   ProfAdvisor: { fr: "ProfAdvisor", kn: "ProfAdvisor" },
   "Budget Planner": {
@@ -168,10 +168,10 @@ const dict = {
   },
   "Initiate Connection": { fr: "Connexion Sécurisée", kn: "Hitamo Uburyo" },
   "Ready to build something extraordinary? Drop a message in the secure channel or reach out via available networks.":
-    {
-      fr: "Prêt à créer quelque chose d'incroyable ? Contactez-moi dans le canal sécurisé.",
-      kn: "Waba witeguye kubaka ibintu bikomeye? Nyandikira wumva unyisanzuyeho rwose.",
-    },
+  {
+    fr: "Prêt à créer quelque chose d'incroyable ? Contactez-moi dans le canal sécurisé.",
+    kn: "Waba witeguye kubaka ibintu bikomeye? Nyandikira wumva unyisanzuyeho rwose.",
+  },
   "Secure Message": { fr: "Message direct", kn: "Ubutumwa bwite" },
   "Copyright © 2026 Sam Musoni": {
     fr: "Droits d'auteur © 2026 Sam Musoni",
@@ -199,35 +199,35 @@ const dict = {
   },
   "Top Innovator": { fr: "Meilleur Innovateur", kn: "Uwa Mbere mu Guhanga" },
   "Awarded 1st place at Rwanda National Tech Summit for an optimal predictive AI model.":
-    {
-      fr: "Premier prix au Sommet National du Rwanda pour un modèle prédictif.",
-      kn: "Uwambere mu nama ihuza ibyikoranabuhanga mu Rwanda kubera AI.",
-    },
+  {
+    fr: "Premier prix au Sommet National du Rwanda pour un modèle prédictif.",
+    kn: "Uwambere mu nama ihuza ibyikoranabuhanga mu Rwanda kubera AI.",
+  },
   "OS Contributor": { fr: "Contributeur OS", kn: "Umusanzu wa Open Source" },
   "Recognized for significant upstream contributions to high-performance Python libraries.":
-    {
-      fr: "Reconnu pour des contributions majeures aux bibliothèques Python hautes performances.",
-      kn: "Yashimiwe kubera uruhare runini mubyakozwe kuri Python yihuta cyane.",
-    },
+  {
+    fr: "Reconnu pour des contributions majeures aux bibliothèques Python hautes performances.",
+    kn: "Yashimiwe kubera uruhare runini mubyakozwe kuri Python yihuta cyane.",
+  },
   "Best Cybersecurity Protocol": {
     fr: "Protocole de Sécurité",
     kn: "Umutekano mwiza w'Ikoranabuhanga",
   },
   "Developed the most resilient encryption logic algorithm during the 2025 Kigali Hackathon.":
-    {
-      fr: "Développement d'un algorithme de chiffrement extrêmement résilient.",
-      kn: "Nakoze ikoranabuhanga rikomeye ricunga umutekano mu ihatana rya Kigali.",
-    },
+  {
+    fr: "Développement d'un algorithme de chiffrement extrêmement résilient.",
+    kn: "Nakoze ikoranabuhanga rikomeye ricunga umutekano mu ihatana rya Kigali.",
+  },
   "Send me a message": { fr: "Envoyez un message", kn: "Ohereza Ubutumwa" },
   Name: { fr: "Nom", kn: "Izina" },
   Message: { fr: "Message", kn: "Ubutumwa" },
   "Send Message": { fr: "Envoyer", kn: "Ohereza" },
   "SYSTEM OFFLINE": { fr: "HORS LIGNE", kn: "NTIRI KUMURONGO" },
   "The requested deployment is currently undergoing scheduled backend architecture maintenance to patch vulnerabilities and upgrade cluster infrastructure. Please check back later.":
-    {
-      fr: "Le système subit actuellement une maintenance backend planifiée pour corriger des failles.",
-      kn: "Inshingano uri gusaba zabaye zikuweho byagateganyo kugirango zivugururwe byisumbyeho. Mwongere mukanya.",
-    },
+  {
+    fr: "Le système subit actuellement une maintenance backend planifiée pour corriger des failles.",
+    kn: "Inshingano uri gusaba zabaye zikuweho byagateganyo kugirango zivugururwe byisumbyeho. Mwongere mukanya.",
+  },
   "Return to Hub": { fr: "Retour", kn: "Subira Inyuma" },
   "# Initialize high-performance quantization": {
     fr: "# Initialisation de la quantification haute performance",
@@ -284,10 +284,10 @@ const dict = {
     kn: "- clear: Siba ibyanditswe",
   },
   "Full Stack Engineer & LLM Enthusiast based in Kigali, Rwanda. Specializing in high-performance computing.":
-    {
-      fr: "Ingénieur Full Stack et passionné de LLM basé à Kigali, Rwanda. Spécialisé en calcul haute performance.",
-      kn: "Injiniyeri Full Stack n'umukunzi wa LLM uba i Kigali, Rwanda. Yibanda kubara byihuse.",
-    },
+  {
+    fr: "Ingénieur Full Stack et passionné de LLM basé à Kigali, Rwanda. Spécialisé en calcul haute performance.",
+    kn: "Injiniyeri Full Stack n'umukunzi wa LLM uba i Kigali, Rwanda. Yibanda kubara byihuse.",
+  },
   "Type 'contact' to request deployment info.": {
     fr: "Tapez 'contact' pour obtenir les infos de déploiement.",
     kn: "Andika 'contact' wumve amakuru y'imishinga.",
@@ -302,15 +302,15 @@ const dict = {
     kn: "umushyitsi@smusoni-net",
   },
   "All clusters fully operational. No vulnerabilities detected. Uptime: 99.98%":
-    {
-      fr: "Tous les clusters sont opérationnels. Aucune vulnérabilité. Disponibilité: 99.98%",
-      kn: "Itsinda ryose rirakora. Nta kibazo na kimwe. Igihe: 99.98%",
-    },
+  {
+    fr: "Tous les clusters sont opérationnels. Aucune vulnérabilité. Disponibilité: 99.98%",
+    kn: "Itsinda ryose rirakora. Nta kibazo na kimwe. Igihe: 99.98%",
+  },
   "bash: permission denied: root access required. This incident will be reported.":
-    {
-      fr: "bash: accès refusé: droits root requis. Cet incident sera signalé.",
-      kn: "bash: byanzwe: hakenewe root. Iri kosa rigiye gutangazwa.",
-    },
+  {
+    fr: "bash: accès refusé: droits root requis. Cet incident sera signalé.",
+    kn: "bash: byanzwe: hakenewe root. Iri kosa rigiye gutangazwa.",
+  },
   "Wake up, Neo...": { fr: "Réveille-toi, Neo...", kn: "Kanguka, Neo..." },
   "The Matrix has you 😂": {
     fr: "La Matrice t'a...",
@@ -323,74 +323,74 @@ const dict = {
   "> User:": { fr: "> Utilisateur :", kn: "> Umukoresha :" },
   "> Agent:": { fr: "> Agent :", kn: "> Agent :" },
   "Hi there! I'm the Alpha Core Agent. I'm here to help you navigate Sam's world. What would you like to know?":
-    {
-      fr: "Salut ! Je suis l'agent Alpha Core. Je suis là pour vous aider à naviguer dans l'univers de Sam. Que voulez-vous savoir ?",
-      kn: "Muraho! Ndi Alpha Core Agent. Ndi hano kugirango mbagufashe kumenya ibya Sam. Murifuza kumenya iki?",
-    },
+  {
+    fr: "Salut ! Je suis l'agent Alpha Core. Je suis là pour vous aider à naviguer dans l'univers de Sam. Que voulez-vous savoir ?",
+    kn: "Muraho! Ndi Alpha Core Agent. Ndi hano kugirango mbagufashe kumenya ibya Sam. Murifuza kumenya iki?",
+  },
   "Greetings, human. I am the Alpha Core. Systems operational. How can I assist you today?":
-    {
-      fr: "Salutations, humain. Je suis l'Alpha Core. Systèmes opérationnels. Comment puis-je vous aider aujourd'hui ?",
-      kn: "Muraho, muntu. Ndi Alpha Core. Sisitemu irakora neza. Nabafasha nte uyu munsi?",
-    },
+  {
+    fr: "Salutations, humain. Je suis l'Alpha Core. Systèmes opérationnels. Comment puis-je vous aider aujourd'hui ?",
+    kn: "Muraho, muntu. Ndi Alpha Core. Sisitemu irakora neza. Nabafasha nte uyu munsi?",
+  },
   "Welcome! I'm Sam's digital companion. I can tell you about his skills, projects, or how to get in touch.":
-    {
-      fr: "Bienvenue ! Je suis le compagnon numérique de Sam. Je peux vous parler de ses compétences, de ses projets ou de la façon de le contacter.",
-      kn: "Murakaza neza! Ndi umufasha wa Sam mu buryo bw'ikoranabuhanga. Nshobora kubabwira kubuhanga bwe, imishinga ye, cyangwa uko mwamuvugisha.",
-    },
+  {
+    fr: "Bienvenue ! Je suis le compagnon numérique de Sam. Je peux vous parler de ses compétences, de ses projets ou de la façon de le contacter.",
+    kn: "Murakaza neza! Ndi umufasha wa Sam mu buryo bw'ikoranabuhanga. Nshobora kubabwira kubuhanga bwe, imishinga ye, cyangwa uko mwamuvugisha.",
+  },
   "Nice to meet you! I've updated my registers. Now, what can I tell you about Sam's work?":
-    {
-      fr: "Ravi de vous rencontrer ! J'ai mis à jour mes registres. Maintenant, que puis-je vous dire sur le travail de Sam ?",
-      kn: "Nishimiye kubamenya! Namaze kubashyira muri sisitemu yanjye. None se, nababwira iki ku mirimo ya Sam?",
-    },
+  {
+    fr: "Ravi de vous rencontrer ! J'ai mis à jour mes registres. Maintenant, que puis-je vous dire sur le travail de Sam ?",
+    kn: "Nishimiye kubamenya! Namaze kubashyira muri sisitemu yanjye. None se, nababwira iki ku mirimo ya Sam?",
+  },
   "I'm still learning! I didn't quite catch that. You can ask me about Sam's projects, skills, or how to contact him.":
-    {
-      fr: "J'apprends encore ! Je n'ai pas bien compris. Vous pouvez me poser des questions sur les projets de Sam, ses compétences ou comment le contacter.",
-      kn: "Ndacyiyiga! Sinumvise neza icyo mushatse kuvuga. Mushobora kumbaza kubyerekeye imishinga ya Sam, ubuhanga bwe, cyangwa uko mwamuvugisha.",
-    },
+  {
+    fr: "J'apprends encore ! Je n'ai pas bien compris. Vous pouvez me poser des questions sur les projets de Sam, ses compétences ou comment le contacter.",
+    kn: "Ndacyiyiga! Sinumvise neza icyo mushatse kuvuga. Mushobora kumbaza kubyerekeye imishinga ya Sam, ubuhanga bwe, cyangwa uko mwamuvugisha.",
+  },
   "Great! What else would you like to know?": {
     fr: "Génial ! Que voulez-vous savoir d'autre ?",
     kn: "Nibyiza cyane! Hari ikindi mwifuza kumenya?",
   },
   "Sam Musoni is a Full Stack Engineer based in Kigali, Rwanda. He is passionate about Artificial Intelligence and Machine Learning. Would you like to hear about his skills or projects?":
-    {
-      fr: "Sam Musoni est un ingénieur Full Stack basé à Kigali, au Rwanda. Il est passionné par l'intelligence artificielle et l'apprentissage automatique. Souhaitez-vous en savoir plus sur ses compétences ou ses projets ?",
-      kn: "Sam Musoni ni Injiniyeri wa Full Stack uba i Kigali, mu Rwanda. Ukunze cyane Ubuhanga mu by'Ikoranabuhanga (AI) na Machine Learning. Mwifuza kumenya ubumenyi bwe cyangwa imishinga ye?",
-    },
+  {
+    fr: "Sam Musoni est un ingénieur Full Stack basé à Kigali, au Rwanda. Il est passionné par l'intelligence artificielle et l'apprentissage automatique. Souhaitez-vous en savoir plus sur ses compétences ou ses projets ?",
+    kn: "Sam Musoni ni Injiniyeri wa Full Stack uba i Kigali, mu Rwanda. Ukunze cyane Ubuhanga mu by'Ikoranabuhanga (AI) na Machine Learning. Mwifuza kumenya ubumenyi bwe cyangwa imishinga ye?",
+  },
   "His primary toolkit includes Node.js, React, and Python. He is also highly proficient in C++, Postgres, and Docker. Are you looking for a specific skill?":
-    {
-      fr: "Sa boîte à outils principale comprend Node.js, React et Python. Il est également très compétent en C++, Postgres et Docker. Recherchez-vous une compétence spécifique ?",
-      kn: "Ibikoresho bye by'ingenzi harimo Node.js, React, na Python. Nanone azi neza C++, Postgres, na Docker. Hari ubumenyi bwihariye mwaba mushaka?",
-    },
+  {
+    fr: "Sa boîte à outils principale comprend Node.js, React et Python. Il est également très compétent en C++, Postgres et Docker. Recherchez-vous une compétence spécifique ?",
+    kn: "Ibikoresho bye by'ingenzi harimo Node.js, React, na Python. Nanone azi neza C++, Postgres, na Docker. Hari ubumenyi bwihariye mwaba mushaka?",
+  },
   "You can view his full portfolio above, but some standout projects include Aether AI Hub and Focus Assistant. Shall I provide more details?":
-    {
-      fr: "Vous pouvez voir son portfolio complet ci-dessus, mais certains projets notables incluent Aether AI Hub et Focus Assistant. Souhaitez-vous plus de détails ?",
-      kn: "Mushobora kureba imishinga ye yose haruguru, ariko imwe mu ikomeye harimo Aether AI Hub na Focus Assistant. Mbabahe andi makuru arambuye?",
-    },
+  {
+    fr: "Vous pouvez voir son portfolio complet ci-dessus, mais certains projets notables incluent Aether AI Hub et Focus Assistant. Souhaitez-vous plus de détails ?",
+    kn: "Mushobora kureba imishinga ye yose haruguru, ariko imwe mu ikomeye harimo Aether AI Hub na Focus Assistant. Mbabahe andi makuru arambuye?",
+  },
   "Please navigate to the About or Awards sections to see his qualifications, or reach out via Email for a formal resume PDF.":
-    {
-      fr: "Veuillez consulter les sections À propos ou Prix pour voir ses qualifications, ou contactez-le par e-mail pour obtenir un CV au format PDF.",
-      kn: "Nyamuneka murebe mu gice cya 'Ibyerekeranye nange' cyangwa 'Ibihembo' kugirango murebe uburambe bwe, cyangwa mumwandikire kuri imeli mumuhe CV ye ya PDF.",
-    },
+  {
+    fr: "Veuillez consulter les sections À propos ou Prix pour voir ses qualifications, ou contactez-le par e-mail pour obtenir un CV au format PDF.",
+    kn: "Nyamuneka murebe mu gice cya 'Ibyerekeranye nange' cyangwa 'Ibihembo' kugirango murebe uburambe bwe, cyangwa mumwandikire kuri imeli mumuhe CV ye ya PDF.",
+  },
   "The best way to reach Sam is via email or by connecting on LinkedIn. He generally responds within 24 hours. You can also use the <a href='contact.html' style='color: var(--primary); text-decoration: underline;'>contact form here</a>.":
-    {
-      fr: "Le meilleur moyen de contacter Sam est par e-mail ou en se connectant sur LinkedIn. Il répond généralement sous 24 heures. Vous pouvez aussi utiliser le <a href='contact.html' style='color: var(--primary); text-decoration: underline;'>formulaire de contact ici</a>.",
-      kn: "Uburyo bwiza bwo kuvugana na Sam ni kuri imeli cyangwa guhura kuri LinkedIn. Akunze gusubiza mu masaha 24. Mwanakoresha <a href='contact.html' style='color: var(--primary); text-decoration: underline;'>ifomu yo kuvugana hano</a>.",
-    },
+  {
+    fr: "Le meilleur moyen de contacter Sam est par e-mail ou en se connectant sur LinkedIn. Il répond généralement sous 24 heures. Vous pouvez aussi utiliser le <a href='contact.html' style='color: var(--primary); text-decoration: underline;'>formulaire de contact ici</a>.",
+    kn: "Uburyo bwiza bwo kuvugana na Sam ni kuri imeli cyangwa guhura kuri LinkedIn. Akunze gusubiza mu masaha 24. Mwanakoresha <a href='contact.html' style='color: var(--primary); text-decoration: underline;'>ifomu yo kuvugana hano</a>.",
+  },
   "Currently, Sam is open to exciting full-time roles and freelance projects. Feel free to contact him to discuss opportunities!":
-    {
-      fr: "Actuellement, Sam est ouvert à des rôles à temps plein passionnants et à des projets en freelance. N'hésitez pas à le contacter pour discuter d'opportunités !",
-      kn: "Kuri ubu, Sam yiteguye akazi gahoraho cyangwa imishinga y'igihe gito. Mwumve mwisanzuye kumuvugisha kugirango muganire ku mahirwe ahari!",
-    },
+  {
+    fr: "Actuellement, Sam est ouvert à des rôles à temps plein passionnants et à des projets en freelance. N'hésitez pas à le contacter pour discuter d'opportunités !",
+    kn: "Kuri ubu, Sam yiteguye akazi gahoraho cyangwa imishinga y'igihe gito. Mwumve mwisanzuye kumuvugisha kugirango muganire ku mahirwe ahari!",
+  },
   "Project rates depend entirely on scope and requirements. Sam would love to hear about your project to give you an accurate estimate. Should I provide his email?":
-    {
-      fr: "Les tarifs des projets dépendent entièrement de la portée et des exigences. Sam aimerait en savoir plus sur votre projet pour vous donner un devis précis. Dois-je vous donner son e-mail ?",
-      kn: "Ibiciro by'imishinga biterwa n'ubunini n'ibikenewe. Sam yabyishimira kumva ibyo mushaka kugirango abahe igiciro gikwiye. Mbabahe imeli ye?",
-    },
+  {
+    fr: "Les tarifs des projets dépendent entièrement de la portée et des exigences. Sam aimerait en savoir plus sur votre projet pour vous donner un devis précis. Dois-je vous donner son e-mail ?",
+    kn: "Ibiciro by'imishinga biterwa n'ubunini n'ibikenewe. Sam yabyishimira kumva ibyo mushaka kugirango abahe igiciro gikwiye. Mbabahe imeli ye?",
+  },
   "When not coding, Sam is usually brewing an unnecessarily complicated cup of coffee or diving deep into cyberpunk lore. And the meaning of life? 42, obviously.":
-    {
-      fr: "Quand il ne code pas, Sam prépare généralement une tasse de café inutilement compliquée ou se plonge dans l'univers cyberpunk. Et le sens de la vie ? 42, évidemment.",
-      kn: "Iyo adahari ari gukora kode, Sam akunze kuba ari gukora ikawa iteguye mu buryo bugoye cyangwa ari kwiga ku mateka ya cyberpunk. Naho icyo ubuzima bivuze? Ni 42, birumvikana.",
-    },
+  {
+    fr: "Quand il ne code pas, Sam prépare généralement une tasse de café inutilement compliquée ou se plonge dans l'univers cyberpunk. Et le sens de la vie ? 42, évidemment.",
+    kn: "Iyo adahari ari gukora kode, Sam akunze kuba ari gukora ikawa iteguye mu buryo bugoye cyangwa ari kwiga ku mateka ya cyberpunk. Naho icyo ubuzima bivuze? Ni 42, birumvikana.",
+  },
   "Unable to fetch external APIs. It's always cyberpunk weather here.": {
     fr: "Impossible de récupérer les API externes. Il fait toujours un temps cyberpunk ici.",
     kn: "Ntibishoboka kubona amakuru y'ikirere. Hano buri gihe ni ikirere cya cyberpunk.",
@@ -412,7 +412,7 @@ const dict = {
   Send: { fr: "Envoyer", kn: "Ohereza" },
   "Interact with the AI agent created in the demo": {
     fr: "Interagissez avec l'agent IA créé dans la démo",
-    kn: "Vugana na agent AI yakozwe mu ngerageza",
+    kn: "Vugana na agent AI yakozwe mu igeragezwa",
   },
   "Chat directly with The Alpha Core Agent created by Sam": {
     fr: "Discutez directement avec l'agent Alpha Core créé par Sam",
@@ -421,25 +421,25 @@ const dict = {
   "Where I've ": { fr: "Où j'ai ", kn: "Aho " },
   Built: { fr: "Construit", kn: "Nubatse" },
   "From mastering complex algorithms at A2SV to securing the internet's foundation and engineering the future of AI.":
-    {
-      fr: "De la maîtrise d'algorithmes complexes chez A2SV à la sécurisation des fondations de l'internet et l'ingénierie de l'IA.",
-      kn: "Kuva mukumenya algorithm zihanitse muri A2SV kugeza kubaka umutekano w'ikoranabuhanga n'iterambere rya AI.",
-    },
+  {
+    fr: "De la maîtrise d'algorithmes complexes chez A2SV à la sécurisation des fondations de l'internet et l'ingénierie de l'IA.",
+    kn: "Kuva mukumenya algorithm zihanitse muri A2SV kugeza kubaka umutekano w'ikoranabuhanga n'iterambere rya AI.",
+  },
   "Software Engineering Trainee": { fr: "Stagiaire en Ingénierie Logicielle", kn: "Uwimenyereza muri Software" },
   "Dec 2025 -> Present": {
     fr: "Déc 2025 -> Présent",
     kn: "Ukuboza 2025 -> Ubu",
   },
   "Mastered Data Structures and Algorithms through rigorous daily challenges.":
-    {
-      fr: "Maîtrise des structures de données et des algorithmes grâce à des défis quotidiens rigoureux.",
-      kn: "Naminuje imiterere y'amakuru na algorithm binyuze mu mbogamizi zikomeye za buri munsi.",
-    },
+  {
+    fr: "Maîtrise des structures de données et des algorithmes grâce à des défis quotidiens rigoureux.",
+    kn: "Naminuje imiterere y'amakuru na algorithm binyuze mu mbogamizi zikomeye za buri munsi.",
+  },
   "Developed optimized technical solutions using Python for complex problem sets.":
-    {
-      fr: "Développement de solutions techniques optimisées avec Python pour des problèmes complexes.",
-      kn: "Natezimbere ibisubizo byikoranabuhanga nkurikije Python kubibazo bikomeye.",
-    },
+  {
+    fr: "Développement de solutions techniques optimisées avec Python pour des problèmes complexes.",
+    kn: "Natezimbere ibisubizo byikoranabuhanga nkurikije Python kubibazo bikomeye.",
+  },
   "Cyber Security Trainee": {
     fr: "Stagiaire en Cybersécurité",
     kn: "Uwimenyereza mu by'Umutekano w'Ikoranabuhanga",
@@ -449,19 +449,19 @@ const dict = {
     kn: "Ukwakira 2025 -> Gashyantare 2026",
   },
   "Gained hands-on expertise in Cybersecurity, Information Security, and Network Expansion.":
-    {
-      fr: "Acquisition d'une expertise pratique en cybersécurité, sécurité de l'information et expansion réseau.",
-      kn: "Nabonye ubumenyi ngiro muri Cybersecurity, Umutekano w'amakuru, n'iyagurwa ry'umuyoboro.",
-    },
+  {
+    fr: "Acquisition d'une expertise pratique en cybersécurité, sécurité de l'information et expansion réseau.",
+    kn: "Nabonye ubumenyi ngiro muri Cybersecurity, Umutekano w'amakuru, n'iyagurwa ry'umuyoboro.",
+  },
   "Attained certification in Advanced Network Operations 2.0.": {
     fr: "Obtention de la certification en Opérations Réseau Avancées 2.0.",
     kn: "Nabonye impamyabumenyi muri Advanced Network Operations 2.0.",
   },
   "Configured and managed Caching DNS Servers for enhanced network performance.":
-    {
-      fr: "Configuration et gestion de serveurs DNS de cache pour améliorer les performances réseau.",
-      kn: "Nashyizeho kandi nicunga Caching DNS Servers kugirango imikorere yumuyoboro yiyongere.",
-    },
+  {
+    fr: "Configuration et gestion de serveurs DNS de cache pour améliorer les performances réseau.",
+    kn: "Nashyizeho kandi nicunga Caching DNS Servers kugirango imikorere yumuyoboro yiyongere.",
+  },
   "Demonstrated advanced proficiency in UNIX/Linux Shell environments.": {
     fr: "Démonstration d'une compétence avancée dans les environnements Shell UNIX/Linux.",
     kn: "Nerekanye ubuhanga buhanitse muri UNIX/Linux Shell.",
@@ -635,16 +635,16 @@ document.addEventListener("DOMContentLoaded", () => {
   // Scroll Hide/Show bottom navigation bar (runs on all pages containing bottom nav)
   if (bottomNav) {
     let lastScrollY = window.scrollY;
-    
+
     window.addEventListener("scroll", () => {
       const currentScrollY = window.scrollY;
-      
+
       // Always show close to top
       if (currentScrollY < 60) {
         bottomNav.classList.remove("bottom-nav-hidden");
         return;
       }
-      
+
       if (currentScrollY > lastScrollY) {
         // Scrolling down -> hide
         bottomNav.classList.add("bottom-nav-hidden");
@@ -652,7 +652,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Scrolling up -> show
         bottomNav.classList.remove("bottom-nav-hidden");
       }
-      
+
       lastScrollY = currentScrollY;
     });
   }
