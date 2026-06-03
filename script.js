@@ -557,31 +557,79 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Metric live simulation
 setInterval(() => {
-  const cpu = document.getElementById("cpu-val");
-  const ram = document.getElementById("ram-val");
-  const net = document.getElementById("net-val");
+  const cpus = document.querySelectorAll(".cpu-val");
+  const rams = document.querySelectorAll(".ram-val");
+  const nets = document.querySelectorAll(".net-val");
 
-  if (cpu) {
+  if (cpus.length > 0) {
     const val = Math.floor(Math.random() * 20) + 5;
-    cpu.innerText = `${val}%`;
-    if (cpu.nextElementSibling && cpu.nextElementSibling.firstElementChild) {
-      cpu.nextElementSibling.firstElementChild.style.width = `${val}%`;
-    }
+    cpus.forEach((cpu) => {
+      cpu.innerText = `${val}%`;
+      if (cpu.nextElementSibling && cpu.nextElementSibling.firstElementChild) {
+        cpu.nextElementSibling.firstElementChild.style.width = `${val}%`;
+      }
+    });
   }
 
-  if (ram) {
+  if (rams.length > 0) {
     const val = +(Math.random() * 1.5 + 3).toFixed(1);
-    ram.innerText = `${val} GB`;
-    if (ram.nextElementSibling && ram.nextElementSibling.firstElementChild) {
-      ram.nextElementSibling.firstElementChild.style.width = `${(val / 16) * 100}%`;
-    }
+    rams.forEach((ram) => {
+      ram.innerText = `${val} GB`;
+      if (ram.nextElementSibling && ram.nextElementSibling.firstElementChild) {
+        ram.nextElementSibling.firstElementChild.style.width = `${(val / 16) * 100}%`;
+      }
+    });
   }
 
-  if (net) {
+  if (nets.length > 0) {
     const val = Math.floor(Math.random() * 150) + 800; // 800-950 Mbps
-    net.innerText = `${val} Mbps`;
+    nets.forEach((net) => {
+      net.innerText = `${val} Mbps`;
+    });
   }
 }, 2000);
+
+// Bottom Navigation Scroll Spy & Smooth Scroll Highlight
+document.addEventListener("DOMContentLoaded", () => {
+  const bottomNavItems = document.querySelectorAll(".bottom-nav-item");
+  const sections = document.querySelectorAll("section[id]");
+
+  if (sections.length > 0 && bottomNavItems.length > 0 && document.getElementById("about")) {
+    function highlightBottomNav() {
+      let current = "";
+      const scrollPos = window.scrollY + window.innerHeight / 3;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      if (current) {
+        bottomNavItems.forEach((item) => {
+          item.classList.remove("active");
+          const href = item.getAttribute("href");
+          if (href) {
+            const isHome = current === "about" && href === "#about";
+            const isTerminal = (current === "terminal" || current === "sandbox" || current === "agent-interactive") && href === "#terminal";
+            const isProjects = current === "projects" && href === "#projects";
+            const isExperience = (current === "experience" || current === "awards") && href === "#experience";
+            const isContact = current === "contact" && href === "#contact";
+
+            if (isHome || isTerminal || isProjects || isExperience || isContact) {
+              item.classList.add("active");
+            }
+          }
+        });
+      }
+    }
+
+    window.addEventListener("scroll", highlightBottomNav);
+    highlightBottomNav(); // Initial call
+  }
+});
 
 // Terminal Logic
 const termInput = document.getElementById("term-input");
