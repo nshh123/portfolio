@@ -1172,73 +1172,26 @@ html.light .bullet-arrow { color: #059669; }
     scroll-snap-align: start !important;
     margin-bottom: 0 !important;
   }
-  .container {
-    padding: calc(var(--nav-height) + 1.25rem) 1.25rem 4rem 1.25rem !important;
-  }
-
+  
   /* Hero & Avatar circular optimizations */
-  .hero {
-    min-height: calc(100dvh - var(--nav-height) - 6.5rem) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 0.5rem !important;
-    padding: 0 !important;
-  }
-
-  .hero-left {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-  }
-
-  .hero-identity {
-    gap: 0.5rem !important;
-    margin-bottom: 0.75rem !important;
-    align-items: center !important;
-  }
-
   .hero-right {
     display: none !important; /* Hide desktop metrics inside hero */
   }
   
   .avatar-container {
-    width: clamp(100px, 18vh, 125px) !important;
-    height: clamp(100px, 18vh, 125px) !important;
+    width: 130px;
+    height: 130px;
     border-radius: 50% !important;
     border: 3px solid var(--primary);
     box-shadow: 0 0 25px var(--primary-glow);
-    margin: 0 auto !important;
+    margin: 0 auto 1.5rem auto;
   }
   
   .profile-avatar {
     border-radius: 50% !important;
   }
   
-  .portfolio-tag {
-    margin-bottom: 0.25rem !important;
-  }
-
-  .hero-title {
-    font-size: clamp(1.8rem, 4vh, 2.3rem) !important;
-    margin-bottom: 0.25rem !important;
-  }
-
-  .hero-subtitle {
-    margin-bottom: 0.75rem !important;
-    font-size: 1.1rem !important;
-  }
-
-  .hero-bio {
-    font-size: 0.85rem !important;
-    line-height: 1.4 !important;
-    margin-bottom: 1.25rem !important;
-    max-width: 380px !important;
-  }
-  
+  .hero-title { font-size: 2.2rem; }
   .section-title h2 { font-size: 1.8rem; }
   .api-status-grid { grid-template-columns: 1fr 1fr; }
 
@@ -1246,7 +1199,7 @@ html.light .bullet-arrow { color: #059669; }
   .hero-action { 
     flex-direction: column; 
     align-items: center; 
-    gap: 0.75rem !important; 
+    gap: 1rem; 
     width: 100%;
   }
   .hero-action .btn { 
