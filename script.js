@@ -410,9 +410,9 @@ const dict = {
   "Agent:": { fr: "Agent :", kn: "Agent :" },
   "User:": { fr: "Utilisateur :", kn: "Umukoresha :" },
   Send: { fr: "Envoyer", kn: "Ohereza" },
-  "Interact with an AI agent created by Sam": {
-    fr: "Interagissez avec un agent AI créé par Sam",
-    kn: "Vugana na agent AI yakozwe na Sam",
+  "Interact with the AI agent created above 👆": {
+    fr: "Interagissez avec l'agent IA créé ci-dessus 👆",
+    kn: "Vugana na agent AI yakozwe haruguru 👆",
   },
   "Chat directly with The Alpha Core Agent created by Sam": {
     fr: "Discutez directement avec l'agent Alpha Core créé par Sam",
