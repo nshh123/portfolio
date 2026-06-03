@@ -286,16 +286,28 @@ body {
 }
 
 .btn-gradient {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #ffffff;
-  border: none;
-  box-shadow: 0 4px 15px rgba(177, 75, 244, 0.3);
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid #ffffff;
 }
 
 .btn-gradient:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(177, 75, 244, 0.5);
+  background: transparent;
   color: #ffffff;
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
+
+html.light .btn-gradient {
+  background: var(--text-main);
+  color: #ffffff;
+  border: 1px solid var(--text-main);
+}
+
+html.light .btn-gradient:hover {
+  background: transparent;
+  color: var(--text-main);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-color: var(--text-main);
 }
 
 .portfolio-tag {
@@ -1235,6 +1247,19 @@ html.light .bullet-arrow { color: #059669; }
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 0.85rem;
+  }
+
+  .btn-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(177, 75, 244, 0.3) !important;
+  }
+  
+  .btn-gradient:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(177, 75, 244, 0.5) !important;
+    color: #ffffff !important;
   }
   .hand-animation-wrapper {
     width: 100%;
