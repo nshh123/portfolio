@@ -70,7 +70,7 @@ if (hamburgerBtn && navLinks) {
 
 // Language Toggle Logic
 const dict = {
-  "PORTFOLIO 2026": { fr: "PORTFOLIO 2026", kn: "PORTIFOLIYO 2026" },
+  "PORTFOLIO 2026": { fr: "PORTEFEUILLE 2026", kn: "PORTIFOLIYO 2026" },
   About: { fr: "À propos", kn: "Ibyanjye" },
   Sandbox: { fr: "Démo", kn: "Igerageza" },
   Projects: { fr: "Projets", kn: "Imishinga" },
