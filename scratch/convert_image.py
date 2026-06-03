@@ -1,8 +1,8 @@
 from PIL import Image
 import os
 
-png_path = 'profil.png'
-webp_path = 'profil.webp'
+png_path = 'images/profil.png'
+webp_path = 'images/profil.webp'
 
 if os.path.exists(png_path):
     img = Image.open(png_path)

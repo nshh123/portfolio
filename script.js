@@ -424,7 +424,7 @@ const dict = {
       fr: "De la maîtrise d'algorithmes complexes chez A2SV à la sécurisation des fondations de l'internet et l'ingénierie de l'IA.",
       kn: "Kuva mukumenya algorithm zihanitse muri A2SV kugeza kubaka umutekano w'ikoranabuhanga n'iterambere rya AI.",
     },
-  Trainee: { fr: "Stagiaire", kn: "Uwimenyereza" },
+  "Software Engineering Trainee": { fr: "Stagiaire en Ingénierie Logicielle", kn: "Uwimenyereza muri Software" },
   "Dec 2025 -> Present": {
     fr: "Déc 2025 -> Présent",
     kn: "Ukuboza 2025 -> Ubu",
@@ -439,9 +439,9 @@ const dict = {
       fr: "Développement de solutions techniques optimisées avec Python pour des problèmes complexes.",
       kn: "Natezimbere ibisubizo byikoranabuhanga nkurikije Python kubibazo bikomeye.",
     },
-  "Apprentice & Student Fellow": {
-    fr: "Apprenti & Étudiant Chercheur",
-    kn: "Uwimenyereza & Umunyeshuri",
+  "Cyber Security Trainee": {
+    fr: "Stagiaire en Cybersécurité",
+    kn: "Uwimenyereza mu by'Umutekano w'Ikoranabuhanga",
   },
   "Oct 2025 -> Feb 2026": {
     fr: "Oct 2025 -> Fév 2026",
