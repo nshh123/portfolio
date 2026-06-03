@@ -1194,45 +1194,6 @@ html.light .bullet-arrow { color: #059669; }
   .hero-title { font-size: 2.2rem; }
   .section-title h2 { font-size: 1.8rem; }
   .api-status-grid { grid-template-columns: 1fr 1fr; }
-  
-  /* Mobile-specific Metrics styling */
-  .mobile-metrics {
-    display: block !important;
-    margin: 0 auto 2rem auto;
-    max-width: 600px;
-  }
-  
-  .mobile-metrics .metrics-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    padding: 1rem;
-  }
-  
-  .mobile-metrics .metric-item {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--border-light);
-    border-radius: 12px;
-    padding: 1.25rem 1rem;
-    align-items: flex-start;
-  }
-  
-  html.light .mobile-metrics .metric-item {
-    background: rgba(0, 0, 0, 0.02);
-  }
-  
-  .mobile-metrics .metric-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--text-gray);
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-  
-  .mobile-metrics .metric-value {
-    font-size: 1.4rem;
-    font-weight: 800;
-  }
 
   /* Hero action — uppercase text & custom flex centering */
   .hero-action { 
