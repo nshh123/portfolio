@@ -2,7 +2,7 @@
  * Site-wide defaults — edit values here only.
  */
 window.SITE_CONFIG = {
-  defaultTheme: "dark",
+  defaultTheme: "light",
   defaultThemeMobile: "dark",
   mobileBreakpoint: 900,
 };
