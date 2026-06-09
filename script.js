@@ -77,10 +77,6 @@ const dict = {
   Agent: { fr: "Agent", kn: "Agent" },
   Experience: { fr: "Expérience", kn: "Uburambe" },
   Contact: { fr: "Contact", kn: "Kuvugana" },
-  "System Online . Ready for tasks": {
-    fr: "Système en Ligne . Prêt pour les tâches",
-    kn: "Sisitemu Iriho . Yiteguye",
-  },
   "Full Stack Engineer": {
     fr: "Ingénieur Full Stack",
     kn: "Injiniyeri Full Stack",
