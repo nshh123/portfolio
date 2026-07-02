@@ -149,10 +149,7 @@ const dict = {
   },
   "Simba E-Comm": { fr: "Simba E-Comm", kn: "Simba E-Comm" },
   ProfAdvisor: { fr: "ProfAdvisor", kn: "ProfAdvisor" },
-  "Budget Planner": {
-    fr: "Planificateur budgétaire",
-    kn: "Gahunda y'ingengo",
-  },
+  Budgetify: { fr: "Budgetify", kn: "Budgetify" },
   "Focus Assistant": {
     fr: "Assistant de concentration",
     kn: "Umufasha wo kwibanda",
@@ -705,7 +702,7 @@ function runTerminalCommand() {
   } else if (command === "stack") {
     response = `<p class="term-line text-secondary">React.js, Node.js, Python, FastAPI, C, PostgreSQL, Ray, Redis</p>`;
   } else if (command === "projects") {
-    response = `<p class="term-line text-primary">1. Aether AI Hub<br>2. Focus Assistant<br>3. Budget Planner<br>4. Finova Wallet App<br>5. Simba E-Comm<br>6. ProfAdvisor<br>Type 'contact' to request deployment info.</p>`;
+    response = `<p class="term-line text-primary">1. Aether AI Hub<br>2. Focus Assistant<br>3. Budgetify<br>4. Finova Wallet App<br>5. Simba E-Comm<br>6. ProfAdvisor<br>Type 'contact' to request deployment info.</p>`;
   } else if (command === "contact") {
     response = `<p class="term-line">Secure commlink ready. Reach out via email: <a href="contact.html" style="color:var(--secondary)">Click Here</a></p>`;
   } else if (command === "whoami") {
